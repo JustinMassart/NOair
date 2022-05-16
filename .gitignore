@@ -1,0 +1,15 @@
+/*
+!.gitignore
+!README.md
+!package.json
+!package-lock.json
+!database.sql
+!webpack.mix.js
+
+
+!wp-content
+wp-content/*
+!wp-content/themes
+wp-content/themes/*
+!wp-content/themes/NOair
+wp-content/themes/NOair/public
