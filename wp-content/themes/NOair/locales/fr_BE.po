@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-05-17 16:31+0200\n"
+"PO-Revision-Date: 2022-05-17 16:32+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: header.php:22
+msgid "Navigation principale"
+msgstr "Navigation principale"
+
+#: header.php:41
+msgid "contactez nous"
+msgstr "contactez nous"
+
+#: template-contact.php:9
+msgid "Oups ! Ce formulaire contient des erreurs, merci de les corriger."
+msgstr "Oups ! Ce formulaire contient des erreurs, merci de les corriger."
+
+#: template-contact.php:12
+msgid "Votre prénom"
+msgstr "Votre prénom"
+
+#: template-contact.php:18
+msgid "Votre nom"
+msgstr "Votre nom"
+
+#: template-contact.php:24
+msgid "Votre adresse e-mail"
+msgstr "Votre adresse e-mail"
+
+#: template-contact.php:30
+msgid "Que faites vous dans la vie ?"
+msgstr "Que faites vous dans la vie ?"
+
+#: template-contact.php:46
+msgid "Votre message"
+msgstr "Votre message"
+
+#: template-contact.php:56
+msgid "conditions générales d’utilisation"
+msgstr "conditions générales d’utilisation"
+
+#: template-contact.php:57
+msgid "J’ai lu et j’accepte les :conditions."
+msgstr "J’ai lu et j’accepte les :conditions."
+
+#: template-contact.php:65
+msgid "Envoyer"
+msgstr "Envoyer"
+
+#: template-contact.php:69
+msgid "Merci de nous avoir contacté, à bientôt !"
+msgstr "Merci de nous avoir contacté, à bientôt !"

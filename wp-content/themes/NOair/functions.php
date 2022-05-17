@@ -22,7 +22,7 @@
 // Activer les images sur les articles
 
 // Enregistrer un seul custom post-type pour "nos voyages"
-	register_post_type ( 'modules', [
+	register_post_type ( 'module', [
 		'label' => 'Modules',
 		'labels' => [
 			'name' => 'Modules',
@@ -36,7 +36,7 @@
 		'rewrite' => [ 'slug' => 'modules' ],
 	] );
 
-	register_post_type ( 'publications', [
+	register_post_type ( 'publication', [
 		'label' => 'Publications',
 		'labels' => [
 			'name' => 'Publications',
@@ -54,6 +54,7 @@
 		'label' => 'C’est quoi NOair ?',
 		'description' => 'Toutes informations générales sur NOair.',
 		'public' => true,
+		'publicly_queryable' => false,
 		'menu_position' => 22,
 		'menu_icon' => 'dashicons-info',
 		'supports' => [ 'title' ],
@@ -162,8 +163,8 @@
 	{
 		if ( !NOair_verify_contact_form_nonce () ) {
 			// C'est pas OK.
-			// TODO : afficher un message d'erreur "unauthorized"
-			return;
+			header ( "HTTP/1.1 401 Unauthorized" );
+			exit;
 		}
 
 		$data = NOair_sanitize_contact_form_data ();
@@ -222,27 +223,34 @@
 
 	function NOair_validate_contact_form_data ( $data )
 	{
+
 		$errors = [];
 
-		$required = [ 'firstname', 'lastname', 'email', 'subject', 'message' ];
+		$required = [ 'firstname', 'lastname', 'email', 'message' ];
 		$email = [ 'email' ];
 		$accepted = [ 'rules' ];
+		$options = [ 'modules', 'ingénieur', 'hepl', 'issep' ];
+		$select = $_POST[ 'subject' ];
 
 		foreach ( $data as $key => $value ) {
-			if ( in_array ( $key, $required ) && !$value ) {
-				$errors[ $key ] = 'required';
+			if ( in_array ( $key, $required, true ) && !$value ) {
+				$errors[ $key ] = 'requis';
 				continue;
 			}
 
-			if ( in_array ( $key, $email ) && !filter_var ( $value, FILTER_VALIDATE_EMAIL ) ) {
+			if ( in_array ( $key, $email, true ) && !filter_var ( $value, FILTER_VALIDATE_EMAIL ) ) {
 				$errors[ $key ] = 'email';
 				continue;
 			}
 
-			if ( in_array ( $key, $accepted ) && $value !== '1' ) {
-				$errors[ $key ] = 'accepted';
+			if ( in_array ( $key, $accepted, true ) && $value !== '1' ) {
+				$errors[ $key ] = 'Vous devez accepter les conditions générales d’utilisations pour envoyer un message.';
 				continue;
 			}
+		}
+
+		if ( !in_array ( $select, $options, true ) ) {
+			$errors[ 'subject' ] = 'Veuillez choisir un sujet dans la liste.';
 		}
 
 		return $errors ? : false;
@@ -263,11 +271,7 @@
 			return '';
 		}
 
-		if ( !isset( $_SESSION[ 'feedback_contact_form' ][ 'errors' ][ $field ] ) ) {
-			return '';
-		}
-
-		return '<p class="form__error">Problème : ' . $_SESSION[ 'feedback_contact_form' ][ 'errors' ][ $field ] . '</p>';
+		return $_SESSION[ 'feedback_contact_form' ][ 'errors' ][ $field ] ?? '';
 	}
 
 // Utilitaire pour charger un fichier compilé par mix, avec cache bursting.
