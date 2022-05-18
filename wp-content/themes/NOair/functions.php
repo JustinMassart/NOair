@@ -50,16 +50,6 @@
 		'rewrite' => [ 'slug' => 'publications' ],
 	] );
 
-	register_post_type ( 'noair', [
-		'label' => 'C’est quoi NOair ?',
-		'description' => 'Toutes informations générales sur NOair.',
-		'public' => true,
-		'publicly_queryable' => false,
-		'menu_position' => 22,
-		'menu_icon' => 'dashicons-info',
-		'supports' => [ 'title' ],
-	] );
-
 	register_post_type ( 'message', [
 		'label' => 'Messages de contact',
 		'labels' => [
@@ -350,4 +340,19 @@
 
 		// Retourner la première occurrence
 		return $query -> posts[ 0 ] ?? null;
+	}
+
+	// Récupérer les champs des informations générales dans un tableau pour le templating
+
+	function NOair_get_general_infos ()
+	{
+		$infos = [];
+
+		$info[] = get_field ( 'first_info' );
+		$info[] = get_field ( 'second_info' );
+		$info[] = get_field ( 'third_info' );
+		$info[] = get_field ( 'fourth_info' );
+
+		return $info;
+
 	}
