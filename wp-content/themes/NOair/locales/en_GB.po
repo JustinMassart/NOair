@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-20 15:15+0200\n"
-"PO-Revision-Date: 2022-05-20 15:15+0200\n"
+"POT-Creation-Date: 2022-05-20 15:50+0200\n"
+"PO-Revision-Date: 2022-05-20 15:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -37,31 +37,35 @@ msgstr "Join pollution awareness with NOair modules to measure air quality."
 msgid "Navigation principale"
 msgstr "Primary navigation"
 
-#: header.php:34
+#: header.php:34 single-module.php:90
 msgid "contactez nous"
 msgstr "contact us"
 
-#: index.php:20
+#: index.php:13
+msgid "NOair •"
+msgstr "NOair •"
+
+#: index.php:29
 msgid "voir nos modules"
 msgstr "see our modules"
 
-#: index.php:25
+#: index.php:35
 msgid "Le logo du module Oryx."
 msgstr "Logo of Oryx module."
 
-#: index.php:26
+#: index.php:38
 msgid "Le logo du module Oryx en noir et vert."
 msgstr "Logo of Oryx module in black and green."
 
-#: index.php:32
-msgid "NOair C’est :"
-msgstr "NOair is :"
+#: index.php:45
+msgid "NOair c’est :"
+msgstr "NOair that’s :"
 
-#: index.php:41
-msgid "Vidéo de présentation de Noair - Antilope"
-msgstr "Presentation video of Noair - Antelope"
+#: index.php:59
+msgid "Vidéo de présentation de NOair - Antilope"
+msgstr "Presentation video of NOair - Antilope"
 
-#: index.php:47
+#: index.php:67
 msgid "Découvrez aussi"
 msgstr "Discover too"
 
@@ -69,9 +73,13 @@ msgstr "Discover too"
 msgid "Le module "
 msgstr "The module "
 
+#: single-module.php:9 template-modules.php:46
+msgid ":name"
+msgstr ":name"
+
 #: single-module.php:25
-msgid "Informations du module "
-msgstr "Module informations "
+msgid "Information du module :name"
+msgstr "Informations of :name module"
 
 #: single-module.php:28
 msgid "Comment s’utilise-t-il ?"
@@ -81,13 +89,21 @@ msgstr "How to use it ?"
 msgid "Ces qualités et défauts"
 msgstr "His qualities and defects"
 
-#: single-module.php:51
+#: single-module.php:55
 msgid "Caractéristiques"
 msgstr "Features"
 
-#: single-module.php:62
+#: single-module.php:68
 msgid "Ce que :name mesure"
 msgstr "What :name measures"
+
+#: single-module.php:83
+msgid "Ce module vous intéresse ?"
+msgstr "Are you interested in this module?"
+
+#: single-module.php:86
+msgid "Posez nous vos question et demandes au sujet du module :name"
+msgstr "Ask us your questions and requests about the module :name"
 
 #: template-contact.php:9
 msgid "Oups ! Ce formulaire contient des erreurs, merci de les corriger."
@@ -129,30 +145,35 @@ msgstr "Send"
 msgid "Merci de nous avoir contacté, à bientôt !"
 msgstr "Thanks for contacting us, see you soon !"
 
-#: template-modules.php:12
+#: template-modules.php:18
 msgid "Pour qui ?"
 msgstr "For who ?"
 
-#: template-modules.php:18
+#: template-modules.php:26
 msgid "Mesures effectuées"
 msgstr "Measurements made"
 
-#: template-modules.php:31
-msgid "Voir le module"
-msgstr "See the module"
+#: template-modules.php:44
+msgid "Voir le module "
+msgstr "See the module "
 
-#: template-modules.php:33
-msgid " :name"
-msgstr " :name"
-
-#: template-modules.php:43 template-modules.php:46
+#: template-modules.php:56 template-modules.php:59
 msgid "Le logo du module :name ."
 msgstr "Logo of the :name module."
 
 #: template-modules.php:70
+msgid ""
+"Oups ! On dirait qu’il n’aucun module n’ait été publié. Revenez plus tard !"
+msgstr "Oops ! It looks like no modules have been released. Come back later !"
+
+#: template-modules.php:75
+msgid "Les publications récentes"
+msgstr "Most recent publications"
+
+#: template-modules.php:86
 msgid "Voir la publication"
 msgstr "See the publication"
 
-#: template-modules.php:72
+#: template-modules.php:88
 msgid " de :author"
 msgstr " of :author"

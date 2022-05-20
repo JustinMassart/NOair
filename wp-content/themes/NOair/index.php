@@ -55,8 +55,9 @@
 			<?php endforeach; ?>
 		</section>
 		<section class="presentation">
-			<h3 class="presentation__title sro"><?= __( 'Vidéo de présentation de NO
-			air - Antilope', 'NOair' ) ?></h3>
+			<h3 class="presentation__title sro">
+				<?= __( 'Vidéo de présentation de NOair - Antilope', 'NOair' ) ?>
+			</h3>
 			<div class="presentation__video">
 				<?= get_field( 'presentation_video' ) ?>
 			</div>

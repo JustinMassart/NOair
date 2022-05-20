@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-20 14:57+0200\n"
-"PO-Revision-Date: 2022-05-20 14:59+0200\n"
+"POT-Creation-Date: 2022-05-20 15:49+0200\n"
+"PO-Revision-Date: 2022-05-20 15:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_BE\n"
@@ -35,35 +35,42 @@ msgstr ""
 "Rejoignez la sensibilisation contre la pollution grâce aux modules de NOair "
 "permettant de mesurer la qualité de l’air."
 
-#: header.php:233
+#: header.php:24
 msgid "Navigation principale"
 msgstr "Navigation principale"
 
-#: header.php:243
+#: header.php:34 single-module.php:90
 msgid "contactez nous"
 msgstr "contactez nous"
 
-#: index.php:20
+#: index.php:13
+msgid "NOair •"
+msgstr "NOair •"
+
+#: index.php:29
 msgid "voir nos modules"
 msgstr "voir nos modules"
 
-#: index.php:25
+#: index.php:35
 msgid "Le logo du module Oryx."
 msgstr "Le logo du module Oryx."
 
-#: index.php:26
+#: index.php:38
 msgid "Le logo du module Oryx en noir et vert."
 msgstr "Le logo du module Oryx en noir et vert."
 
-#: index.php:32
-msgid "NOair C’est :"
-msgstr "NOair C’est :"
+#: index.php:45
+msgid "NOair c’est :"
+msgstr "NOair c’est :"
 
-#: index.php:41
-msgid "Vidéo de présentation de Noair - Antilope"
-msgstr "Vidéo de présentation de Noair - Antilope"
+#: index.php:59
+#| msgid ""
+#| "Vidéo de présentation de NO\n"
+#| "\t\t\tair - Antilope"
+msgid "Vidéo de présentation de NOair - Antilope"
+msgstr "Vidéo de présentation de NOair - Antilope"
 
-#: index.php:47
+#: index.php:67
 msgid "Découvrez aussi"
 msgstr "Découvrez aussi"
 
@@ -71,9 +78,13 @@ msgstr "Découvrez aussi"
 msgid "Le module "
 msgstr "Le module "
 
+#: single-module.php:9 template-modules.php:46
+msgid ":name"
+msgstr ":name"
+
 #: single-module.php:25
-msgid "Informations du module "
-msgstr "Informations du module "
+msgid "Information du module :name"
+msgstr "Information du module :name"
 
 #: single-module.php:28
 msgid "Comment s’utilise-t-il ?"
@@ -83,13 +94,21 @@ msgstr "Comment s’utilise-t-il ?"
 msgid "Ces qualités et défauts"
 msgstr "Ces qualités et défauts"
 
-#: single-module.php:51
+#: single-module.php:55
 msgid "Caractéristiques"
 msgstr "Caractéristiques"
 
-#: single-module.php:62
-msgid " Ce que :name mesure"
-msgstr " Ce que :name mesure"
+#: single-module.php:68
+msgid "Ce que :name mesure"
+msgstr "Ce que :name mesure"
+
+#: single-module.php:83
+msgid "Ce module vous intéresse ?"
+msgstr "Ce module vous intéresse ?"
+
+#: single-module.php:86
+msgid "Posez nous vos question et demandes au sujet du module :name"
+msgstr "Posez nous vos question et demandes au sujet du module :name"
 
 #: template-contact.php:9
 msgid "Oups ! Ce formulaire contient des erreurs, merci de les corriger."
@@ -131,31 +150,37 @@ msgstr "Envoyer"
 msgid "Merci de nous avoir contacté, à bientôt !"
 msgstr "Merci de nous avoir contacté, à bientôt !"
 
-#: template-modules.php:12
+#: template-modules.php:18
 msgid "Pour qui ?"
 msgstr "Pour qui ?"
 
-#: template-modules.php:18
+#: template-modules.php:26
 msgid "Mesures effectuées"
 msgstr "Mesures effectuées"
 
-#: template-modules.php:31
-msgid "Voir le module"
-msgstr "Voir le module"
+#: template-modules.php:44
+msgid "Voir le module "
+msgstr "Voir le module "
 
-#: template-modules.php:33
-msgid " :name"
-msgstr " :name"
-
-#: template-modules.php:43 template-modules.php:46
+#: template-modules.php:56 template-modules.php:59
 msgid "Le logo du module :name ."
 msgstr "Le logo du module :name ."
 
 #: template-modules.php:70
+msgid ""
+"Oups ! On dirait qu’il n’aucun module n’ait été publié. Revenez plus tard !"
+msgstr ""
+"Oups ! On dirait qu’il n’aucun module n’ait été publié. Revenez plus tard !"
+
+#: template-modules.php:75
+msgid "Les publications récentes"
+msgstr "Les publications récentes"
+
+#: template-modules.php:86
 msgid "Voir la publication"
 msgstr "Voir la publication"
 
-#: template-modules.php:72
+#: template-modules.php:88
 msgid " de :author"
 msgstr " de :author"
 
