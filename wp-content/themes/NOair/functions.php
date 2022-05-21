@@ -120,7 +120,7 @@
 		'description'   => 'Les messages envoyés par les utilisateurs via le formulaire de contact.',
 		'public'        => false,
 		'show_ui'       => true,
-		'menu_position' => 22,
+		'menu_position' => 23,
 		'menu_icon'     => 'dashicons-buddicons-pm',
 		'capabilities'  => [
 			'create_posts' => false,
@@ -403,12 +403,14 @@ HTML;
 	// Ensuite elle renvoi suivant l’extension une fonction qui fera le bon templating
 
 	function NOair_get_template_by_extension( $file, $width, $height, $size ) {
+		$fileInfo = pathinfo( $file[ 'url' ] );
 		$id       = $file[ 'ID' ];
 		$url      = $file[ 'url' ];
-		$fileInfo = pathinfo( $file[ 'url' ] );
 
 		switch ( $fileInfo[ 'extension' ] ) {
 			case 'png':
+			case 'jpg':
+			case 'jpeg':
 				return NOair_get_png_template( $id, $size );
 				break;
 			case 'svg':

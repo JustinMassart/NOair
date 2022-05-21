@@ -66,6 +66,32 @@
 			<h2 class="discover__title">
 				<?= __( 'Découvrez aussi', 'NOair' ) ?>
 			</h2>
+			<article class="discover__card dis_card">
+				<h3 class="dis_card__title">
+					<?= strtoupper( __( 'Les publications', 'NOair' ) ) ?>
+				</h3>
+				<p class="dis_card__desc">
+					<?= __( 'Toutes les publications qui nous font références autant dans des journaux et jusqu’à la télévision', 'NOair' ) ?>
+				</p>
+				<div class="dis_card__cta">
+					<a href="<?= get_permalink( NOair_get_template_page( ( 'template-publications' ) ) ) ?>"
+					   class="nav__contact"><?= strtoupper( __( 'voir nos modules', 'NOair' ) ) ?></a>
+				</div>
+			</article>
+			<article class="discover__card dis_card">
+				<h3 class="dis_card__title">
+					<?= strtoupper( __( 'Nos partenaires', 'NOair' ) ) ?>
+				</h3>
+				<p class="dis_card__desc">
+					<?= __( 'Nous ne travaillons pas seul, nous sommes plusieurs à réaliser cette démarche', 'NOair' ) ?>
+				</p>
+				<div class="dis_card__cta">
+					<a href="<?= get_permalink( NOair_get_template_page( ( 'template-partners' ) ) ) ?>"
+					   class="nav__contact">
+						<?= strtoupper( __( 'voir les partenaires', 'NOair' ) ) ?>
+					</a>
+				</div>
+			</article>
 		</section>
 	</main>
 <?php get_footer(); ?>

@@ -56,9 +56,11 @@
 				</h4>
 				<ul class="technical__list specList">
 					<?php foreach ( NOair_make_array_of_string( get_field( 'specifications' ) ) as $spec ): ?>
-						<li class="specList__item">
-							<?= ucfirst( strtolower( $spec ) ) ?>
-						</li>
+						<?php if ( ! empty( $spec ) ): ?>
+							<li class="specList__item">
+								<?= $spec ?>
+							</li>
+						<?php endif; ?>
 					<?php endforeach; ?>
 				</ul>
 			</div>
