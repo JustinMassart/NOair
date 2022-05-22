@@ -30,15 +30,7 @@
 				</div>
 			</div>
 			<div class="description__svgContainer">
-				<svg class="description__svg">
-					<title>
-						<?= __( 'Le logo du module Oryx.', 'NOair' ) ?>
-					</title>
-					<desc>
-						<?= __( 'Le logo du module Oryx en noir et vert.', 'NOair' ) ?>
-					</desc>
-					<use xlink:href="#oryx"/>
-				</svg>
+				<?= NOair_get_template_by_extension( get_field( 'svg' ), 350, 450, 'medium' ) ?>
 			</div>
 		</section>
 		<section class="whoAreWe">

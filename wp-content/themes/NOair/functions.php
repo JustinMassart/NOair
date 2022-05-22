@@ -64,6 +64,8 @@
 		'labels'        => [
 			'name'          => 'Modules',
 			'singular_name' => 'Module',
+			'add_new'       => 'Ajouter un nouveau module',
+
 		],
 		'description'   => 'Tous les articles à propos des modules',
 		'public'        => true,
@@ -75,7 +77,7 @@
 
 	// Requête Wordpress pour la boucle des modules
 
-	function NOair_get_modules() {
+	function NOair_get_modules(): WP_Query {
 		return new WP_Query( [
 			'post_type' => 'module',
 			'orderby'   => 'name',
@@ -90,6 +92,7 @@
 		'labels'        => [
 			'name'          => 'Publications',
 			'singular_name' => 'Publication',
+			'add_new'       => 'Ajouter une nouvelle publication',
 		],
 		'description'   => 'Toutes les publications qui font référence à NOair.',
 		'public'        => true,
@@ -101,11 +104,38 @@
 
 	// Requête Wordpress pour la boucle des publications
 
-	function NOair_get_publications( $limit ) {
+	function NOair_get_publications( $limit ): WP_Query {
 		return new WP_Query( [
 			'post_type'      => 'publication',
 			'posts_per_page' => $limit,
 			'orderby'        => 'DESC'
+		] );
+	}
+
+	// Enregistrer un seul custom post-type pour les contacts généraux
+
+	register_post_type( 'contact', [
+		'label'              => 'Contacts généraux',
+		'labels'             => [
+			'name'          => 'Contacts généraux',
+			'singular_name' => 'Contact général',
+			'add_new'       => 'Ajouter un nouveau contact',
+		],
+		'description'        => 'Tous les contacts généraux.',
+		'public'             => true,
+		'publicly_queryable' => false,
+		'menu_position'      => 23,
+		'menu_icon'          => 'dashicons-groups',
+		'supports'           => [ 'title' ],
+	] );
+
+	// Requête Wordpress pour la boucle des contacts
+
+	function NOair_get_contacts(): WP_Query {
+		return new WP_Query( [
+			'post_type' => 'contact',
+			'orderby'   => 'name',
+			'order'     => 'ASC'
 		] );
 	}
 
@@ -120,7 +150,7 @@
 		'description'   => 'Les messages envoyés par les utilisateurs via le formulaire de contact.',
 		'public'        => false,
 		'show_ui'       => true,
-		'menu_position' => 23,
+		'menu_position' => 24,
 		'menu_icon'     => 'dashicons-buddicons-pm',
 		'capabilities'  => [
 			'create_posts' => false,
@@ -378,13 +408,11 @@
 
 	// Faire une fonction qui renvoi un template si l’image enregistrée dans une publication est un fichier '.svg'
 
-	function NOair_get_svg_template( $url, $width, $height ): string {
-		$link  = $url;
-		$title = str_replace( ':name', $link, __( 'Le logo de :name .', 'NOair' ) );
-		$desc  = str_replace( ':name', $link, __( 'Le logo de :name .', 'NOair' ) );
+	function NOair_get_svg_template( $url, $width, $height, $title, $desc ): string {
+		$link = $url;
 
 		return <<<HTML
-			<svg class="publication__svg"
+			<svg class="svg"
 				 width="{$width}"
 				 height="{$height}">
 				<title>
@@ -403,11 +431,25 @@ HTML;
 	// Ensuite elle renvoi suivant l’extension une fonction qui fera le bon templating
 
 	function NOair_get_template_by_extension( $file, $width, $height, $size ) {
-		$fileInfo = pathinfo( $file[ 'url' ] );
-		$id       = $file[ 'ID' ];
-		$url      = $file[ 'url' ];
+		// $file = un ID ou une URL
+		$imgExtension = [ 'png', 'jpg', 'jpeg' ];
+		$svgExtension = [ 'svg', 'svg+xml' ];
+		$title        = $file[ 'title' ];
+		$desc         = $file[ 'alt' ];
 
-		switch ( $fileInfo[ 'extension' ] ) {
+		if ( in_array( $file[ 'subtype' ], $imgExtension, true ) ) {
+			$id = $file[ 'ID' ];
+
+			return NOair_get_png_template( $id, $size );
+		}
+
+		if ( in_array( $file[ 'subtype' ], $svgExtension, true ) ) {
+			$url = $file[ 'url' ];
+
+			return NOair_get_svg_template( $url, $width, $height, $title, $desc );
+		}
+
+		/*switch ( $fileInfo[ 'extension' ] ) {
 			case 'png':
 			case 'jpg':
 			case 'jpeg':
@@ -420,8 +462,10 @@ HTML;
 			case null: // Si pas d’extension de fichier
 				return 'Oups ! On dirait qu’il y a un problème avec l’image de cette publication.';
 				break;
-		}
+		}*/
+
 	}
+
 
 	// Faire une fonction qui prend un texte donnée par une zone de texte de ACF et en fait un tableau d’éléments pour chaque entrée
 

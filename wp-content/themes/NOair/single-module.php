@@ -13,10 +13,10 @@
 				</div>
 				<div class="intro__pictures">
 					<div class="intro_svg">
-						<?= NOair_get_svg_template( get_field( 'logo' ), 163, 190 ) ?>
+						<?= NOair_get_template_by_extension( get_field( 'logo' ), 163, 190, 'thumbnail' ) ?>
 					</div>
 					<div class=" intro__img">
-						<?= NOair_get_png_template( get_field( 'module_image' ), 'medium' ) ?>
+						<?= NOair_get_template_by_extension( get_field( 'module_image' ), 0, 0, 'big' ) ?>
 					</div>
 				</div>
 			</div>

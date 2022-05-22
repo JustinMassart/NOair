@@ -26,31 +26,19 @@
 		</ul>
 	</div>
 	<div class="<?= strtolower( get_field( 'module_name' ) ) ?>__imgContainer">
-		<?= wp_get_attachment_image( get_field( 'module_image' ), 'medium' ) ?>
+		<?= NOair_get_template_by_extension( get_field( 'module_image' ), 235, 360, 'medium' ) ?>
 	</div>
 	<div class="<?= strtolower( get_field( 'module_name' ) ) ?>__cta">
 		<a href="<?= the_permalink() ?>" class="<?= strtolower( get_field( 'module_name' ) ) ?>__link">
 			<?= __( 'Voir le module ', 'NOair' ); ?>
 			<span class="sro">
-								<?= str_replace( ':name', get_field( 'module_name' ), __( ':name', 'NOair' ) ) ?>
-							</span>
+				<?= str_replace( ':name', get_field( 'module_name' ), __( ':name', 'NOair' ) ) ?>
+			</span>
 		</a>
 	</div>
-	<?php if ( get_field( 'logo' ) !== null ): ?>
+	<?php if ( get_field( 'logo' ) !== false ): ?>
 		<div class="<?= strtolower( get_field( 'module_name' ) ) ?>__svgContainer">
-			<svg class="description__svg"
-				 width="<?= get_field( 'module_name' ) === 'Oryx' ? 52 : 50 ?>"
-				 height="<?= get_field( 'module_name' ) === 'Oryx' ? 65 : 58 ?>">
-				<title>
-					<?= str_replace( ':name', get_field( 'module_name' ), __( 'Le logo du module :name .', 'NOair' ) ) ?>
-				</title>
-				<desc>
-					<?= str_replace( ':name', get_field( 'module_name' ), __( 'Le logo du module :name .', 'NOair' ) ) ?>
-				</desc>
-				<image xlink:href="<?= get_field( 'logo' ) ?>"
-					   width="<?= get_field( 'module_name' ) === 'Oryx' ? 52 : 50 ?>"
-					   height="<?= get_field( 'module_name' ) === 'Oryx' ? 65 : 58 ?>"/>
-			</svg>
+			<?= NOair_get_template_by_extension( get_field( 'logo' ), 50, 58, 'thumbnail' ) ?>
 		</div>
 	<?php endif; ?>
 </article>
