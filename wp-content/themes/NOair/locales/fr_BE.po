@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-20 15:49+0200\n"
-"PO-Revision-Date: 2022-05-20 15:50+0200\n"
+"POT-Creation-Date: 2022-05-22 16:58+0200\n"
+"PO-Revision-Date: 2022-05-22 17:01+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_BE\n"
@@ -23,10 +23,6 @@ msgstr "Pied de page"
 msgid "Navigation de pied de page"
 msgstr "Navigation de pied de page"
 
-#: functions.php:383 functions.php:384
-msgid "Le logo de :name ."
-msgstr "Le logo de :name ."
-
 #: header.php:7
 msgid ""
 "Rejoignez la sensibilisation contre la pollution grâce aux modules de NOair "
@@ -39,7 +35,7 @@ msgstr ""
 msgid "Navigation principale"
 msgstr "Navigation principale"
 
-#: header.php:34 single-module.php:90
+#: header.php:34 single-module.php:92
 msgid "contactez nous"
 msgstr "contactez nous"
 
@@ -47,40 +43,126 @@ msgstr "contactez nous"
 msgid "NOair •"
 msgstr "NOair •"
 
-#: index.php:29
+#: index.php:29 index.php:70 single-publication.php:34
+#: template-publications.php:32
 msgid "voir nos modules"
 msgstr "voir nos modules"
 
-#: index.php:35
-msgid "Le logo du module Oryx."
-msgstr "Le logo du module Oryx."
-
-#: index.php:38
-msgid "Le logo du module Oryx en noir et vert."
-msgstr "Le logo du module Oryx en noir et vert."
-
-#: index.php:45
+#: index.php:37
 msgid "NOair c’est :"
 msgstr "NOair c’est :"
 
-#: index.php:59
-#| msgid ""
-#| "Vidéo de présentation de NO\n"
-#| "\t\t\tair - Antilope"
+#: index.php:51
 msgid "Vidéo de présentation de NOair - Antilope"
 msgstr "Vidéo de présentation de NOair - Antilope"
 
-#: index.php:67
+#: index.php:59
 msgid "Découvrez aussi"
 msgstr "Découvrez aussi"
+
+#: index.php:63
+msgid "Les publications"
+msgstr "Les publications"
+
+#: index.php:66
+msgid ""
+"Toutes les publications qui nous font références autant dans des journaux et "
+"jusqu’à la télévision"
+msgstr ""
+"Toutes les publications qui nous font références autant dans des journaux et "
+"jusqu’à la télévision"
+
+#: index.php:75
+msgid "Nos partenaires"
+msgstr "Nos partenaires"
+
+#: index.php:78
+msgid ""
+"Nous ne travaillons pas seul, nous sommes plusieurs à réaliser cette démarche"
+msgstr ""
+"Nous ne travaillons pas seul, nous sommes plusieurs à réaliser cette démarche"
+
+#: index.php:83
+msgid "voir les partenaires"
+msgstr "voir les partenaires"
+
+#: partials/form.php:3
+msgid "Oups ! Ce formulaire contient des erreurs, merci de les corriger."
+msgstr "Oups ! Ce formulaire contient des erreurs, merci de les corriger."
+
+#: partials/form.php:6
+msgid "Votre prénom"
+msgstr "Votre prénom"
+
+#: partials/form.php:12
+msgid "Votre nom"
+msgstr "Votre nom"
+
+#: partials/form.php:18
+msgid "Votre adresse e-mail"
+msgstr "Votre adresse e-mail"
+
+#: partials/form.php:24
+msgid "Que faites vous dans la vie ?"
+msgstr "Que faites vous dans la vie ?"
+
+#: partials/form.php:40
+msgid "Votre message"
+msgstr "Votre message"
+
+#: partials/form.php:50
+msgid "conditions générales d’utilisation"
+msgstr "conditions générales d’utilisation"
+
+#: partials/form.php:51
+msgid "J’ai lu et j’accepte les :conditions."
+msgstr "J’ai lu et j’accepte les :conditions."
+
+#: partials/form.php:59
+msgid "Envoyer"
+msgstr "Envoyer"
+
+#: partials/module.php:7
+msgid "Pour qui ?"
+msgstr "Pour qui ?"
+
+#: partials/module.php:15
+msgid "Mesures effectuées"
+msgstr "Mesures effectuées"
+
+#: partials/module.php:33
+msgid "Voir le module "
+msgstr "Voir le module "
+
+#: partials/module.php:35 single-module.php:9
+msgid ":name"
+msgstr ":name"
+
+#: partials/partner.php:22
+#| msgid "contactez nous"
+msgid "contactez la hepl"
+msgstr "contactez la hepl"
+
+#: partials/partner.php:24
+msgid "contactez la section ingénieur"
+msgstr "contactez la section ingénieur"
+
+#: partials/partner.php:26
+#| msgid "contactez nous"
+msgid "contactez l’issep"
+msgstr "contactez l’issep"
+
+#: partials/publication.php:12
+msgid "Voir la publication"
+msgstr "Voir la publication"
+
+#: partials/publication.php:14
+msgid " de :author"
+msgstr " de :author"
 
 #: single-module.php:4
 msgid "Le module "
 msgstr "Le module "
-
-#: single-module.php:9 template-modules.php:46
-msgid ":name"
-msgstr ":name"
 
 #: single-module.php:25
 msgid "Information du module :name"
@@ -98,91 +180,69 @@ msgstr "Ces qualités et défauts"
 msgid "Caractéristiques"
 msgstr "Caractéristiques"
 
-#: single-module.php:68
+#: single-module.php:70
 msgid "Ce que :name mesure"
 msgstr "Ce que :name mesure"
 
-#: single-module.php:83
+#: single-module.php:85
 msgid "Ce module vous intéresse ?"
 msgstr "Ce module vous intéresse ?"
 
-#: single-module.php:86
+#: single-module.php:88
 msgid "Posez nous vos question et demandes au sujet du module :name"
 msgstr "Posez nous vos question et demandes au sujet du module :name"
 
+#: single-publication.php:22 template-publications.php:20
+msgid "Découvrez de quels modules ils parlent"
+msgstr "Découvrez de quels modules ils parlent"
+
+#: single-publication.php:26 template-publications.php:24
+#| msgid "Le module "
+msgid "Les modules"
+msgstr "Les modules"
+
+#: single-publication.php:29 template-publications.php:27
+msgid "Tous les modules dont les articles ci-dessus parlent ce trouvent ici !"
+msgstr "Tous les modules dont les articles ci-dessus parlent ce trouvent ici !"
+
 #: template-contact.php:9
-msgid "Oups ! Ce formulaire contient des erreurs, merci de les corriger."
-msgstr "Oups ! Ce formulaire contient des erreurs, merci de les corriger."
-
-#: template-contact.php:12
-msgid "Votre prénom"
-msgstr "Votre prénom"
-
-#: template-contact.php:18
-msgid "Votre nom"
-msgstr "Votre nom"
-
-#: template-contact.php:24
-msgid "Votre adresse e-mail"
-msgstr "Votre adresse e-mail"
-
-#: template-contact.php:30
-msgid "Que faites vous dans la vie ?"
-msgstr "Que faites vous dans la vie ?"
-
-#: template-contact.php:46
-msgid "Votre message"
-msgstr "Votre message"
-
-#: template-contact.php:56
-msgid "conditions générales d’utilisation"
-msgstr "conditions générales d’utilisation"
-
-#: template-contact.php:57
-msgid "J’ai lu et j’accepte les :conditions."
-msgstr "J’ai lu et j’accepte les :conditions."
-
-#: template-contact.php:65
-msgid "Envoyer"
-msgstr "Envoyer"
-
-#: template-contact.php:69
 msgid "Merci de nous avoir contacté, à bientôt !"
 msgstr "Merci de nous avoir contacté, à bientôt !"
 
-#: template-modules.php:18
-msgid "Pour qui ?"
-msgstr "Pour qui ?"
+#: template-contact.php:12
+msgid "Les différents contacts"
+msgstr "Les différents contacts"
 
-#: template-modules.php:26
-msgid "Mesures effectuées"
-msgstr "Mesures effectuées"
-
-#: template-modules.php:44
-msgid "Voir le module "
-msgstr "Voir le module "
-
-#: template-modules.php:56 template-modules.php:59
-msgid "Le logo du module :name ."
-msgstr "Le logo du module :name ."
-
-#: template-modules.php:70
+#: template-modules.php:15
 msgid ""
 "Oups ! On dirait qu’il n’aucun module n’ait été publié. Revenez plus tard !"
 msgstr ""
 "Oups ! On dirait qu’il n’aucun module n’ait été publié. Revenez plus tard !"
 
-#: template-modules.php:75
+#: template-modules.php:20
 msgid "Les publications récentes"
 msgstr "Les publications récentes"
 
-#: template-modules.php:86
-msgid "Voir la publication"
-msgstr "Voir la publication"
+#: template-partners.php:12
+msgid "La HEPL et ces ingénieurs"
+msgstr "La HEPL et ces ingénieurs"
 
-#: template-modules.php:88
-msgid " de :author"
-msgstr " de :author"
+#: template-publications.php:12
+#| msgid "Les publications récentes"
+msgid "Voici publications les plus récentes"
+msgstr "Voici publications les plus récentes"
+
+#~ msgid "Le logo de :name ."
+#~ msgstr "Le logo de :name ."
+
+#~ msgid "Le logo du module Oryx."
+#~ msgstr "Le logo du module Oryx."
+
+#~ msgid "Le logo du module Oryx en noir et vert."
+#~ msgstr "Le logo du module Oryx en noir et vert."
+
+#~ msgid "Le logo du module :name ."
+#~ msgstr "Le logo du module :name ."
 
 #~ msgid "Ce que "
 #~ msgstr "Ce que "
