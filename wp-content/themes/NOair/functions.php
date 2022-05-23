@@ -1,5 +1,7 @@
 <?php
 
+	use JetBrains\PhpStorm\ArrayShape;
+
 	require_once( __DIR__ . '/Menus/PrimaryMenuItem.php' );
 
 // Lancer la session PHP
@@ -212,7 +214,6 @@
 
 	function NOair_handle_submit_contact_form() {
 		if ( ! NOair_verify_contact_form_nonce() ) {
-			// C'est pas OK.
 			header( "HTTP/1.1 401 Unauthorized" );
 			exit;
 		}
@@ -233,6 +234,7 @@
 		$id = wp_insert_post( [
 			'post_type'    => 'message',
 			'post_title'   => 'Message de ' . $data[ 'firstname' ] . ' ' . $data[ 'lastname' ],
+			'post_excerpt' => 'À propos ' . $data['subject'],
 			'post_content' => $data[ 'message' ],
 			'post_status'  => 'publish',
 		] );
@@ -251,13 +253,21 @@
 		return wp_redirect( $_POST[ '_wp_http_referer' ] );
 	}
 
-	function NOair_verify_contact_form_nonce() {
+	function NOair_verify_contact_form_nonce(): bool|int {
 		$nonce = $_POST[ '_wpnonce' ];
 
 		return wp_verify_nonce( $nonce, 'nonce_check_contact_form' );
 	}
 
-	function NOair_sanitize_contact_form_data() {
+	#[ArrayShape( [
+		'firstname' => "string",
+		'lastname'  => "string",
+		'email'     => "string",
+		'work'      => "string",
+		'subject'   => "string",
+		'message'   => "string",
+		'rules'     => "mixed|null"
+	] )] function NOair_sanitize_contact_form_data() {
 		return [
 			'firstname' => sanitize_text_field( $_POST[ 'firstname' ] ?? null ),
 			'lastname'  => sanitize_text_field( $_POST[ 'lastname' ] ?? null ),
@@ -269,7 +279,7 @@
 		];
 	}
 
-	function NOair_validate_contact_form_data( $data ) {
+	function NOair_validate_contact_form_data( $data ): bool|array {
 
 		$errors = [];
 

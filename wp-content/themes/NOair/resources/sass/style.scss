@@ -12,11 +12,13 @@ $aquaGR: "Aqua Grotesque", sans-serif;
 
 $background: #FAFAFA;
 $green: #5D8042;
+$darkGreen: #234738;
 $orange: #C05411;
 $purple: #82146B;
 $blue: #0A5775;
 
 $lightGreen: rgba(93, 128, 66, .07);
+$lightDarkGreen: rgba(35, 71, 56, .07);
 $lightOrange: rgba(192, 84, 17, .07);
 $lightPurple: rgba(130, 20, 107, .07);
 $lightBlue: rgba(10, 87, 117, .07);
@@ -74,6 +76,13 @@ body {
   max-width: 31.25rem;
   padding: 0 3.125rem;
   margin: 0 auto;
+
+  &__title {
+    font-size: 60px;
+    font-family: $glacialB;
+    margin-top: $headerBottom;
+    margin-bottom: $titleBottom;
+  }
 }
 
 .accent {
@@ -90,6 +99,7 @@ strong {
   font-family: $glacialB;
   border-radius: 100px;
   box-shadow: $btnShadow;
+  font-size: 1.125rem;
 }
 
 .cta a {
@@ -198,31 +208,255 @@ strong {
     box-shadow: $btnShadow;
   }
 
-  .dis_card {
+}
 
-    &__title {
-      font-size: 1.5625rem;
-      padding: 3.125rem 3.125rem 1.25rem;
-    }
+.dis_card {
 
-    &__desc {
-      font-size: 25px;
-      line-height: 2.1875rem;
-      padding: 0 0 $btnTop 3.125rem;
-      max-width: 24.9375rem;
-    }
+  &__title {
+    font-size: 1.5625rem;
+    padding: 3.125rem 3.125rem 1.25rem;
+  }
 
-    &__cta {
-      margin: 0 0 3.125rem 3.125rem;
-    }
+  &__desc {
+    font-size: 25px;
+    line-height: 2.1875rem;
+    padding: 0 0 $btnTop 3.125rem;
+    max-width: 24.9375rem;
+  }
 
-    &__link {
-      color: black;
-    }
+  &__cta {
+    margin: 0 0 3.125rem 3.125rem;
+  }
 
+  & a {
+    color: black;
   }
 
 }
+
+// MODULES
+
+.module {
+  display: inline-block;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: $btnShadow;
+  position: relative;
+  min-width: 28.25rem;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: $articleTop;
+
+  &__container {
+    padding: 3.125rem 0 0 3.125rem;
+  }
+
+  &__title {
+    font-family: $glacialB;
+    font-size: 40px;
+    line-height: 3rem;
+  }
+
+  &__who, &__measures span {
+    display: inline-block;
+    font-family: $glacialB;
+    font-size: 1.5625rem;
+    line-height: 1.875rem;
+    padding-top: $btnTop;
+    padding-bottom: $textBottom;
+  }
+
+  &__desc, &__item {
+    max-width: 13.75rem;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+
+  &__imgContainer {
+    max-width: 200px;
+    max-height: 250px;
+    position: absolute;
+    right: -1.875rem;
+    top: 3.125rem;
+  }
+
+  &__imgContainer img {
+    object-fit: contain;
+  }
+
+  &__list {
+    padding-left: 0.9375rem;
+  }
+
+  &__item {
+    list-style-type: disc;
+  }
+
+  & a {
+    text-decoration: none;
+    color: white;
+  }
+
+  &__cta {
+    margin-top: $btnTop;
+    position: absolute;
+    right: 1.875rem;
+    bottom: 1.875rem;
+  }
+
+  &__svgContainer svg {
+    margin: 1.25rem 0 1.25rem 1.25rem;
+    opacity: .25;
+  }
+
+}
+
+.antilope {
+  & h3 {
+    color: $orange;
+  }
+
+  & .cta {
+    background-color: $orange;
+  }
+}
+
+.madoqua {
+  & h3 {
+    color: $orange;
+  }
+
+  & .cta {
+    background-color: $orange;
+  }
+}
+
+.oryx {
+  & h3 {
+    color: $green;
+  }
+
+  & .cta {
+    background-color: $green;
+  }
+}
+
+.nyala {
+  & h3 {
+    color: $darkGreen;
+  }
+
+  & .cta {
+    background-color: $darkGreen;
+  }
+}
+
+.impala {
+  & h3 {
+    color: $purple;
+  }
+
+  & .cta {
+    background-color: $purple;
+  }
+}
+
+.saïga {
+  & h3 {
+    color: $blue;
+  }
+
+  & .cta {
+    background-color: $blue;
+  }
+}
+
+// MODULES - PUBLICATION
+
+.recent {
+  margin-top: 2.8125rem;
+
+  &__title {
+    font-family: $glacialB;
+    font-size: 40px;
+    line-height: 3rem;
+    margin-bottom: $titleBottom;
+  }
+
+}
+
+.publication {
+  background: white;
+  border-radius: 10px;
+  box-shadow: $btnShadow;
+
+  &__container {
+    padding: 3.125rem 3.125rem 0;
+  }
+
+  &__title {
+    font-size: 1.5625rem;
+    line-height: 1.875rem;
+    margin-bottom: $textBottom;
+  }
+
+  &__infos{
+    font-size: 1.125rem;
+    line-height: 2.1875rem;
+    max-width: 24.0625rem;
+  }
+
+  &__cta {
+    margin-top: $btnTop;
+    margin-bottom: $btnBottom;
+  }
+
+  & a {
+    color: black;
+  }
+
+  &__imgContainer {
+    display: none;
+  }
+
+}
+
+.publication:not(:first-child) {
+  margin-top: $articleTop;
+}
+
+// UN MODULE
+
+
+
+// PUBLICATIONS
+
+.discover_modules {
+  margin-top: $sectionBottom;
+
+  &__card {
+    margin-top: $articleTop;
+    background: white;
+    border-radius: 10px;
+    box-shadow: $btnShadow;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+
+}
+
+// UNE PUBLICATION
+
+
+
+// CONTACT
+
+
 
 // FOOTER
 

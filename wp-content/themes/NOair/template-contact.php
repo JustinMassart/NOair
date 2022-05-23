@@ -6,7 +6,7 @@
 		<?php if ( ! isset( $_SESSION[ 'feedback_contact_form' ] ) || ! $_SESSION[ 'feedback_contact_form' ][ 'success' ] ) : ?>
 			<?php include( __DIR__ . '/partials/form.php' ) ?>
 		<?php else : ?>
-			<p class="form__feedback"><?= __( 'Merci de nous avoir contacté, à bientôt !', 'NOair' ); ?></p>
+			<p class="form__feedback"><?= __( 'Merci de nous avoir contacté, à bientôt !', 'NOair' ) ?></p>
 		<?php endif; ?>
 		<section class="contact__general general">
 			<h2 class="general__title"><?= __( 'Les différents contacts', 'NOair' ) ?></h2>

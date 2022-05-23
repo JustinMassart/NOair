@@ -69,7 +69,7 @@
 					</p>
 					<div class="dis_card__cta cta">
 						<a class="dis_card__link" href="<?= get_permalink( NOair_get_template_page( ( 'template-publications' ) ) ) ?>"
-						   class="nav__contact"><?= strtoupper( __( 'voir nos modules', 'NOair' ) ) ?></a>
+						   class="nav__contact"><?= strtoupper( __( 'voir les publications', 'NOair' ) ) ?></a>
 					</div>
 				</article>
 				<article class="discover__card dis_card">

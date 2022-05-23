@@ -1,4 +1,4 @@
-<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
+<form action="<?= get_home_url() ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
 	<?php if ( isset( $_SESSION[ 'feedback_contact_form' ] ) && ! $_SESSION[ 'feedback_contact_form' ][ 'success' ] ) : ?>
 		<p class="form__errors"><?= __( 'Oups ! Ce formulaire contient des erreurs, merci de les corriger.', 'NOair' ); ?></p>
 	<?php endif; ?>
