@@ -1,0 +1,7 @@
+@use "sass:math";
+
+@function em($goal: m, $parent: m){
+  $goal: if(type-of($goal) == number, $goal, fvalue($goal) * 1em);
+  $parent: if(type-of($parent) == number, $parent, fvalue($parent) * 1em);
+  @return (math.div(rmUnit($goal), rmUnit($parent)) * 1em);
+}
