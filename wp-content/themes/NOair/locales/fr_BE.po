@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-22 16:58+0200\n"
-"PO-Revision-Date: 2022-05-22 17:01+0200\n"
+"POT-Creation-Date: 2022-05-24 16:14+0200\n"
+"PO-Revision-Date: 2022-05-24 16:14+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_BE\n"
@@ -15,11 +15,11 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: footer.php:3
+#: footer.php:2
 msgid "Pied de page"
 msgstr "Pied de page"
 
-#: footer.php:5
+#: footer.php:17
 msgid "Navigation de pied de page"
 msgstr "Navigation de pied de page"
 
@@ -31,40 +31,39 @@ msgstr ""
 "Rejoignez la sensibilisation contre la pollution grâce aux modules de NOair "
 "permettant de mesurer la qualité de l’air."
 
-#: header.php:24
+#: header.php:95
 msgid "Navigation principale"
 msgstr "Navigation principale"
 
-#: header.php:34 single-module.php:92
+#: header.php:105 single-module.php:97
 msgid "contactez nous"
 msgstr "contactez nous"
 
-#: index.php:13
+#: index.php:14
 msgid "NOair •"
 msgstr "NOair •"
 
-#: index.php:29 index.php:70 single-publication.php:34
-#: template-publications.php:32
+#: index.php:30 single-publication.php:34 template-publications.php:32
 msgid "voir nos modules"
 msgstr "voir nos modules"
 
-#: index.php:37
+#: index.php:38
 msgid "NOair c’est :"
 msgstr "NOair c’est :"
 
-#: index.php:51
+#: index.php:52
 msgid "Vidéo de présentation de NOair - Antilope"
 msgstr "Vidéo de présentation de NOair - Antilope"
 
-#: index.php:59
+#: index.php:61
 msgid "Découvrez aussi"
 msgstr "Découvrez aussi"
 
-#: index.php:63
+#: index.php:65
 msgid "Les publications"
 msgstr "Les publications"
 
-#: index.php:66
+#: index.php:68
 msgid ""
 "Toutes les publications qui nous font références autant dans des journaux et "
 "jusqu’à la télévision"
@@ -72,17 +71,21 @@ msgstr ""
 "Toutes les publications qui nous font références autant dans des journaux et "
 "jusqu’à la télévision"
 
-#: index.php:75
+#: index.php:72
+msgid "voir les publications"
+msgstr "voir les publications"
+
+#: index.php:77
 msgid "Nos partenaires"
 msgstr "Nos partenaires"
 
-#: index.php:78
+#: index.php:80
 msgid ""
 "Nous ne travaillons pas seul, nous sommes plusieurs à réaliser cette démarche"
 msgstr ""
 "Nous ne travaillons pas seul, nous sommes plusieurs à réaliser cette démarche"
 
-#: index.php:83
+#: index.php:85
 msgid "voir les partenaires"
 msgstr "voir les partenaires"
 
@@ -122,24 +125,23 @@ msgstr "J’ai lu et j’accepte les :conditions."
 msgid "Envoyer"
 msgstr "Envoyer"
 
-#: partials/module.php:7
+#: partials/module.php:8
 msgid "Pour qui ?"
 msgstr "Pour qui ?"
 
-#: partials/module.php:15
+#: partials/module.php:16
 msgid "Mesures effectuées"
 msgstr "Mesures effectuées"
 
-#: partials/module.php:33
+#: partials/module.php:35
 msgid "Voir le module "
 msgstr "Voir le module "
 
-#: partials/module.php:35 single-module.php:9
+#: partials/module.php:37 single-module.php:9
 msgid ":name"
 msgstr ":name"
 
 #: partials/partner.php:22
-#| msgid "contactez nous"
 msgid "contactez la hepl"
 msgstr "contactez la hepl"
 
@@ -148,15 +150,14 @@ msgid "contactez la section ingénieur"
 msgstr "contactez la section ingénieur"
 
 #: partials/partner.php:26
-#| msgid "contactez nous"
 msgid "contactez l’issep"
 msgstr "contactez l’issep"
 
-#: partials/publication.php:12
+#: partials/publication.php:13
 msgid "Voir la publication"
 msgstr "Voir la publication"
 
-#: partials/publication.php:14
+#: partials/publication.php:15
 msgid " de :author"
 msgstr " de :author"
 
@@ -176,19 +177,23 @@ msgstr "Comment s’utilise-t-il ?"
 msgid "Ces qualités et défauts"
 msgstr "Ces qualités et défauts"
 
-#: single-module.php:55
+#: single-module.php:56
 msgid "Caractéristiques"
 msgstr "Caractéristiques"
 
-#: single-module.php:70
+#: single-module.php:69
+msgid "* Sous options."
+msgstr "* Sous options."
+
+#: single-module.php:75
 msgid "Ce que :name mesure"
 msgstr "Ce que :name mesure"
 
-#: single-module.php:85
+#: single-module.php:90
 msgid "Ce module vous intéresse ?"
 msgstr "Ce module vous intéresse ?"
 
-#: single-module.php:88
+#: single-module.php:93
 msgid "Posez nous vos question et demandes au sujet du module :name"
 msgstr "Posez nous vos question et demandes au sujet du module :name"
 
@@ -196,12 +201,11 @@ msgstr "Posez nous vos question et demandes au sujet du module :name"
 msgid "Découvrez de quels modules ils parlent"
 msgstr "Découvrez de quels modules ils parlent"
 
-#: single-publication.php:26 template-publications.php:24
-#| msgid "Le module "
+#: single-publication.php:26 template-publications.php:25
 msgid "Les modules"
 msgstr "Les modules"
 
-#: single-publication.php:29 template-publications.php:27
+#: single-publication.php:29 template-publications.php:28
 msgid "Tous les modules dont les articles ci-dessus parlent ce trouvent ici !"
 msgstr "Tous les modules dont les articles ci-dessus parlent ce trouvent ici !"
 
@@ -228,7 +232,6 @@ msgid "La HEPL et ces ingénieurs"
 msgstr "La HEPL et ces ingénieurs"
 
 #: template-publications.php:12
-#| msgid "Les publications récentes"
 msgid "Voici publications les plus récentes"
 msgstr "Voici publications les plus récentes"
 

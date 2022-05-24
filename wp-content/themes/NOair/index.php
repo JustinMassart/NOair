@@ -61,29 +61,33 @@
 					<?= __( 'Découvrez aussi', 'NOair' ) ?>
 				</h2>
 				<article class="discover__card dis_card">
-					<h3 class="dis_card__title">
-						<?= strtoupper( __( 'Les publications', 'NOair' ) ) ?>
-					</h3>
-					<p class="dis_card__desc">
-						<?= __( 'Toutes les publications qui nous font références autant dans des journaux et jusqu’à la télévision', 'NOair' ) ?>
-					</p>
-					<div class="dis_card__cta cta">
-						<a class="dis_card__link" href="<?= get_permalink( NOair_get_template_page( ( 'template-publications' ) ) ) ?>"
-						   class="nav__contact"><?= strtoupper( __( 'voir les publications', 'NOair' ) ) ?></a>
+					<div class="dis_card__container">
+						<h3 class="dis_card__title">
+							<?= strtoupper( __( 'Les publications', 'NOair' ) ) ?>
+						</h3>
+						<p class="dis_card__desc">
+							<?= __( 'Toutes les publications qui nous font références autant dans des journaux et jusqu’à la télévision', 'NOair' ) ?>
+						</p>
+						<div class="dis_card__cta cta">
+							<a class="dis_card__link" href="<?= get_permalink( NOair_get_template_page( ( 'template-publications' ) ) ) ?>"
+							   class="nav__contact"><?= strtoupper( __( 'voir les publications', 'NOair' ) ) ?></a>
+						</div>
 					</div>
 				</article>
 				<article class="discover__card dis_card">
-					<h3 class="dis_card__title">
-						<?= strtoupper( __( 'Nos partenaires', 'NOair' ) ) ?>
-					</h3>
-					<p class="dis_card__desc">
-						<?= __( 'Nous ne travaillons pas seul, nous sommes plusieurs à réaliser cette démarche', 'NOair' ) ?>
-					</p>
-					<div class="dis_card__cta cta">
-						<a class="dis_card__link" href="<?= get_permalink( NOair_get_template_page( ( 'template-partners' ) ) ) ?>"
-						   class="nav__contact">
-							<?= strtoupper( __( 'voir les partenaires', 'NOair' ) ) ?>
-						</a>
+					<div class="dis_card__container">
+						<h3 class="dis_card__title">
+							<?= strtoupper( __( 'Nos partenaires', 'NOair' ) ) ?>
+						</h3>
+						<p class="dis_card__desc">
+							<?= __( 'Nous ne travaillons pas seul, nous sommes plusieurs à réaliser cette démarche', 'NOair' ) ?>
+						</p>
+						<div class="dis_card__cta cta">
+							<a class="dis_card__link" href="<?= get_permalink( NOair_get_template_page( ( 'template-partners' ) ) ) ?>"
+							   class="nav__contact">
+								<?= strtoupper( __( 'voir les partenaires', 'NOair' ) ) ?>
+							</a>
+						</div>
 					</div>
 				</article>
 			</section>

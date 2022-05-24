@@ -1,3 +1,4 @@
+</div>
 <footer class="footer">
 	<h2 class="sro"><?= __( 'Pied de page', 'NOair' ) ?></h2>
 	<div class="footer__logo">
@@ -20,7 +21,6 @@
 				<li class="<?= $link -> getBemClasses( 'fnav__item' ); ?>">
 					<a href="<?= $link -> url; ?>" class="fnav__link"><?= $link -> label ?></a>
 				</li>
-				<span>•</span>
 			<?php endforeach; ?>
 			<li class="fnav__item copyright">
 				Copyright <?= date( "Y" ) ?>

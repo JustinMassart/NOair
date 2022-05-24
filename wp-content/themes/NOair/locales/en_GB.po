@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-22 16:58+0200\n"
-"PO-Revision-Date: 2022-05-22 17:01+0200\n"
+"POT-Creation-Date: 2022-05-24 16:14+0200\n"
+"PO-Revision-Date: 2022-05-24 16:14+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -15,11 +15,11 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: footer.php:3
+#: footer.php:2
 msgid "Pied de page"
 msgstr "Footer"
 
-#: footer.php:5
+#: footer.php:17
 msgid "Navigation de pied de page"
 msgstr "Footer navigation"
 
@@ -29,58 +29,61 @@ msgid ""
 "permettant de mesurer la qualité de l’air."
 msgstr "Join pollution awareness with NOair modules to measure air quality."
 
-#: header.php:24
+#: header.php:95
 msgid "Navigation principale"
 msgstr "Primary navigation"
 
-#: header.php:34 single-module.php:92
+#: header.php:105 single-module.php:97
 msgid "contactez nous"
 msgstr "contact us"
 
-#: index.php:13
+#: index.php:14
 msgid "NOair •"
 msgstr "NOair •"
 
-#: index.php:29 index.php:70 single-publication.php:34
-#: template-publications.php:32
+#: index.php:30 single-publication.php:34 template-publications.php:32
 msgid "voir nos modules"
 msgstr "see our modules"
 
-#: index.php:37
+#: index.php:38
 msgid "NOair c’est :"
 msgstr "NOair that’s :"
 
-#: index.php:51
+#: index.php:52
 msgid "Vidéo de présentation de NOair - Antilope"
 msgstr "Presentation video of NOair - Antilope"
 
-#: index.php:59
+#: index.php:61
 msgid "Découvrez aussi"
 msgstr "Discover too"
 
-#: index.php:63
+#: index.php:65
 #, fuzzy
 #| msgid "Les publications récentes"
 msgid "Les publications"
 msgstr "Most recent publications"
 
-#: index.php:66
+#: index.php:68
 msgid ""
 "Toutes les publications qui nous font références autant dans des journaux et "
 "jusqu’à la télévision"
 msgstr ""
 "All publications that refer to us both in newspapers and even on television"
 
-#: index.php:75
+#: index.php:72
+msgid "voir les publications"
+msgstr "see our publications"
+
+#: index.php:77
 msgid "Nos partenaires"
 msgstr "Our partners"
 
-#: index.php:78
+#: index.php:80
 msgid ""
 "Nous ne travaillons pas seul, nous sommes plusieurs à réaliser cette démarche"
 msgstr "We are not working alone, many of us are doing this"
 
-#: index.php:83
+#: index.php:85
 msgid "voir les partenaires"
 msgstr "see our partners"
 
@@ -120,19 +123,19 @@ msgstr "I have read and accept the :conditions."
 msgid "Envoyer"
 msgstr "Send"
 
-#: partials/module.php:7
+#: partials/module.php:8
 msgid "Pour qui ?"
 msgstr "For who ?"
 
-#: partials/module.php:15
+#: partials/module.php:16
 msgid "Mesures effectuées"
 msgstr "Measurements made"
 
-#: partials/module.php:33
+#: partials/module.php:35
 msgid "Voir le module "
 msgstr "See the module "
 
-#: partials/module.php:35 single-module.php:9
+#: partials/module.php:37 single-module.php:9
 msgid ":name"
 msgstr ":name"
 
@@ -148,11 +151,11 @@ msgstr "contact the engineer section"
 msgid "contactez l’issep"
 msgstr "contact issues"
 
-#: partials/publication.php:12
+#: partials/publication.php:13
 msgid "Voir la publication"
 msgstr "See the publication"
 
-#: partials/publication.php:14
+#: partials/publication.php:15
 msgid " de :author"
 msgstr " of :author"
 
@@ -172,19 +175,23 @@ msgstr "How to use it ?"
 msgid "Ces qualités et défauts"
 msgstr "His qualities and defects"
 
-#: single-module.php:55
+#: single-module.php:56
 msgid "Caractéristiques"
 msgstr "Features"
 
-#: single-module.php:70
+#: single-module.php:69
+msgid "* Sous options."
+msgstr "* on options."
+
+#: single-module.php:75
 msgid "Ce que :name mesure"
 msgstr "What :name measures"
 
-#: single-module.php:85
+#: single-module.php:90
 msgid "Ce module vous intéresse ?"
 msgstr "Are you interested in this module?"
 
-#: single-module.php:88
+#: single-module.php:93
 msgid "Posez nous vos question et demandes au sujet du module :name"
 msgstr "Ask us your questions and requests about the module :name"
 
@@ -192,11 +199,11 @@ msgstr "Ask us your questions and requests about the module :name"
 msgid "Découvrez de quels modules ils parlent"
 msgstr "Find out what modules they are talking about"
 
-#: single-publication.php:26 template-publications.php:24
+#: single-publication.php:26 template-publications.php:25
 msgid "Les modules"
 msgstr "The modules"
 
-#: single-publication.php:29 template-publications.php:27
+#: single-publication.php:29 template-publications.php:28
 msgid "Tous les modules dont les articles ci-dessus parlent ce trouvent ici !"
 msgstr "All the modules of which the articles above speak can be found here!"
 
