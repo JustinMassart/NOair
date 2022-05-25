@@ -5,29 +5,29 @@
 	<div class="form__field">
 		<label for="firstname" class="form__label"><?= __( 'Votre prénom', 'NOair' ); ?></label>
 		<input type="text" name="firstname" id="firstname" class="form__input"
-			   value="<?= NOair_get_contact_field_value( 'firstname' ); ?>"/>
+			   value="<?= NOair_get_contact_field_value( 'firstname' ); ?>" placeholder="<?= __( 'Votre prénom', 'NOair' ); ?>"/>
 		<?= NOair_get_contact_field_error( 'firstname' ); ?>
 	</div>
 	<div class="form__field">
 		<label for="lastname" class="form__label"><?= __( 'Votre nom', 'NOair' ); ?></label>
 		<input type="text" name="lastname" id="lastname" class="form__input"
-			   value="<?= NOair_get_contact_field_value( 'lastname' ); ?>"/>
+			   value="<?= NOair_get_contact_field_value( 'lastname' ); ?>" placeholder="<?= __( 'Votre nom', 'NOair' ); ?>"/>
 		<?= NOair_get_contact_field_error( 'lastname' ); ?>
 	</div>
 	<div class="form__field">
 		<label for="email" class="form__label"><?= __( 'Votre adresse e-mail', 'NOair' ); ?></label>
 		<input type="email" name="email" id="email" class="form__input"
-			   value="<?= NOair_get_contact_field_value( 'email' ); ?>"/>
+			   value="<?= NOair_get_contact_field_value( 'email' ); ?>" placeholder="<?= __( 'Votre email', 'NOair' ); ?>"/>
 		<?= NOair_get_contact_field_error( 'email' ); ?>
 	</div>
 	<div class="form__field">
 		<label for="work" class="form__label"><?= __( 'Que faites vous dans la vie ?', 'NOair' ); ?></label>
 		<input type="tel" name="work" id="work" class="form__input"
-			   value="<?= NOair_get_contact_field_value( 'work' ); ?>"/>
+			   value="<?= NOair_get_contact_field_value( 'work' ); ?>" placeholder="<?= __( 'Que faites vous dans la vie ?', 'NOair' ); ?>"/>
 	</div>
 	<div class="form__field">
-		<label for="subject">Votre message est à propos de ...</label>
-		<select name="subject" id="subject" class="form__select">
+		<label class="form__label" for="subject">Votre message est à propos de ...</label>
+		<select class="form__select" name="subject" id="subject" class="form__select">
 			<option value="" selected hidden>Sélectionner un sujet ici</option>
 			<option value="modules" class="form__option">des modules</option>
 			<option value="ingénieur" class="form__option">de la section ingénieur de la HEPL</option>
@@ -39,7 +39,7 @@
 	<div class="form__field">
 		<label for="message" class="form__label"><?= __( 'Votre message', 'NOair' ); ?></label>
 		<textarea name="message" id="message" cols="30" rows="10"
-				  class="form__input"><?= NOair_get_contact_field_value( 'message' ); ?></textarea>
+				  class="form__input form__textarea" placeholder="<?= __( 'Votre message', 'NOair' ); ?>"><?= NOair_get_contact_field_value( 'message' ); ?></textarea>
 		<?= NOair_get_contact_field_error( 'message' ); ?>
 	</div>
 	<div class="form__field">
@@ -56,6 +56,6 @@
 	<div class="form__actions">
 		<input type="hidden" name="action" value="submit_contact_form"/>
 		<?php wp_nonce_field( 'nonce_check_contact_form' ); ?>
-		<button type="submit" class="form__button"><?= __( 'Envoyer', 'NOair' ); ?></button>
+		<button type="submit" class="form__button cta"><?= __( 'Envoyer', 'NOair' ); ?></button>
 	</div>
 </form>

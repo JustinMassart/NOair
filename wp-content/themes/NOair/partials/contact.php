@@ -1,14 +1,16 @@
-<article class="general__contact contact">
-	<h3 class="contact__title">
-		<?= get_field( 'contact_name' ) ?>
-	</h3>
-	<span class="contact__email">
+<article class="general__contact contact dis_card  <?= strtolower(get_field( 'contact_name' )) ?>">
+	<div class="general__container">
+		<h3 class="general__title dis_card__title">
+			<?= get_field( 'contact_name' ) ?>
+		</h3>
+		<span class="general__email">
 		<?= get_field( 'contact_email' ) ?>
 	</span>
-	<span class="contact__address">
+		<span class="general__address">
 		<?= get_field( 'contact_address' ) ?>
 	</span>
-	<span class="contact__phone">
+		<span class="general__phone">
 		<?= get_field( 'contact_phone' ) ?>
 	</span>
+	</div>
 </article>

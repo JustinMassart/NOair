@@ -16,6 +16,9 @@ $darkGreen: #234738;
 $orange: #C05411;
 $purple: #82146B;
 $blue: #0A5775;
+$hepl: #CE1531;
+$engineer: #1E70B9;
+$issep: #183E80;
 
 $lightGreen: rgba(93, 128, 66, .07);
 $lightDarkGreen: rgba(35, 71, 56, .07);
@@ -81,7 +84,8 @@ $footerShadow: 0 -5px 10px 0 rgba(0, 0, 0, .1);
 .main {
 
   &__title {
-    font-size: 45px;
+    font-size: 32px;
+    line-height: 40px;
     font-family: $glacialB;
     margin-top: $headerBottom;
     margin-bottom: $titleBottom;
@@ -102,7 +106,8 @@ strong {
   font-family: $glacialB;
   border-radius: 100px;
   box-shadow: $btnShadow;
-  font-size: 1.125rem;
+  font-size: 16px;
+  text-align: center;
 }
 
 .cta a {
@@ -214,7 +219,7 @@ strong {
 .dis_card {
 
   &__container {
-    padding: 20px 20px 0;
+    padding: 50px 25px 0;
   }
 
   &__title {
@@ -241,79 +246,69 @@ strong {
 
 // MODULES
 
-.module {
-  display: inline-block;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: $btnShadow;
-  position: relative;
-  min-width: 28.25rem;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: $articleTop;
+.modules {
 
-  &__container {
-    padding: 3.125rem 0 0 3.125rem;
+  .module {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: $btnShadow;
+    overflow: hidden;
+    margin-bottom: $articleTop;
+
+    &__container {
+      max-width: 100%;
+      padding: 50px 25px 0;
+    }
+
+    &__title {
+      font-family: $glacialB;
+      font-size: 32px;
+    }
+
+    &__who, &__measures span {
+      display: inline-block;
+      font-family: $glacialB;
+      font-size: 22px;
+      padding-top: 30px;
+      padding-bottom: $textBottom;
+    }
+
+    &__public, &__measures {
+      max-width: 375px;
+    }
+
+    &__desc, &__item {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    &__imgContainer {
+      display: none;
+    }
+
+    &__list {
+      padding-left: 15px;
+    }
+
+    &__item {
+      list-style-type: disc;
+    }
+
+    & a {
+      text-decoration: none;
+      color: white;
+    }
+
+    &__cta {
+      font-size: 16px;
+      margin: $btnMargin;
+      float: right;
+    }
+
+    &__svgContainer svg {
+      display: none;
+    }
   }
-
-  &__title {
-    font-family: $glacialB;
-    font-size: 40px;
-    line-height: 3rem;
-  }
-
-  &__who, &__measures span {
-    display: inline-block;
-    font-family: $glacialB;
-    font-size: 1.5625rem;
-    line-height: 1.875rem;
-    padding-top: $btnTop;
-    padding-bottom: $textBottom;
-  }
-
-  &__desc, &__item {
-    max-width: 13.75rem;
-    font-size: 1.125rem;
-    line-height: 1.375rem;
-  }
-
-  &__imgContainer {
-    max-width: 200px;
-    max-height: 250px;
-    position: absolute;
-    right: -1.875rem;
-    top: 3.125rem;
-  }
-
-  &__imgContainer img {
-    object-fit: contain;
-  }
-
-  &__list {
-    padding-left: 0.9375rem;
-  }
-
-  &__item {
-    list-style-type: disc;
-  }
-
-  & a {
-    text-decoration: none;
-    color: white;
-  }
-
-  &__cta {
-    margin-top: $btnTop;
-    position: absolute;
-    right: 1.875rem;
-    bottom: 1.875rem;
-  }
-
-  &__svgContainer svg {
-    margin: 1.25rem 0 1.25rem 1.25rem;
-    opacity: .25;
-  }
-
 }
 
 .antilope {
@@ -379,19 +374,20 @@ strong {
 
 // UN MODULE
 
+
 .intro {
   &__title {
     margin-top: $headerBottom;
-    font-size: 3.75rem;
-    line-height: 4.5rem;
+    font-size: 48px;
     font-family: $glacialB;
     margin-bottom: $titleBottom;
   }
 
   &__desc {
-    font-size: 2.8125rem;
-    line-height: 3.3725rem;
+    font-size: 32px;
+    line-height: 40px;
     margin-bottom: $titleBottom;
+    max-width: 500px;
   }
 
   &__desc p:first-of-type {
@@ -399,68 +395,77 @@ strong {
   }
 
   &__pictures {
+    display: block;
+    margin: 0 auto;
     position: relative;
+    max-width: 275px;
   }
 
   &__svg svg {
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
   }
 
   &__img img {
-    max-height: 550px;
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
     object-fit: contain;
   }
 }
 
 .specs {
   margin-top: $sectionBottom;
+  max-width: 500px;
 
   &__title {
     font-family: $glacialB;
-    font-size: 2rem;
-    line-height: 2.375rem;
+    font-size: 24px;
+    line-height: 32px;
     margin-bottom: $textBottom;
   }
 
   &__desc {
-    margin-bottom: 1.875rem;
-    font-size: 1.5rem;
-    line-height: 2.1875rem;
+    margin-bottom: 40px;
+    font-size: 20px;
+    line-height: 32px;
   }
 
   & .quadef {
-    font-size: 1.5rem;
-    line-height: 2.1875rem;
+    font-size: 20px;
+    line-height: 32px;
 
     & .list:first-of-type {
-      margin-bottom: 0.625rem;
+      margin-bottom: 10px;
       color: #4F6F37;
     }
 
     & .list:last-of-type {
-      margin-bottom: 1.875rem;
+      margin-bottom: 40px;
       color: #9A0F24;
     }
   }
 
   & .technical {
+    margin: 0 auto;
     background: white;
     border-radius: 10px;
     box-shadow: $btnShadow;
+    max-width: 375px;
 
     &__container {
       padding: 30px;
     }
 
     & .specList {
-      font-size: 1.5rem;
-      line-height: 2.8125rem;
+      font-size: 20px;
+      line-height: 32px;
     }
 
     & ul {
-      margin-left: 1.25rem;
+      margin-left: 20px;
       list-style-type: disc;
     }
   }
@@ -472,8 +477,7 @@ strong {
 
   &__title {
     font-family: $glacialB;
-    font-size: 2rem;
-    line-height: 2.375rem;
+    font-size: 24px;
     margin-bottom: $textBottom;
   }
 
@@ -483,9 +487,7 @@ strong {
   }
 
   & .list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px 100px;
+
     background-color: white;
     border-radius: 10px;
     box-shadow: $btnShadow;
@@ -499,22 +501,8 @@ strong {
       align-items: center;
     }
 
-    &__item:nth-child(1),
-    &__item:nth-child(4),
-    &__item:nth-child(7),
-    &__item:nth-child(10),
-    &__item:nth-child(13),
-    &__item:nth-child(16) {
-      border-right: 1px solid rgba(0, 0, 0, .1);
-    }
-
-    &__item:nth-child(3),
-    &__item:nth-child(6),
-    &__item:nth-child(9),
-    &__item:nth-child(12),
-    &__item:nth-child(15),
-    &__item:nth-child(19) {
-      border-left: 1px solid rgba(0, 0, 0, .1);
+    &__item:not(:last-of-type) {
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
     }
   }
 }
@@ -527,24 +515,25 @@ strong {
   }
 
   &__container {
-    padding: 50px;
+    padding: 50px 25px 0;
   }
 
   &__title {
-    font-size: 1.5625rem;
+    font-size: 20px;
     margin-bottom: $textBottom;
   }
 
   &__desc {
-    font-size: 1.375rem;
-    line-height: 2.1875rem;
+    font-size: 18px;
+    line-height: 24px;
   }
 
   & .cta {
-    margin: 0 0 50px 50px;
+    margin: $btnMargin;
+    font-size: 16px;
 
     & a {
-      color: black;
+      color: white;
     }
   }
 }
@@ -556,8 +545,7 @@ strong {
 
   &__title {
     font-family: $glacialB;
-    font-size: 40px;
-    line-height: 3rem;
+    font-size: 32px;
     margin-bottom: $titleBottom;
   }
 
@@ -567,26 +555,33 @@ strong {
   background: white;
   border-radius: 10px;
   box-shadow: $btnShadow;
+  max-width: 420px;
+  margin: 0 auto;
 
   &__container {
-    padding: 3.125rem 3.125rem 0;
+    padding: 50px 25px 0;
   }
 
   &__title {
-    font-size: 1.5625rem;
-    line-height: 1.875rem;
+    font-size: 24px;
+    line-height: 32px;
     margin-bottom: $textBottom;
   }
 
+  &__date {
+    display: block;
+  }
+
   &__infos {
-    font-size: 1.125rem;
-    line-height: 2.1875rem;
-    max-width: 24.0625rem;
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 375px;
   }
 
   &__cta {
     margin-top: $btnTop;
     margin-bottom: $btnBottom;
+    font-size: 16px;
   }
 
   & a {
@@ -618,8 +613,8 @@ strong {
   }
 
   &__title {
-    font-size: 2.5rem;
-    line-height: 3rem;
+    font-size: 32px;
+    line-height: 40px;
     text-align: center;
   }
 
@@ -656,6 +651,8 @@ strong {
     max-width: 100%;
     height: 100%;
     object-fit: contain;
+    margin: 0 auto;
+    display: block;
   }
 
   & img:not(:last-of-type) {
@@ -663,6 +660,187 @@ strong {
   }
 }
 
+// PARTNERS
+
+.partner {
+  background-color: white;
+  box-shadow: $btnShadow;
+  border-radius: 10px;
+
+  &__container {
+    padding: 50px 25px 0;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-family: $glacialB;
+  }
+
+  &__fullname {
+    display: inline-block;
+    font-family: $glacialB;
+    font-size: 20px;
+    margin-bottom: $textBottom;
+  }
+
+  &__desc {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 375px;
+    margin-bottom: $titleBottom;
+  }
+
+  &__image img {
+    object-fit: contain;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  &__cta {
+    font-size: 15px;
+    margin: $btnMargin;
+  }
+
+}
+
+.partner:not(:last-of-type) {
+  margin-bottom: 30px;
+}
+
+.hepl {
+
+  &__title, & h3 {
+    color: $hepl;
+  }
+
+  &__cta {
+    background-color: $hepl;
+  }
+
+}
+
+.engineer {
+
+  &__title, & h3 {
+    color: $engineer;
+  }
+
+  &__cta {
+    background-color: $engineer;
+  }
+
+}
+
+.issep {
+
+  &__title, & h3 {
+    color: $issep;
+  }
+
+  &__cta {
+    background-color: $issep;
+  }
+
+}
+
+.cecotepe {
+
+  &__title, & h3 {
+    color: $green;
+  }
+
+  &__cta {
+    background-color: $green;
+  }
+
+}
+
+// CONTACT
+
+.form {
+  margin-bottom: $sectionBottom;
+
+  &__field {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    display: none;
+  }
+
+  &__input, &__select {
+    background-color: white;
+    min-height: 50px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    padding-left: 10px;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: $glacialR;
+  }
+
+  &__textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 50px;
+    max-height: 1000px;
+  }
+
+  ::placeholder {
+    font-family: $glacialR;
+    font-size: 20px;
+    color: black;
+    vertical-align: middle;
+  }
+
+  & a {
+    text-decoration: underline;
+    color: black;
+  }
+
+  &__button  {
+    border: none;
+    background-color: $green;
+    padding: $btnPadding;
+    font-size: 16px;
+    line-height: 16px;
+    color: white;
+  }
+}
+
+.general {
+
+  &__container {
+    padding: 50px 25px 50px;
+  }
+
+  &__contact {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: $btnShadow;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  &__contact:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+
+  & span:not(:last-of-type) {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: $glacialB;
+  }
+}
 
 // FOOTER
 

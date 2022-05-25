@@ -1,7 +1,10 @@
 <article class="recent__publication publication">
 	<div class="publication__container">
 		<h3 class="publication__title">
-			<?= strtoupper( get_field( 'publication_author' ) ) . ' - ' . get_field( 'publication_date' ) ?>
+			<?= strtoupper( get_field( 'publication_author' ) ) ?>
+			<span class="publication__date">
+				<?= get_field( 'publication_date' ) ?>
+			</span>
 		</h3>
 		<div class="publication__imgContainer">
 			<?= NOair_get_template_by_extension( get_field( 'author_img' ), 330, 120, 'medium' ) ?>

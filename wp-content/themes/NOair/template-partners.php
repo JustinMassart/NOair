@@ -8,7 +8,7 @@
 		</span>
 		</h2>
 		<section class="main__hepling hepling">
-			<h3 class="hepling__title">
+			<h3 class="hepling__title sro">
 				<?= __( 'La HEPL et ces ingénieurs', 'NOair' ) ?>
 			</h3>
 			<?php

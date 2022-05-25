@@ -26,21 +26,21 @@
 				</li>
 			</ul>
 		</div>
-	</div>
-	<div class="module__imgContainer">
-		<?= NOair_get_template_by_extension( get_field( 'module_image' ), 235, 360, 'medium' ) ?>
-	</div>
-	<div class="module__cta cta <?= strtolower( get_field( 'module_name' ) ) ?>">
-		<a href="<?= the_permalink() ?>" class="module__link">
-			<?= __( 'Voir le module ', 'NOair' ); ?>
-			<span class="sro">
+		<div class="module__imgContainer">
+			<?= NOair_get_template_by_extension( get_field( 'module_image' ), 235, 360, 'medium' ) ?>
+		</div>
+		<div class="module__cta cta <?= strtolower( get_field( 'module_name' ) ) ?>">
+			<a href="<?= the_permalink() ?>" class="module__link">
+				<?= __( 'Voir le module ', 'NOair' ); ?>
+				<span class="sro">
 				<?= str_replace( ':name', get_field( 'module_name' ), __( ':name', 'NOair' ) ) ?>
 			</span>
-		</a>
-	</div>
-	<?php if ( get_field( 'logo' ) !== false ): ?>
-		<div class="module__svgContainer <?= strtolower( get_field( 'module_name' ) ) ?>">
-			<?= NOair_get_template_by_extension( get_field( 'logo' ), 50, 58, 'thumbnail' ) ?>
+			</a>
 		</div>
-	<?php endif; ?>
+		<?php if ( get_field( 'logo' ) !== false ): ?>
+			<div class="module__svgContainer <?= strtolower( get_field( 'module_name' ) ) ?>">
+				<?= NOair_get_template_by_extension( get_field( 'logo' ), 50, 58, 'thumbnail' ) ?>
+			</div>
+		<?php endif; ?>
+	</div>
 </article>

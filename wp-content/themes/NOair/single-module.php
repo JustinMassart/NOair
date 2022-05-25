@@ -3,7 +3,7 @@
 		<h2 class="main__title sro">
 			<?= __( 'Le module ' ) . get_field( 'module_name' ) ?>
 		</h2>
-		<section class="main__intro intro">
+		<section class="main__intro intro <?= strtolower( get_field( 'module_name' ) ) ?>">
 			<div class="intro__hero">
 				<h3 class="intro__title accent">
 					<?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( ':name', 'NOair' ) ) ?>
@@ -13,10 +13,10 @@
 				</div>
 				<div class="intro__pictures">
 					<div class="intro__svg">
-						<?= NOair_get_template_by_extension( get_field( 'logo' ), 163, 190, 'thumbnail' ) ?>
+						<?= NOair_get_template_by_extension( get_field( 'logo' ), 100, 116, 'thumbnail' ) ?>
 					</div>
 					<div class=" intro__img">
-						<?= NOair_get_template_by_extension( get_field( 'module_image' ), 0, 0, 'big' ) ?>
+						<?= NOair_get_template_by_extension( get_field( 'module_image' ), 0, 0, 'medium' ) ?>
 					</div>
 				</div>
 			</div>
@@ -85,7 +85,7 @@
 			</span>
 		</section>
 		<section class="wanted">
-			<article class="wanted__card">
+			<article class="wanted__card <?= strtolower( get_field( 'module_name' ) ) ?>">
 				<div class="wanted__container">
 					<h4 class="wanted__title">
 						<?= strtoupper( __( 'Des questions sur ce module ?' ) ) ?>
@@ -93,11 +93,11 @@
 					<p class="wanted__desc">
 						<?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( 'Posez nous vos question et demandes au sujet du module :name' ) ) ?>
 					</p>
-				</div>
-				<div class="wanted__cta cta">
-					<a href="<?= get_permalink( NOair_get_template_page( ( 'template-contact' ) ) ) ?>" class="nav__contact">
-						<?= __( 'contactez nous', 'NOair' ) ?>
-					</a>
+					<div class="wanted__cta cta ">
+						<a href="<?= get_permalink( NOair_get_template_page( ( 'template-contact' ) ) ) ?>" class="nav__contact">
+							<?= __( 'contactez nous', 'NOair' ) ?>
+						</a>
+					</div>
 				</div>
 			</article>
 		</section>
