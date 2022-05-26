@@ -36,16 +36,18 @@
 			</section>
 			<section class="whoAreWe">
 				<h3 class="whoAreWe__title"><?= __( 'NOair c’est :', 'NOair' ) ?></h3>
-				<?php foreach ( NOair_get_general_infos() as $key => $value ): ?>
-					<div class="whoAreWe__infos">
-					<span class="whoAreWe__subTitle">
-						<?= $value[ 'info_title' ] ?>
-					</span>
-						<p class="whoAreWe__desc">
-							<?= $value[ 'info_desc' ] ?>
-						</p>
-					</div>
-				<?php endforeach; ?>
+				<div class="whoAreWe__grid">
+					<?php foreach ( NOair_get_general_infos() as $key => $value ): ?>
+						<div class="whoAreWe__infos">
+							<span class="whoAreWe__subTitle">
+								<?= $value[ 'info_title' ] ?>
+							</span>
+							<p class="whoAreWe__desc">
+								<?= $value[ 'info_desc' ] ?>
+							</p>
+						</div>
+					<?php endforeach; ?>
+				</div>
 			</section>
 			<section class="presentation">
 				<h3 class="presentation__title sro">
@@ -62,31 +64,49 @@
 				</h2>
 				<article class="discover__card dis_card">
 					<div class="dis_card__container">
-						<h3 class="dis_card__title">
-							<?= strtoupper( __( 'Les publications', 'NOair' ) ) ?>
-						</h3>
-						<p class="dis_card__desc">
-							<?= __( 'Toutes les publications qui nous font références autant dans des journaux et jusqu’à la télévision', 'NOair' ) ?>
-						</p>
-						<div class="dis_card__cta cta">
-							<a class="dis_card__link" href="<?= get_permalink( NOair_get_template_page( ( 'template-publications' ) ) ) ?>"
-							   class="nav__contact"><?= strtoupper( __( 'voir les publications', 'NOair' ) ) ?></a>
+						<div class="dis_card__text">
+							<h3 class="dis_card__title">
+								<?= strtoupper( __( 'Les publications', 'NOair' ) ) ?>
+							</h3>
+							<p class="dis_card__desc">
+								<?= __( 'Toutes les publications qui nous font références autant dans des journaux et jusqu’à la télévision', 'NOair' ) ?>
+							</p>
+							<div class="dis_card__cta cta">
+								<a class="dis_card__link" href="<?= get_permalink( NOair_get_template_page( ( 'template-publications' ) ) ) ?>"
+								   class="nav__contact"><?= strtoupper( __( 'voir les publications', 'NOair' ) ) ?></a>
+							</div>
+						</div>
+						<div class="dis_card__svgContainer">
+							<svg width="100" height="100">
+								<title>Illustration de publication</title>
+								<desc>Une illustration qui représente une publication avec diverses sections.</desc>
+								<use xlink:href="#publication"/>
+							</svg>
 						</div>
 					</div>
 				</article>
 				<article class="discover__card dis_card">
 					<div class="dis_card__container">
-						<h3 class="dis_card__title">
-							<?= strtoupper( __( 'Nos partenaires', 'NOair' ) ) ?>
-						</h3>
-						<p class="dis_card__desc">
-							<?= __( 'Nous ne travaillons pas seul, nous sommes plusieurs à réaliser cette démarche', 'NOair' ) ?>
-						</p>
-						<div class="dis_card__cta cta">
-							<a class="dis_card__link" href="<?= get_permalink( NOair_get_template_page( ( 'template-partners' ) ) ) ?>"
-							   class="nav__contact">
-								<?= strtoupper( __( 'voir les partenaires', 'NOair' ) ) ?>
-							</a>
+						<div class="dis_card__text">
+							<h3 class="dis_card__title">
+								<?= strtoupper( __( 'Nos partenaires', 'NOair' ) ) ?>
+							</h3>
+							<p class="dis_card__desc">
+								<?= __( 'Nous ne travaillons pas seul, nous sommes plusieurs à réaliser cette démarche', 'NOair' ) ?>
+							</p>
+							<div class="dis_card__cta cta">
+								<a class="dis_card__link" href="<?= get_permalink( NOair_get_template_page( ( 'template-partners' ) ) ) ?>"
+								   class="nav__contact">
+									<?= strtoupper( __( 'voir les partenaires', 'NOair' ) ) ?>
+								</a>
+							</div>
+						</div>
+						<div class="dis_card__svgContainer">
+							<svg width="100" height="100">
+								<title>Illustration de travail d’équipe</title>
+								<desc>Une illustration qui représente un travail d’équipe.</desc>
+								<use xlink:href="#teamWork"/>
+							</svg>
 						</div>
 					</div>
 				</article>

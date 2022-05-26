@@ -27,7 +27,7 @@
 			</ul>
 		</div>
 		<div class="module__imgContainer">
-			<?= NOair_get_template_by_extension( get_field( 'module_image' ), 235, 360, 'medium' ) ?>
+			<?= NOair_get_template_by_extension( get_field( 'module_image' ), 'medium' ) ?>
 		</div>
 		<div class="module__cta cta <?= strtolower( get_field( 'module_name' ) ) ?>">
 			<a href="<?= the_permalink() ?>" class="module__link">

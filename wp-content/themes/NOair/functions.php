@@ -418,20 +418,18 @@
 
 	// Faire une fonction qui renvoi un template si l’image enregistrée dans une publication est un fichier '.svg'
 
-	function NOair_get_svg_template( $url, $width, $height, $title, $desc ): string {
+	function NOair_get_svg_template( $url, $title, $desc ): string {
 		$link = $url;
 
 		return <<<HTML
-			<svg class="svg"
-				 width="{$width}"
-				 height="{$height}">
+			<svg class="svg">
 				<title>
 					{$title}
 				</title>
 				<desc>
 					{$desc}
 				</desc>
-				<image xlink:href="{$link}" width="{$width}" height="{$height}"/>
+				<image href="{$link}"/>
 			</svg>
 HTML;
 
@@ -440,7 +438,7 @@ HTML;
 	// Faire une fonction qui regarde de quelle extension est, l'image qui a été enregistré dans une publication.
 	// Ensuite elle renvoi suivant l’extension une fonction qui fera le bon templating
 
-	function NOair_get_template_by_extension( $file, $width, $height, $size ) {
+	function NOair_get_template_by_extension( $file, $size ) {
 		// $file = un ID ou une URL
 		$imgExtension = [ 'png', 'jpg', 'jpeg' ];
 		$svgExtension = [ 'svg', 'svg+xml' ];
@@ -456,7 +454,7 @@ HTML;
 		if ( in_array( $file[ 'subtype' ], $svgExtension, true ) ) {
 			$url = $file[ 'url' ];
 
-			return NOair_get_svg_template( $url, $width, $height, $title, $desc );
+			return NOair_get_svg_template( $url, $title, $desc );
 		}
 
 		/*switch ( $fileInfo[ 'extension' ] ) {
