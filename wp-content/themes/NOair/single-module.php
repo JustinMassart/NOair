@@ -10,14 +10,20 @@
 				</h3>
 				<div class="intro__desc">
 					<?= __( the_content(), 'NOair' ) ?>
+
 				</div>
-				<div class="intro__pictures">
-					<div class="intro__svg">
-						<?= NOair_get_template_by_extension( get_field( 'logo' ), 100, 116, 'thumbnail' ) ?>
-					</div>
-					<div class=" intro__img">
-						<?= NOair_get_template_by_extension( get_field( 'module_image' ), 0, 0, 'medium' ) ?>
-					</div>
+			</div>
+			<div class="intro__svg">
+				<?= NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' ) ?>
+			</div>
+		</section>
+		<section class="main__slider slider">
+			<h3 class="sro">
+				<?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( 'Les photos du module :name', 'NOair' ) ) ?>
+			</h3>
+			<div class="intro__pictures">
+				<div class=" intro__img">
+					<?= NOair_get_template_by_extension( get_field( 'module_image' ), 'medium' ) ?>
 				</div>
 			</div>
 		</section>
@@ -85,18 +91,23 @@
 			</span>
 		</section>
 		<section class="wanted">
-			<article class="wanted__card <?= strtolower( get_field( 'module_name' ) ) ?>">
-				<div class="wanted__container">
-					<h4 class="wanted__title">
-						<?= strtoupper( __( 'Des questions sur ce module ?' ) ) ?>
-					</h4>
-					<p class="wanted__desc">
-						<?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( 'Posez nous vos question et demandes au sujet du module :name' ) ) ?>
-					</p>
-					<div class="wanted__cta cta ">
-						<a href="<?= get_permalink( NOair_get_template_page( ( 'template-contact' ) ) ) ?>" class="nav__contact">
-							<?= __( 'contactez nous', 'NOair' ) ?>
-						</a>
+			<article class="wanted__card <?= strtolower( get_field( 'module_name' ) ) ?> dis_card">
+				<div class="wanted__container dis_card__container">
+					<div class="dis_card__text">
+						<h4 class="wanted__title dis_card__title">
+							<?= strtoupper( __( 'Des questions sur ce module ?' ) ) ?>
+						</h4>
+						<p class="wanted__desc dis_card__desc">
+							<?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( 'Posez nous vos question et demandes au sujet du module :name' ) ) ?>
+						</p>
+						<div class="wanted__cta cta dis_card__cta">
+							<a href="<?= get_permalink( NOair_get_template_page( ( 'template-contact' ) ) ) ?>" class="nav__contact">
+								<?= __( 'contactez nous', 'NOair' ) ?>
+							</a>
+						</div>
+					</div>
+					<div class="dis_card__imgContainer wanted__imgContainer">
+						<?= NOair_get_template_by_extension( get_field( 'module_image' ), 'thumbnail' ) ?>
 					</div>
 				</div>
 			</article>

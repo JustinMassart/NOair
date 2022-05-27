@@ -30,16 +30,18 @@
 		</h2>
 		<article class="discover_modules__card dis_card">
 			<div class="dis_card__container">
-				<h3 class="dis_card__title">
-					<?= strtoupper( __( 'Les modules', 'NOair' ) ) ?>
-				</h3>
-				<p class="dis_card__desc">
-					<?= __( 'Tous les modules dont les articles ci-dessus parlent ce trouvent ici !', 'NOair' ) ?>
-				</p>
+				<div class="dis_card__text">
+					<h3 class="dis_card__title">
+						<?= strtoupper( __( 'Les modules', 'NOair' ) ) ?>
+					</h3>
+					<p class="dis_card__desc">
+						<?= __( 'Tous les modules dont les articles ci-dessus parlent ce trouvent ici !', 'NOair' ) ?>
+					</p>
 
-				<div class="dis_card__cta cta">
-					<a href="<?= get_permalink( NOair_get_template_page( ( 'template-modules' ) ) ) ?>"
-					   class="nav__contact"><?= strtoupper( __( 'voir nos modules', 'NOair' ) ) ?></a>
+					<div class="dis_card__cta cta">
+						<a href="<?= get_permalink( NOair_get_template_page( ( 'template-modules' ) ) ) ?>"
+						   class="nav__contact"><?= strtoupper( __( 'voir nos modules', 'NOair' ) ) ?></a>
+					</div>
 				</div>
 			</div>
 		</article>
