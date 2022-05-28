@@ -1,9 +1,9 @@
 <article class="<?= $partner ?> partner">
 	<div class="partner__container">
 		<div class="<?= $partner ?>__name partner__name">
-			<h4 class="<?= $partner ?>__title partner__title">
+			<h3 class="<?= $partner ?>__title partner__title">
 				<?= get_field( $partner . '_partner_name' ) ?>
-			</h4>
+			</h3>
 			<span class="<?= $partner ?>__fullname partner__fullname">
 								<?= get_field( $partner . '_partner_fullname' ) ?>
 							</span>

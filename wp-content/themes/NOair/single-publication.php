@@ -7,23 +7,22 @@
 		</span>
 	</h2>
 	<section class="main__article article">
-		<h3 class="article__title sro">
-			<?= __( 'L’article de ' ) . strtoupper( get_field( 'publication_author' ) ) ?>
-		</h3>
 		<div class="article__text">
-			<?= get_field( 'publication_text' ) ?>
+			<h3 class="article__title sro">
+				<?= __( 'L’article de ' ) . strtoupper( get_field( 'publication_author' ) ) ?>
+			</h3>
+			<div class="article__desc">
+				<?= get_field( 'publication_text' ) ?>
+			</div>
+		</div>
+		<div class="article__img support">
+			<?php if ( get_field( 'publication_images' ) !== null ): ?>
+				<?php foreach ( get_field( 'publication_images' ) as $img ): ?>
+					<?= NOair_get_template_by_extension( $img, 'medium' ) ?>
+				<?php endforeach; ?>
+			<?php endif; ?>
 		</div>
 	</section>
-	<?php if ( get_field( 'publication_images' ) !== null ): ?>
-		<section class="main_support support">
-			<h3 class="support__title sro">
-				<?= __( 'Images de l’article de ', 'NOair' ) . strtoupper( get_field( 'publication_author' ) ) ?>
-			</h3>
-			<?php foreach ( get_field( 'publication_images' ) as $img ): ?>
-				<?= NOair_get_template_by_extension( $img, 0, 0, 'big' ) ?>
-			<?php endforeach; ?>
-		</section>
-	<?php endif; ?>
 	<section class="main_discover_modules discover_modules">
 		<h2 class="discover_modules__title">
 			<?= __( 'Découvrez de quels modules ils parlent', 'NOair' ) ?>

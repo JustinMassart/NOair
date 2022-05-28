@@ -1,15 +1,12 @@
 <?php /* Template Name: Publications page template */ ?>
 <?php get_header(); ?>
 <main class="main">
-	<h2 class="main__title">
-		<?= get_field( 'first_title_part' ); ?>
-		<span class="accent">
+	<section class="main__publications publications">
+		<h2 class="main__title">
+			<?= get_field( 'first_title_part' ); ?>
+			<span class="accent">
 			<?= get_field( 'second_title_part' ); ?>
 		</span>
-	</h2>
-	<section class="main__publications publications">
-		<h2 class="publications__title sro">
-			<?= __( 'Voici publications les plus récentes', 'NOair' ) ?>
 		</h2>
 		<?php if ( ( $publications = NOair_get_publications( 1000 ) ) -> have_posts() ): while ( $publications -> have_posts() ): $publications -> the_post();
 			include( __DIR__ . '/partials/publication.php' );

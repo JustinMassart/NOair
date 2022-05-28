@@ -1,4 +1,4 @@
-<article class="general__contact contact dis_card  <?= strtolower(get_field( 'contact_name' )) ?>">
+<article class="general__contact dis_card  <?= strtolower(get_field( 'contact_name' )) ?>">
 	<div class="general__container">
 		<h3 class="general__title dis_card__title">
 			<?= get_field( 'contact_name' ) ?>
