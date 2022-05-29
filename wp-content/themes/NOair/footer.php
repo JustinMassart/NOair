@@ -4,17 +4,17 @@
 	<div class="footer__grid">
 		<div class="footer__logo">
 			<a href="/">
-				<?= file_get_contents( __DIR__ . '/resources/assets/NOair.svg' ) ?>
+				<?= NOair_get_svg( 'NOair' ) ?>
 			</a>
 		</div>
 		<div class="footer__socials socials">
 			<div class="socials__insta">
 				<a href="https://instagram.com/ingenieur.hepl?igshid=YmMyMTA2M2Y=">
-					<?= file_get_contents( __DIR__ . '/resources/assets/instagram.svg' ) ?>
+					<?= NOair_get_svg( 'instagram' ) ?>
 				</a>
 			</div>
 			<div class="socials__fb">
-				<?= file_get_contents( __DIR__ . '/resources/assets/facebook.svg' ) ?>
+				<?= NOair_get_svg( 'facebook' ) ?>
 			</div>
 		</div>
 	</div>
@@ -32,7 +32,7 @@
 		</ul>
 	</nav>
 	<div class="footer__dev">
-		<?= file_get_contents( __DIR__ . '/resources/assets/JustinMassart.svg' ) ?>
+		<?= NOair_get_svg( 'JustinMassart' ) ?>
 	</div>
 </footer>
 </body>

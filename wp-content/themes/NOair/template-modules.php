@@ -20,11 +20,12 @@
 			</div>
 		</section>
 		<section class="recent">
-			<h2 class="recent__title"><?= __( 'Les publications récentes', 'NOair' ) ?></h2>
+			<h2 class="recent__title">
+				<?= __( 'Les publications récentes', 'NOair' ) ?>
+			</h2>
 			<?php if ( ( $publications = NOair_get_publications( 2 ) ) -> have_posts() ): while ( $publications -> have_posts() ): $publications -> the_post();
 				include( __DIR__ . '/partials/publication.php' );
 			endwhile; endif; ?>
 		</section>
-		<?php // TODO : Remplacer la fonction substr de php par du css ?>
 	</main>
 <?php get_footer(); ?>

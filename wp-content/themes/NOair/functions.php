@@ -234,7 +234,7 @@
 		$id = wp_insert_post( [
 			'post_type'    => 'message',
 			'post_title'   => 'Message de ' . $data[ 'firstname' ] . ' ' . $data[ 'lastname' ],
-			'post_excerpt' => 'À propos ' . $data['subject'],
+			'post_excerpt' => 'À propos ' . $data[ 'subject' ],
 			'post_content' => $data[ 'message' ],
 			'post_status'  => 'publish',
 		] );
@@ -480,3 +480,22 @@ HTML;
 	function NOair_make_array_of_string( $string ) {
 		return explode( PHP_EOL, $string );
 	}
+
+	// Créer une fonction qui va chercher le contenu d'un fichier svg dans resources/assets/...svg
+
+	function NOair_get_svg( string $svg ): bool|string {
+		return file_get_contents( __DIR__ . '/resources/assets/' . $svg . '.svg' );
+	}
+
+	// Créer une fonction qui permet de voir les entrées valides (non null ou non fausse) d'un tableau d'image et retourne un nouveau tableau avec uniquement les bonnes entrées
+
+/*	function Noair_get_publication_images( $field ): array {
+		$images = [];
+		foreach ( get_field( $field ) as $img ) {
+			if ( $img !== null && $img !== false ) {
+				$images[] = $img;
+			}
+		}
+
+		return $images;
+	}*/

@@ -1,3 +1,6 @@
+<h3 class="sro">
+	<?= __( 'Formulaire pour contacter Noair • Antilope', 'NOair' ) ?>
+</h3>
 <form action="<?= get_home_url() ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
 	<?php if ( isset( $_SESSION[ 'feedback_contact_form' ] ) && ! $_SESSION[ 'feedback_contact_form' ][ 'success' ] ) : ?>
 		<p class="form__errors"><?= __( 'Oups ! Ce formulaire contient des erreurs, merci de les corriger.', 'NOair' ); ?></p>
@@ -26,13 +29,13 @@
 			   value="<?= NOair_get_contact_field_value( 'work' ); ?>" placeholder="<?= __( 'Que faites vous dans la vie ?', 'NOair' ); ?>"/>
 	</div>
 	<div class="form__field subject">
-		<label class="form__label" for="subject">Votre message est à propos de ...</label>
+		<label class="form__label" for="subject"><?= __( 'Votre message est à propos de ...', 'NOair' ) ?></label>
 		<select class="form__select" name="subject" id="subject" class="form__select">
-			<option value="" selected hidden>Sélectionner un sujet ici</option>
-			<option value="modules" class="form__option">les modules</option>
-			<option value="ingénieur" class="form__option">la section ingénieur de la HEPL</option>
-			<option value="hepl" class="form__option">la HEPL</option>
-			<option value="issep" class="form__option">l’ISSeP</option>
+			<option value="" selected hidden><?= __( 'Sélectionner un sujet ici', 'NOair' ) ?></option>
+			<option value="modules" class="form__option"><?= __( 'les modules', 'NOair' ) ?></option>
+			<option value="ingénieur" class="form__option"><?= __( 'la section ingénieur de la HEPL', 'NOair' ) ?></option>
+			<option value="hepl" class="form__option"><?= __( 'la HEPL', 'NOair' ) ?></option>
+			<option value="issep" class="form__option"><?= __( 'l’ISSeP', 'NOair' ) ?></option>
 		</select>
 		<?= NOair_get_contact_field_error( 'subject' ); ?>
 	</div>

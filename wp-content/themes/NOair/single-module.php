@@ -108,7 +108,7 @@
 							</div>
 						</div>
 						<div class="dis_card__imgContainer wanted__imgContainer">
-							<?= NOair_get_template_by_extension( get_field( 'module_image' ), 'thumbnail' ) ?>
+							<?= NOair_get_template_by_extension( get_field( 'module_image' ), 'medium' ) ?>
 						</div>
 					</div>
 				</article>

@@ -11,6 +11,7 @@
 		<?php wp_head(); ?>
 	</head>
 	<body class="body">
+		<span class="alert"><?= __( 'Ce site est toujours en cours de développement', 'NOair' ) ?></span>
 		<div class="body__container">
 			<header class="header">
 				<div class="header__wrapper">
@@ -22,7 +23,7 @@
 					</h1>
 					<div class="header__logo">
 						<a href="/">
-							<?= file_get_contents( __DIR__ . '/resources/assets/NOair.svg' ) ?>
+							<?= NOair_get_svg( 'NOair' ) ?>
 						</a>
 					</div>
 					<div class="header__burger">

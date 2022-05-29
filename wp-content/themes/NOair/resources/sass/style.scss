@@ -50,7 +50,15 @@ $footerShadow: 0 -5px 10px 0 rgba(0, 0, 0, .1);
   display: none;
 }
 
-// MOBILE 320px - 425px
+// TODO : alert
+
+.alert {
+  font-size: 20px;
+  font-family: $glacialB;
+  color: red;
+}
+
+// MOBILE 320px
 
 // BODY
 
@@ -61,6 +69,7 @@ $footerShadow: 0 -5px 10px 0 rgba(0, 0, 0, .1);
   background-position: 0 190px;
   background-repeat: no-repeat;
   max-width: 1920px;
+  min-height: 100vh;
   margin: 0 auto;
 
   &__container {
@@ -113,6 +122,7 @@ section {
     line-height: 40px;
     font-family: $glacialB;
     margin-bottom: $titleBottom;
+    display: inline-block;
   }
 }
 
@@ -215,20 +225,21 @@ strong {
 // INDEX - PRESENTATION
 
 .presentation {
-  position: relative;
   margin-bottom: $sectionBottom;
 
-  &__black {
-    position: absolute;
-    left: -25px;
-    right: -25px;
-    height: 100%;
-    background-color: black;
-    z-index: -1;
+  &__video {
+    background-color: white;
+    box-shadow: $btnShadow;
+    border-radius: 10px;
+    min-width: calc(100% - 50px);
+    padding: 30px 25px;
+    margin: 0 auto;
   }
 
   iframe {
-    max-width: 100%;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 100%;
     display: block;
     margin: 0 auto;
   }
@@ -559,6 +570,20 @@ strong {
 }
 
 
+.wanted {
+
+  &__imgContainer img {
+    width: 175px;
+    height: 175px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  & a {
+    color: white;
+  }
+}
+
 // MODULES - PUBLICATION
 
 .recent {
@@ -580,7 +605,7 @@ strong {
   margin: 0 auto;
 
   &__container {
-    padding: 30px 25px 0;
+    padding: 30px 25px;
   }
 
   &__title {
@@ -600,7 +625,7 @@ strong {
   }
 
   &__cta {
-    margin: $btnMargin;
+    margin: 30px 0 0;
     font-size: 16px;
   }
 
@@ -649,10 +674,10 @@ strong {
 }
 
 .article {
-  margin: $titleBottom auto 0;
+  margin: 0 auto;
   max-width: 630px;
 
-  &__text {
+  &__desc {
     font-size: 1.5rem;
     line-height: 2.5rem;
   }
@@ -869,13 +894,15 @@ strong {
   background-color: white;
   box-shadow: $footerShadow;
   margin-top: $footerTop;
-  padding-bottom: 3.125rem;
+  position: sticky;
+  top: 100vh;
 
   &__grid {
     display: grid;
     grid-template-columns: 150px 150px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 25px;
   }
 
   &__logo {
@@ -1039,10 +1066,6 @@ strong {
         border-right: 1px solid rgba(0, 0, 0, .1);
       }
 
-      &__item:nth-last-child(n+2) {
-        border-bottom: none;
-      }
-
       &__item:nth-last-child(n+3) {
         border-bottom: 1px solid rgba(0, 0, 0, .1);
       }
@@ -1114,9 +1137,9 @@ strong {
     }
 
     &__svgContainer, &__imgContainer {
-      display: inline-block;
-      width: 100%;
-      height: 100%;
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
     }
 
     & svg, & image {
@@ -1193,6 +1216,17 @@ strong {
 
     & img {
       max-height: 400px;
+    }
+  }
+
+  .presentation {
+
+    &__video {
+      min-height: 600px;
+    }
+
+    & iframe {
+      min-height: 600px;
     }
   }
 

@@ -39,7 +39,7 @@
 		</div>
 		<?php if ( get_field( 'logo' ) !== false ): ?>
 			<div class="module__svgContainer <?= strtolower( get_field( 'module_name' ) ) ?>">
-				<?= NOair_get_template_by_extension( get_field( 'logo' ), 50, 58, 'thumbnail' ) ?>
+				<?= NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' ) ?>
 			</div>
 		<?php endif; ?>
 	</div>

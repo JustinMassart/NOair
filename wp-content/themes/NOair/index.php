@@ -53,7 +53,6 @@
 				<h3 class="presentation__title sro">
 					<?= __( 'Vidéo de présentation de NOair - Antilope', 'NOair' ) ?>
 				</h3>
-				<div class="presentation__black"></div>
 				<div class="presentation__video">
 					<?= get_field( 'presentation_video' ) ?>
 				</div>
@@ -77,11 +76,7 @@
 							</div>
 						</div>
 						<div class="dis_card__svgContainer">
-							<svg width="100" height="100">
-								<title>Illustration de publication</title>
-								<desc>Une illustration qui représente une publication avec diverses sections.</desc>
-								<use xlink:href="#publication"/>
-							</svg>
+							<?= NOair_get_svg( 'publication' ) ?>
 						</div>
 					</div>
 				</article>
@@ -102,11 +97,7 @@
 							</div>
 						</div>
 						<div class="dis_card__svgContainer">
-							<svg width="100" height="100">
-								<title>Illustration de travail d’équipe</title>
-								<desc>Une illustration qui représente un travail d’équipe.</desc>
-								<use xlink:href="#teamWork"/>
-							</svg>
+							<?= NOair_get_svg( 'teamWork' ) ?>
 						</div>
 					</div>
 				</article>
