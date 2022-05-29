@@ -38,5 +38,5 @@
 <?php endwhile; endif; ?>
 <?php
 	get_footer();
-	unset( $_SESSION[ 'feedback_contact_form' ] );
+	unset( $_SESSION[ 'feedback_contact_form' ], $_SESSION[ 'errors' ] );
 ?>

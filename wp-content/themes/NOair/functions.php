@@ -210,15 +210,18 @@
 
 // Enregistrer le traitement du formulaire de contact personnalisé.
 
+	add_action( 'admin_post_nopriv_submit_contact_form', 'NOair_handle_submit_contact_form' );
 	add_action( 'admin_post_submit_contact_form', 'NOair_handle_submit_contact_form' );
 
 	function NOair_handle_submit_contact_form() {
+
 		if ( ! NOair_verify_contact_form_nonce() ) {
 			header( "HTTP/1.1 401 Unauthorized" );
 			exit;
 		}
 
 		$data = NOair_sanitize_contact_form_data();
+
 
 		if ( $errors = NOair_validate_contact_form_data( $data ) ) {
 			$_SESSION[ 'feedback_contact_form' ] = [
@@ -233,8 +236,7 @@
 		// Stocker en base de données
 		$id = wp_insert_post( [
 			'post_type'    => 'message',
-			'post_title'   => 'Message de ' . $data[ 'firstname' ] . ' ' . $data[ 'lastname' ],
-			'post_excerpt' => 'À propos ' . $data[ 'subject' ],
+			'post_title'   => 'Message de ' . strtoupper( $data[ 'firstname' ] ) . ' ' . strtoupper( $data[ 'lastname' ] ) . ' à propos de ' . strtoupper( $data[ 'subject' ] ),
 			'post_content' => $data[ 'message' ],
 			'post_status'  => 'publish',
 		] );
@@ -259,15 +261,7 @@
 		return wp_verify_nonce( $nonce, 'nonce_check_contact_form' );
 	}
 
-	#[ArrayShape( [
-		'firstname' => "string",
-		'lastname'  => "string",
-		'email'     => "string",
-		'work'      => "string",
-		'subject'   => "string",
-		'message'   => "string",
-		'rules'     => "mixed|null"
-	] )] function NOair_sanitize_contact_form_data() {
+	function NOair_sanitize_contact_form_data(): array {
 		return [
 			'firstname' => sanitize_text_field( $_POST[ 'firstname' ] ?? null ),
 			'lastname'  => sanitize_text_field( $_POST[ 'lastname' ] ?? null ),
@@ -281,9 +275,9 @@
 
 	function NOair_validate_contact_form_data( $data ): bool|array {
 
-		$errors = [];
+		$_SESSION[ 'errors' ] = [];
 
-		$required = [ 'firstname', 'lastname', 'email', 'message' ];
+		$required = [ 'firstname', 'lastname', 'email', 'message', 'subject' ];
 		$email    = [ 'email' ];
 		$accepted = [ 'rules' ];
 		$options  = [ 'modules', 'ingénieur', 'hepl', 'issep' ];
@@ -291,26 +285,22 @@
 
 		foreach ( $data as $key => $value ) {
 			if ( in_array( $key, $required, true ) && ! $value ) {
-				$errors[ $key ] = 'requis';
+				$_SESSION[ 'errors' ][ $key ] = true;
 				continue;
 			}
 
 			if ( in_array( $key, $email, true ) && ! filter_var( $value, FILTER_VALIDATE_EMAIL ) ) {
-				$errors[ $key ] = 'email';
+				$_SESSION[ 'errors' ][ $key ] = true;
 				continue;
 			}
 
 			if ( in_array( $key, $accepted, true ) && $value !== '1' ) {
-				$errors[ $key ] = 'Vous devez accepter les conditions générales d’utilisations pour envoyer un message.';
+				$_SESSION[ 'errors' ][ $key ] = true;
 				continue;
 			}
 		}
 
-		if ( ! in_array( $select, $options, true ) ) {
-			$errors[ 'subject' ] = 'Veuillez choisir un sujet dans la liste.';
-		}
-
-		return $errors ? : false;
+		return $_SESSION[ 'errors' ] ? : false;
 	}
 
 	function NOair_get_contact_field_value( $field ) {
@@ -487,15 +477,3 @@ HTML;
 		return file_get_contents( __DIR__ . '/resources/assets/' . $svg . '.svg' );
 	}
 
-	// Créer une fonction qui permet de voir les entrées valides (non null ou non fausse) d'un tableau d'image et retourne un nouveau tableau avec uniquement les bonnes entrées
-
-/*	function Noair_get_publication_images( $field ): array {
-		$images = [];
-		foreach ( get_field( $field ) as $img ) {
-			if ( $img !== null && $img !== false ) {
-				$images[] = $img;
-			}
-		}
-
-		return $images;
-	}*/

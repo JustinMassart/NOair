@@ -857,6 +857,25 @@ strong {
     line-height: 16px;
     color: white;
   }
+
+  &__errors {
+    font-size: 20px;
+    line-height: 25px;
+    font-family: $glacialB;
+    color: darkred;
+    margin-bottom: $textBottom;
+  }
+
+  & .input {
+
+    &__error {
+      display: inline-block;
+      color: darkred;
+      font-size: 16px;
+      line-height: 20px;
+      margin-top: 10px;
+    }
+  }
 }
 
 .general {
@@ -1077,9 +1096,12 @@ strong {
     box-shadow: $btnShadow;
     border-radius: 10px;
     padding: 30px 25px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 20px;
+
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 20px;
+    }
 
     & .subject, & .message, & .rules {
       grid-column: span 2;
