@@ -9,10 +9,16 @@
 		<link rel="stylesheet" type="text/css" href="<?= NOair_mix( '/css/style.css' ); ?>"/>
 		<script type="text/javascript" src="<?= NOair_mix( 'js/script.js' ); ?>"></script>
 		<?php wp_head(); ?>
+		<?php if ( ! isset( $_SESSION[ 'accents' ] ) ): ?>
+			<?php NOair_get_accents() ?>
+		<?php endif; ?>
 	</head>
 	<body class="body">
 		<span class="alert"><?= __( 'Ce site est toujours en cours de développement', 'NOair' ) ?></span>
 		<div class="body__container">
+			<div class="body__wave <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
+				<?= NOair_get_svg( 'wave' ) ?>
+			</div>
 			<header class="header">
 				<div class="header__wrapper">
 					<h1 class="header__title sro">
@@ -29,7 +35,9 @@
 					<div class="header__burger">
 						<div class="header__languages">
 							<?php foreach ( pll_the_languages( [ 'raw' => true ] ) as $code => $locale ) : ?>
-								<a href="<?= $locale[ 'url' ]; ?>" class="header__locale" title="<?= $locale[ 'name' ]; ?>"
+								<a href="<?= $locale[ 'url' ]; ?>"
+								   class="header__locale<?= NOair_verify_lang( $locale ) ?>"
+								   title="<?= $locale[ 'name' ]; ?>"
 								   lang="<?= $locale[ 'locale' ]; ?>" hreflang="<?= $locale[ 'locale' ]; ?>"><?= $code; ?></a>
 							<?php endforeach; ?>
 						</div>
@@ -37,12 +45,12 @@
 							<h2 class="nav__title sro"><?= __( 'Navigation principale', 'NOair' ); ?></h2>
 							<ul class="nav__container">
 								<?php foreach ( NOair_get_menu_items( 'primary' ) as $link ): ?>
-									<li class="<?= $link -> getBemClasses( 'nav__item' ); ?>">
-										<a href="<?= $link -> url; ?>" class="nav__link"><?= $link -> label; ?></a>
+									<li class="<?= $link -> getBemClasses( 'nav__item' ); ?><?= NOair_verify_url( $link -> url ) ?>">
+										<a href="<?= $link -> url ?>" class="nav__link"><?= $link -> label; ?></a>
 									</li>
 								<?php endforeach; ?>
 							</ul>
-							<div class="nav__cta cta">
+							<div class="nav__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
 								<a href="<?= get_permalink( NOair_get_template_page( ( 'template-contact' ) ) ) ?>"
 								   class="nav__contact"><?= __( 'contactez nous', 'NOair' ); ?></a>
 							</div>

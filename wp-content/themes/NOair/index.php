@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="description__svgContainer">
-					<?= NOair_get_template_by_extension( get_field( 'svg' ), 350, 450, 'medium' ) ?>
+					<?= $_SESSION[ 'accents' ]['logo'] ?>
 				</div>
 			</section>
 			<section class="whoAreWe">

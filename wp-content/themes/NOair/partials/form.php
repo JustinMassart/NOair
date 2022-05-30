@@ -8,7 +8,7 @@
 	<div class="form__grid">
 		<div class="form__field name">
 			<label for="firstname" class="form__label"><?= __( 'Votre prénom', 'NOair' ); ?></label>
-			<input type="text" name="firstname" id="firstname" class="form__input input"
+			<input type="text" name="firstname" id="firstname" class="form__input input<?= isset( $_SESSION[ 'errors' ][ 'firstname' ] ) ? ' redBorder' : '' ?>"
 				   value="<?= NOair_get_contact_field_value( 'firstname' ); ?>" placeholder="<?= __( 'Votre prénom', 'NOair' ); ?>"/>
 			<?php if ( isset( $_SESSION[ 'errors' ][ 'firstname' ] ) ): ?>
 				<span class="input__error">
@@ -18,7 +18,7 @@
 		</div>
 		<div class="form__field lastname">
 			<label for="lastname" class="form__label"><?= __( 'Votre nom', 'NOair' ); ?></label>
-			<input type="text" name="lastname" id="lastname" class="form__input input"
+			<input type="text" name="lastname" id="lastname" class="form__input input<?= isset( $_SESSION[ 'errors' ][ 'lastname' ] ) ? ' redBorder' : '' ?>"
 				   value="<?= NOair_get_contact_field_value( 'lastname' ); ?>" placeholder="<?= __( 'Votre nom', 'NOair' ); ?>"/>
 			<?php if ( isset( $_SESSION[ 'errors' ][ 'lastname' ] ) ): ?>
 				<span class="input__error">
@@ -28,7 +28,7 @@
 		</div>
 		<div class="form__field email">
 			<label for="email" class="form__label"><?= __( 'Votre adresse e-mail', 'NOair' ); ?></label>
-			<input type="email" name="email" id="email" class="form__input input"
+			<input type="email" name="email" id="email" class="form__input input<?= isset( $_SESSION[ 'errors' ][ 'email' ] ) ? ' redBorder' : '' ?>"
 				   value="<?= NOair_get_contact_field_value( 'email' ); ?>" placeholder="<?= __( 'Votre email', 'NOair' ); ?>"/>
 			<?php if ( isset( $_SESSION[ 'errors' ][ 'email' ] ) ): ?>
 				<span class="input__error">
@@ -43,7 +43,7 @@
 		</div>
 		<div class="form__field subject">
 			<label class="form__label" for="subject"><?= __( 'Votre message est à propos de ...', 'NOair' ) ?></label>
-			<select class="form__select" name="subject" id="subject">
+			<select class="form__select<?= isset( $_SESSION[ 'errors' ][ 'subject' ] ) ? ' redBorder' : '' ?>" name="subject" id="subject">
 				<option value="" selected disabled>
 					<?= __( 'Sélectionner un sujet ici', 'NOair' ) ?>
 				</option>
@@ -69,7 +69,7 @@
 		<div class="form__field message">
 			<label for="message" class="form__label"><?= __( 'Votre message', 'NOair' ); ?></label>
 			<textarea name="message" id="message" cols="30" rows="10"
-					  class="form__input form__textarea input"
+					  class="form__input form__textarea input<?= isset( $_SESSION[ 'errors' ][ 'message' ] ) ? ' redBorder' : '' ?>"
 					  placeholder="<?= __( 'Votre message', 'NOair' ); ?>"><?= NOair_get_contact_field_value( 'message' ); ?></textarea>
 			<?php if ( isset( $_SESSION[ 'errors' ][ 'email' ] ) ): ?>
 				<span class="input__error">
@@ -78,7 +78,7 @@
 			<?php endif; ?>
 		</div>
 		<div class="form__field rules">
-			<label for="rules" class="form__checkbox">
+			<label for="rules" class="form__checkbox <?= isset( $_SESSION[ 'errors' ][ 'rules' ] ) ? ' redBorder' : '' ?>">
 				<input type="checkbox" name="rules" id="rules" class="form__checker" value="1">
 				<span class="form__checklabel"><?= str_replace(
 						':conditions',

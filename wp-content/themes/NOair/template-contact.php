@@ -24,7 +24,19 @@
 						<?php include( __DIR__ . '/partials/form.php' ) ?>
 					</section>
 				<?php else : ?>
-					<p class="form__feedback"><?= __( 'Merci de nous avoir contacté, à bientôt !', 'NOair' ) ?></p>
+					<div class="form__feedback">
+						<span>
+							<?= __( 'Merci de nous avoir contacté.', 'NOair' ) ?>
+						</span>
+						<span class="form__fbAccent">
+							<?= __( 'À bientôt !', 'NOair' ) ?>
+						</span>
+						<div class="form__feedbackCta cta">
+							<a href="/" class="nav__contact">
+								<?= __( 'Revenir à la page d’accueil', 'NOair' ) ?>
+							</a>
+						</div>
+					</div>
 				<?php endif; ?>
 				<section class="contact__general general">
 					<h2 class="general__title sro"><?= __( 'Les différents contacts', 'NOair' ) ?></h2>

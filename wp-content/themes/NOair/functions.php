@@ -477,3 +477,36 @@ HTML;
 		return file_get_contents( __DIR__ . '/resources/assets/' . $svg . '.svg' );
 	}
 
+	function NOair_verify_url( $link ): string {
+		return 'http://' . $_SERVER[ 'HTTP_HOST' ] . $_SERVER[ 'REQUEST_URI' ] === $link ? ' underline' : '';
+	}
+
+	function NOair_verify_lang( $locale ) {
+		return get_locale() === str_replace( '-', '_', $locale[ 'locale' ] ) ? ' underline' : '';
+	}
+
+	function NOair_get_accents(): array {
+
+		static $called = false;
+
+		$_SESSION[ 'accents' ] = '';
+
+		$accents = [];
+		if ( ( $modules = NOair_get_modules() ) -> have_posts() ) {
+			while ( $modules -> have_posts() ) {
+				$modules -> the_post();
+				$accents[] = [
+					'name'    => strtolower( get_field( 'module_name' ) ),
+					'color'   => get_field( 'accent_color' ),
+					'opacity' => str_replace( '#', '#12', get_field( 'accent_color' ) ),
+					'logo'    => NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' ),
+				];
+			}
+		}
+
+		if ( $called === false ) {
+			$called = true;
+
+			return $_SESSION[ 'accents' ] = $accents[ random_int( 0, count( $accents ) - 1 ) ];
+		}
+	}
