@@ -9,9 +9,6 @@
 		<link rel="stylesheet" type="text/css" href="<?= NOair_mix( '/css/style.css' ); ?>"/>
 		<script type="text/javascript" src="<?= NOair_mix( 'js/script.js' ); ?>"></script>
 		<?php wp_head(); ?>
-		<?php if ( ! isset( $_SESSION[ 'accents' ] ) ): ?>
-			<?php NOair_get_accents() ?>
-		<?php endif; ?>
 	</head>
 	<body class="body">
 		<span class="alert"><?= __( 'Ce site est toujours en cours de développement', 'NOair' ) ?></span>

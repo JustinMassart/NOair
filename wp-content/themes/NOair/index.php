@@ -9,29 +9,31 @@
 			</h2>
 			<section class="description">
 				<div class="description__desc">
-					<h3 class="description__title">
-					<span class="sro">
-						<?= __( 'NOair •', 'NOair' ) ?>
-					</span>
+					<h3 class="description__title <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
+						<span class="sro">
+							<?= __( 'NOair •', 'NOair' ) ?>
+						</span>
 						<?= get_field( 'first_hook_part' ) ?>
 						<span class="accent">
-						<?= get_field( 'second_hook_part' ) ?>
-					</span>
+							<?= get_field( 'second_hook_part' ) ?>
+						</span>
 						<?= get_field( 'third_hook_part' ) ?>
 						<span class="accent">
-						<?= get_field( 'fourth_hook_part' ) ?>
-					</span>
+							<?= get_field( 'fourth_hook_part' ) ?>
+						</span>
 					</h3>
-					<div class="description__goal">
-						<?= the_content() ?>
-					</div>
+					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+						<div class="description__goal">
+							<?= the_content() ?>
+						</div>
+					<?php endwhile; endif; ?>
 					<div class="description__cta cta">
 						<a href="<?= get_permalink( NOair_get_template_page( ( 'template-modules' ) ) ) ?>"
 						   class="description__modules"><?= __( 'voir nos modules', 'NOair' ); ?></a>
 					</div>
 				</div>
 				<div class="description__svgContainer">
-					<?= $_SESSION[ 'accents' ]['logo'] ?>
+					<?= $_SESSION[ 'accents' ][ 'logo' ] ?>
 				</div>
 			</section>
 			<section class="whoAreWe">

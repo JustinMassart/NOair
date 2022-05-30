@@ -9,9 +9,12 @@
 					<h3 class="intro__title accent">
 						<?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( ':name', 'NOair' ) ) ?>
 					</h3>
+					<?php if ( have_posts() ): while ( have_posts() ):
+						the_post(); ?>
 					<div class="intro__desc">
-						<?= __( the_content(), 'NOair' ) ?>
-
+						<?= the_content() ?>
+						<?php endwhile;
+							endif; ?>
 					</div>
 				</div>
 				<div class="intro__svg">

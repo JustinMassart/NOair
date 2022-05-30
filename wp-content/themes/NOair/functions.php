@@ -4,15 +4,19 @@
 
 	require_once( __DIR__ . '/Menus/PrimaryMenuItem.php' );
 
-// Lancer la session PHP
+	// Lancer la session PHP
 
 	add_action( 'init', 'NOair_boot_theme', 1 );
 
-	function NOair_boot_theme() {
+	function NOair_boot_theme(): void {
 		load_theme_textdomain( 'NOair', __DIR__ . '/locales' );
 
 		if ( ! session_id() ) {
 			session_start();
+		}
+
+		if ( ! isset( $_SESSION[ 'accents' ] ) ) {
+			NOair_get_accents();
 		}
 	}
 
@@ -335,7 +339,7 @@
 		}
 
 		// Ouvrir le fichier mix-manifest et lire le JSON
-		$manifest = json_decode( file_get_contents( $manifest ), true );
+		$manifest = json_decode( file_get_contents( $manifest ), true, 512, JSON_THROW_ON_ERROR );
 
 		// Check si le fichier demandé est bien présent dans le mix manifest, sinon retourner le fichier sans cache-bursting
 		if ( ! array_key_exists( $path, $manifest ) ) {
@@ -348,7 +352,7 @@
 
 // Fonction permettant d'inclure des composants et d'y injecter des variables locales (scope de l'appel de fonction)
 
-	function NOair_include( string $partial, array $variables = [] ) {
+	function NOair_include( string $partial, array $variables = [] ): void {
 		extract( $variables );
 
 		include( __DIR__ . '/partials/' . $partial . '.php' );
@@ -356,7 +360,7 @@
 
 // Générer un lien vers la première page utilisant un certain template
 
-	function NOair_get_template_page( string $template ) {
+	function NOair_get_template_page( string $template ): int|WP_Post|null {
 		// Créer une WP_Query
 		$query = new WP_Query( [
 			'post_type'   => 'page', // uniquement récupérer des pages
@@ -402,7 +406,7 @@
 
 	// Faire une fonction qui renvoi un template si l’image enregistrée dans une publication est un fichier '.png'
 
-	function NOair_get_png_template( $id, $size ) {
+	function NOair_get_png_template( $id, $size ): string {
 		return wp_get_attachment_image( $id, $size );
 	}
 
@@ -467,7 +471,7 @@ HTML;
 
 	// Faire une fonction qui prend un texte donnée par une zone de texte de ACF et en fait un tableau d’éléments pour chaque entrée
 
-	function NOair_make_array_of_string( $string ) {
+	function NOair_make_array_of_string( $string ): array {
 		return explode( PHP_EOL, $string );
 	}
 
@@ -481,17 +485,14 @@ HTML;
 		return 'http://' . $_SERVER[ 'HTTP_HOST' ] . $_SERVER[ 'REQUEST_URI' ] === $link ? ' underline' : '';
 	}
 
-	function NOair_verify_lang( $locale ) {
+	function NOair_verify_lang( $locale ): string {
 		return get_locale() === str_replace( '-', '_', $locale[ 'locale' ] ) ? ' underline' : '';
 	}
 
 	function NOair_get_accents(): array {
 
-		static $called = false;
-
-		$_SESSION[ 'accents' ] = '';
-
 		$accents = [];
+
 		if ( ( $modules = NOair_get_modules() ) -> have_posts() ) {
 			while ( $modules -> have_posts() ) {
 				$modules -> the_post();
@@ -504,9 +505,5 @@ HTML;
 			}
 		}
 
-		if ( $called === false ) {
-			$called = true;
-
-			return $_SESSION[ 'accents' ] = $accents[ random_int( 0, count( $accents ) - 1 ) ];
-		}
+		return $_SESSION[ 'accents' ] = $accents[ random_int( 0, count( $accents ) - 1 ) ];
 	}
