@@ -1,4 +1,4 @@
-<?php $_SESSION[ 'accents' ][ 'name' ] = strtolower( get_field( 'module_name' ) ); ?>
+<?php NOair_get_new_accent() ?>
 <?php get_header() ?>
 	<main class="main">
 		<div class="main__container">

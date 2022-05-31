@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="<?= NOair_mix( 'js/script.js' ); ?>"></script>
 		<?php wp_head(); ?>
 	</head>
-	<body class="body">
+	<body class="body" itemscope itemtype="https://schema.org/Organization">
 		<span class="alert"><?= __( 'Ce site est toujours en cours de développement', 'NOair' ) ?></span>
 		<div class="body__container">
 			<div class="body__wave <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
@@ -19,23 +19,27 @@
 			<header class="header">
 				<div class="header__wrapper">
 					<h1 class="header__title sro">
-						<?= get_bloginfo( 'name' ) ?>
+						<span itemprop="legalName">
+							<?= get_bloginfo( 'name' ) ?>
+						</span>
 						<span class="sro">
-						<?= wp_title( '•' ) ?>
-					</span>
+							<?= wp_title( '•' ) ?>
+						</span>
 					</h1>
 					<div class="header__logo">
-						<a href="/">
+						<a href="/" itemprop="logo">
 							<?= NOair_get_svg( 'NOair' ) ?>
 						</a>
 					</div>
 					<div class="header__burger">
 						<div class="header__languages">
 							<?php foreach ( pll_the_languages( [ 'raw' => true ] ) as $code => $locale ) : ?>
-								<a href="<?= $locale[ 'url' ]; ?>"
-								   class="header__locale<?= NOair_verify_lang( $locale ) ?>"
-								   title="<?= $locale[ 'name' ]; ?>"
-								   lang="<?= $locale[ 'locale' ]; ?>" hreflang="<?= $locale[ 'locale' ]; ?>"><?= $code; ?></a>
+								<div class="header__langs <?= NOair_verify_lang( $locale ) ?>">
+									<a href="<?= $locale[ 'url' ]; ?>" itemprop="knowsLanguage"
+									   class="header__locale"
+									   title="<?= $locale[ 'name' ]; ?>"
+									   lang="<?= $locale[ 'locale' ]; ?>" hreflang="<?= $locale[ 'locale' ]; ?>"><?= $code; ?></a>
+								</div>
 							<?php endforeach; ?>
 						</div>
 						<nav class="header__nav nav">
@@ -47,7 +51,7 @@
 									</li>
 								<?php endforeach; ?>
 							</ul>
-							<div class="nav__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
+							<div class="nav__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
 								<a href="<?= get_permalink( NOair_get_template_page( ( 'template-contact' ) ) ) ?>"
 								   class="nav__contact"><?= __( 'contactez nous', 'NOair' ); ?></a>
 							</div>

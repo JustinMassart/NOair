@@ -241,15 +241,45 @@
 		$id = wp_insert_post( [
 			'post_type'    => 'message',
 			'post_title'   => 'Message de ' . strtoupper( $data[ 'firstname' ] ) . ' ' . strtoupper( $data[ 'lastname' ] ) . ' à propos de ' . strtoupper( $data[ 'subject' ] ),
-			'post_content' => $data[ 'message' ],
+			'post_content' => 'Prénom et NOM (travail) : ' . $data[ 'firstname' ] . ' ' . strtoupper( $data[ 'lastname' ] ) . ' (' . $data[ 'work' ] . ')' . '<br/>' . 'Adresse email : ' . $data[ 'email' ] . '<br/>' . 'À propos de : ' . $data[ 'subject' ] . '<br/>' . 'Message : ' . $data[ 'message' ],
 			'post_status'  => 'publish',
 		] );
 
 		// Envoyer un mail
+
+		$subject   = '';
+		$email     = '';
+		$sender    = $data[ 'email' ];
+		$firstname = $data[ 'firstname' ];
+		$lastname  = $data[ 'lastname' ];
+
+		switch ( $_POST[ 'subject' ] ) {
+			case 'modules' :
+				$subject = ' à propos des modules';
+				$email   = 'justin.massart@student.hepl.be';
+				break;
+			case 'engineer' :
+				$subject = ' à propos de la section ingénieur';
+				$email   = 'justin.massart@student.hepl.be';
+				break;
+			case 'issep' :
+				$subject = ' à propos de l’ISSeP';
+				$email   = 'justin.massart@student.hepl.be';
+				break;
+			case 'installation' :
+				$subject = ' à de l’achat/l’installation d’un module';
+				$email   = 'justinmassart@outlook.com';
+				break;
+		}
+
 		$content = 'Bonjour, un nouveau message de contact a été envoyé.<br />';
+		$content .= 'de ' . ucfirst( $firstname ) . strtoupper( $lastname ) . '<br />';
+		$content .= 'à propos de ' . $subject . '<br />';
+		$content .= 'email : ' . $sender . '<br />';
 		$content .= 'Pour le visualiser : ' . get_edit_post_link( $id );
 
-		wp_mail( get_bloginfo( 'admin_email' ), 'Nouveau message', $content );
+
+		wp_mail( $email, 'Nouveau message' . $subject, $content );
 
 		// Tout est OK, afficher le feedback positif
 		$_SESSION[ 'feedback_contact_form' ] = [
@@ -265,13 +295,37 @@
 		return wp_verify_nonce( $nonce, 'nonce_check_contact_form' );
 	}
 
-	function NOair_sanitize_contact_form_data(): array {
+	#[ArrayShape( [
+		'firstname' => "string",
+		'lastname'  => "string",
+		'email'     => "string",
+		'work'      => "string",
+		'subject'   => "string",
+		'message'   => "string",
+		'rules'     => "mixed|null"
+	] )] function NOair_sanitize_contact_form_data(): array {
+
+		switch ( $_POST[ 'subject' ] ) {
+			case 'modules' :
+				$about = ' des modules';
+				break;
+			case 'engineer' :
+				$about = ' la section ingénieur';
+				break;
+			case 'issep' :
+				$about = ' l’ISSeP';
+				break;
+			case 'installation' :
+				$about = ' l’achat/l’installation d’un module';
+				break;
+		}
+
 		return [
 			'firstname' => sanitize_text_field( $_POST[ 'firstname' ] ?? null ),
 			'lastname'  => sanitize_text_field( $_POST[ 'lastname' ] ?? null ),
 			'email'     => sanitize_email( $_POST[ 'email' ] ?? null ),
 			'work'      => sanitize_text_field( $_POST[ 'work' ] ?? null ),
-			'subject'   => sanitize_text_field( $_POST[ 'subject' ] ?? null ),
+			'subject'   => sanitize_text_field( $about ?? null ),
 			'message'   => sanitize_text_field( $_POST[ 'message' ] ?? null ),
 			'rules'     => $_POST[ 'rules' ] ?? null
 		];
@@ -497,10 +551,8 @@ HTML;
 			while ( $modules -> have_posts() ) {
 				$modules -> the_post();
 				$accents[] = [
-					'name'    => strtolower( get_field( 'module_name' ) ),
-					'color'   => get_field( 'accent_color' ),
-					'opacity' => str_replace( '#', '#12', get_field( 'accent_color' ) ),
-					'logo'    => NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' ),
+					'name' => strtolower( get_field( 'module_name' ) ),
+					'logo' => NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' ),
 				];
 			}
 		}
@@ -523,4 +575,9 @@ HTML;
 				exit;
 				break;
 		}
+	}
+
+	function NOair_get_new_accent(): void {
+		$_SESSION[ 'accents' ][ 'name' ] = strtolower( get_field( 'module_name' ) );
+		$_SESSION[ 'accents' ][ 'logo' ] = NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' );
 	}

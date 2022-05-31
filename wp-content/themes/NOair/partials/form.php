@@ -12,7 +12,7 @@
 				   value="<?= NOair_get_contact_field_value( 'firstname' ); ?>" placeholder="<?= __( 'Votre prénom', 'NOair' ); ?>"/>
 			<?php if ( isset( $_SESSION[ 'errors' ][ 'firstname' ] ) ): ?>
 				<span class="input__error">
-					Le champs "Votre prénom" est requis pour envoyer le formulaire. Merci de le compléter.
+					<?= __( 'Le champs "Votre prénom" est requis pour envoyer le formulaire. Merci de le compléter.', 'NOair' ) ?>
 				</span>
 			<?php endif; ?>
 		</div>
@@ -22,7 +22,7 @@
 				   value="<?= NOair_get_contact_field_value( 'lastname' ); ?>" placeholder="<?= __( 'Votre nom', 'NOair' ); ?>"/>
 			<?php if ( isset( $_SESSION[ 'errors' ][ 'lastname' ] ) ): ?>
 				<span class="input__error">
-					Le champs "Votre nom" est requis pour envoyer le formulaire. Merci de le compléter.
+					<?= __( 'Le champs "Votre nom" est requis pour envoyer le formulaire. Merci de le compléter.', 'NOair' ) ?>
 				</span>
 			<?php endif; ?>
 		</div>
@@ -32,7 +32,7 @@
 				   value="<?= NOair_get_contact_field_value( 'email' ); ?>" placeholder="<?= __( 'Votre email', 'NOair' ); ?>"/>
 			<?php if ( isset( $_SESSION[ 'errors' ][ 'email' ] ) ): ?>
 				<span class="input__error">
-					Le champs "Votre email" est requis pour envoyer le formulaire. Merci de le compléter.
+					<?= __( 'Le champs "Votre email" est requis pour envoyer le formulaire. Merci de le compléter.', 'NOair' ) ?>
 				</span>
 			<?php endif; ?>
 		</div>
@@ -47,22 +47,22 @@
 				<option value="" selected disabled>
 					<?= __( 'Sélectionner un sujet ici', 'NOair' ) ?>
 				</option>
+				<option value="installation" class="form__option">
+					<?= __( 'Achat/Installation d’un module', 'NOair' ) ?>
+				</option>
 				<option value="modules" class="form__option">
-					<?= __( 'les modules', 'NOair' ) ?>
+					<?= __( 'Informations sur les modules', 'NOair' ) ?>
 				</option>
-				<option value="ingénieur" class="form__option">
-					<?= __( 'la section ingénieur de la HEPL', 'NOair' ) ?>
-				</option>
-				<option value="hepl" class="form__option">
-					<?= __( 'la HEPL', 'NOair' ) ?>
+				<option value="engineer" class="form__option">
+					<?= __( 'Informations sur la section ingénieur de la HEPL', 'NOair' ) ?>
 				</option>
 				<option value="issep" class="form__option">
-					<?= __( 'l’ISSeP', 'NOair' ) ?>
+					<?= __( 'Informations sur l’ISSeP', 'NOair' ) ?>
 				</option>
 			</select>
 			<?php if ( isset( $_SESSION[ 'errors' ][ 'subject' ] ) ): ?>
 				<span class="input__error">
-					Un sujet est requis pour envoyer le formulaire. Merci d'en choisir un.
+					<?= __( 'Un sujet est requis pour envoyer le formulaire. Merci d’en choisir un.', 'NOair' ) ?>
 				</span>
 			<?php endif; ?>
 		</div>
@@ -73,7 +73,7 @@
 					  placeholder="<?= __( 'Votre message', 'NOair' ); ?>"><?= NOair_get_contact_field_value( 'message' ); ?></textarea>
 			<?php if ( isset( $_SESSION[ 'errors' ][ 'email' ] ) ): ?>
 				<span class="input__error">
-					Un message est requis pour envoyer le formulaire. Merci d'en écrire un.
+					<?= __( 'Un sujet est requis pour envoyer le formulaire. Merci d’en choisir un.', 'NOair' ) ?>
 				</span>
 			<?php endif; ?>
 		</div>
@@ -89,7 +89,7 @@
 			</label>
 			<?php if ( isset( $_SESSION[ 'errors' ][ 'rules' ] ) ): ?>
 				<span class="input__error">
-					Vous devez accepter les conditions générales d’utilisations pour envoyer le formulaire.
+					<?= __( 'Vous devez accepter les conditions générales d’utilisations pour envoyer le formulaire.', 'NOair' ) ?>
 				</span>
 			<?php endif; ?>
 		</div>

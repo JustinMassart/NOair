@@ -31,7 +31,7 @@
 						<span class="form__fbAccent">
 							<?= __( 'À bientôt !', 'NOair' ) ?>
 						</span>
-						<div class="form__feedbackCta cta">
+						<div class="form__feedbackCta cta <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
 							<a href="/" class="nav__contact">
 								<?= __( 'Revenir à la page d’accueil', 'NOair' ) ?>
 							</a>
