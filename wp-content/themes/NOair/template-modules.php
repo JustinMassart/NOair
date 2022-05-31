@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 	<main class="main">
 		<section class="modules">
-			<h2 class="main__title">
+			<h2 class="main__title <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
 				<?= get_field( 'first_title_part' ); ?>
 				<span class="accent">
 				<?= get_field( 'second_title_part' ); ?>

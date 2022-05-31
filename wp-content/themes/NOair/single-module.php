@@ -1,3 +1,4 @@
+<?php $_SESSION[ 'accents' ][ 'name' ] = strtolower( get_field( 'module_name' ) ); ?>
 <?php get_header() ?>
 	<main class="main">
 		<div class="main__container">
@@ -21,15 +22,32 @@
 					<?= NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' ) ?>
 				</div>
 			</section>
-			<section class="main__slider slider">
+			<section class="main__images images">
 				<h3 class="sro">
 					<?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( 'Les photos du module :name', 'NOair' ) ) ?>
 				</h3>
-				<div class="intro__pictures">
-					<div class=" intro__img">
-						<?= NOair_get_template_by_extension( get_field( 'module_image' ), 'medium' ) ?>
+				<?php if ( get_field( 'module_images' ) !== null ): ?>
+					<?php $images = [];
+					foreach ( get_field( 'module_images' ) as $img ) {
+						if ( $img !== null && $img !== false ) {
+							$images[] = $img;
+						}
+					} ?>
+					<div class="intro__grid<?= NOair_count_array( $images ) ?>">
+						<?php
+							foreach ( $images as $image ): ?>
+								<div class="intro__img">
+									<?= NOair_get_template_by_extension( $image, 'medium' ) ?>
+								</div>
+							<?php endforeach; ?>
+					</div
+				<?php else: ?>
+					<div class="intro__pictures">
+						<div class=" intro__img">
+							<?= NOair_get_template_by_extension( get_field( 'module_image' ), 'medium' ) ?>
+						</div>
 					</div>
-				</div>
+				<?php endif; ?>
 			</section>
 			<section class="main__specs specs">
 				<h3 class="specs__title sro"><?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( 'Information du module :name', 'NOair' ) ) ?></h3>
@@ -104,7 +122,7 @@
 							<p class="wanted__desc dis_card__desc">
 								<?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( 'Posez nous vos question et demandes au sujet du module :name' ) ) ?>
 							</p>
-							<div class="wanted__cta cta dis_card__cta">
+							<div class="wanted__cta cta dis_card__cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] ?>__cta">
 								<a href="<?= get_permalink( NOair_get_template_page( ( 'template-contact' ) ) ) ?>" class="nav__contact">
 									<?= __( 'contactez nous', 'NOair' ) ?>
 								</a>

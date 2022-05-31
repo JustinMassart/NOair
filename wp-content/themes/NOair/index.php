@@ -27,7 +27,7 @@
 							<?= the_content() ?>
 						</div>
 					<?php endwhile; endif; ?>
-					<div class="description__cta cta">
+					<div class="description__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
 						<a href="<?= get_permalink( NOair_get_template_page( ( 'template-modules' ) ) ) ?>"
 						   class="description__modules"><?= __( 'voir nos modules', 'NOair' ); ?></a>
 					</div>
@@ -40,8 +40,8 @@
 				<h3 class="whoAreWe__title"><?= __( 'NOair c’est :', 'NOair' ) ?></h3>
 				<div class="whoAreWe__grid">
 					<?php foreach ( NOair_get_general_infos() as $key => $value ): ?>
-						<div class="whoAreWe__infos">
-							<span class="whoAreWe__subTitle">
+						<div class="whoAreWe__infos <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
+							<span class="whoAreWe__subTitle accent">
 								<?= $value[ 'info_title' ] ?>
 							</span>
 							<p class="whoAreWe__desc">

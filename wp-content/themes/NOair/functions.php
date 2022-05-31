@@ -507,3 +507,20 @@ HTML;
 
 		return $_SESSION[ 'accents' ] = $accents[ random_int( 0, count( $accents ) - 1 ) ];
 	}
+
+	function NOair_count_array( array $array ) {
+		switch ( count( $array ) ) {
+			case 1 :
+				return '';
+				break;
+			case 2 :
+				return 2;
+				break;
+			case 3 :
+				return 3;
+				break;
+			default :
+				exit;
+				break;
+		}
+	}

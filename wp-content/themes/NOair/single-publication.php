@@ -2,7 +2,7 @@
 <main class="main">
 	<section class="main__article article">
 		<div class="article__text">
-			<h2 class="main__title">
+			<h2 class="main__title <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
 				<?= strtoupper( get_field( 'publication_author' ) ) . ' - ' ?>
 				<span class="accent pbaccent">
 			<?= get_field( 'publication_date' ) ?>
@@ -17,18 +17,20 @@
 				</div>
 			</div>
 		</div>
-		<div class="article__img support">
-			<?php
-				$images = [];
-				foreach ( get_field( 'publication_images' ) as $img ) {
-					if ( $img !== null && $img !== false ) {
-						$images[] = $img;
+		<?php if ( get_field( 'publication_images' ) !== null ): ?>
+			<div class="article__img support">
+				<?php
+					$images = [];
+					foreach ( get_field( 'publication_images' ) as $img ) {
+						if ( $img !== null && $img !== false ) {
+							$images[] = $img;
+						}
 					}
-				}
-				foreach ( $images as $image ): ?>
-					<?= NOair_get_template_by_extension( $image, 'medium' ) ?>
-				<?php endforeach; ?>
-		</div>
+					foreach ( $images as $image ): ?>
+						<?= NOair_get_template_by_extension( $image, 'medium' ) ?>
+					<?php endforeach; ?>
+			</div>
+		<?php endif; ?>
 	</section>
 	<section class="main_discover_modules discover_modules">
 		<h2 class="discover_modules__title">
@@ -43,10 +45,9 @@
 					<p class="dis_card__desc">
 						<?= __( 'Tous les modules dont les articles ci-dessus parlent ce trouvent ici !', 'NOair' ) ?>
 					</p>
-					<div class="dis_card__cta cta">
+					<div class="dis_card__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
 						<a href="<?= get_permalink( NOair_get_template_page( ( 'template-modules' ) ) ) ?>"
-						   class="nav__contact"><?= strtoupper( __( 'voir nos modules', 'NOair' ) ) ?>
-						</a>
+						   class="nav__contact"><?= strtoupper( __( 'voir nos modules', 'NOair' ) ) ?></a>
 					</div>
 				</div>
 				<div class="dis_card__svgContainer">

@@ -4,7 +4,7 @@
 	<main class="main">
 		<section class="contactWrapper">
 			<?php if ( get_locale() === 'fr_BE' ): ?>
-				<h2 class="main__title">
+				<h2 class="main__title <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
 					<?= __( 'Formulaire de ', 'NOair' ) ?>
 					<span class="accent">
 					<?= get_the_title() ?>
