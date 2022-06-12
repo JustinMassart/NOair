@@ -1,7 +1,7 @@
 <article class="modules__module module <?= strtolower( get_field( 'module_name' ) ) ?>">
 	<div class="module__container">
 		<h3 class="module__title <?= strtolower( get_field( 'module_name' ) ) ?>">
-			<span class="accent">
+			<span class="accent" style="color: <?= get_field( 'accent_color' ) ?>">
 				<?= ucfirst( strtolower( get_field( 'module_name' ) ) ) ?>
 			</span>
 		</h3>
@@ -31,7 +31,7 @@
 		<div class="module__imgContainer">
 			<?= NOair_get_template_by_extension( get_field( 'module_image' ), 'medium' ) ?>
 		</div>
-		<div class="module__cta cta <?= strtolower( get_field( 'module_name' ) ) ?>__cta">
+		<div class="module__cta cta <?= strtolower( get_field( 'module_name' ) ) ?>__cta" style="background-color: <?= get_field( 'accent_color' ) ?>">
 			<a href="<?= the_permalink() ?>" class="module__link">
 				<?= __( 'Voir le module ', 'NOair' ); ?>
 				<span class="sro">

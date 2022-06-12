@@ -14,11 +14,11 @@
 							<?= __( 'NOair •', 'NOair' ) ?>
 						</span>
 					<?= get_field( 'first_hook_part' ) ?>
-					<span class="accent">
+					<span class="accent" style="color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 							<?= get_field( 'second_hook_part' ) ?>
 						</span>
 					<?= get_field( 'third_hook_part' ) ?>
-					<span class="accent">
+					<span class="accent" style="color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 							<?= get_field( 'fourth_hook_part' ) ?>
 						</span>
 				</h3>
@@ -27,7 +27,7 @@
 						<?= the_content() ?>
 					</div>
 				<?php endwhile; endif; ?>
-				<div class="description__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
+				<div class="description__cta cta" style="background-color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 					<a href="<?= get_permalink( NOair_get_template_page( ( 'template-modules' ) ) ) ?>"
 					   title="<?= __( 'Aller sur la page des modules', 'NOair' ) ?>"
 					   class="description__modules"><?= __( 'voir nos modules', 'NOair' ); ?></a>
@@ -42,7 +42,7 @@
 			<div class="whoAreWe__grid">
 				<?php foreach ( NOair_get_general_infos() as $key => $value ): ?>
 					<div class="whoAreWe__infos <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
-							<span class="whoAreWe__subTitle accent">
+							<span class="whoAreWe__subTitle" style="color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 								<?= $value[ 'info_title' ] ?>
 							</span>
 						<p class="whoAreWe__desc">
@@ -57,7 +57,7 @@
 				<?= __( 'Vidéo de présentation de NOair - Antilope', 'NOair' ) ?>
 			</h3>
 			<div class="presentation__video">
-				<?= get_field('presentation_video') ?>
+				<?= get_field( 'presentation_video' ) ?>
 			</div>
 		</section>
 		<section class="discover">

@@ -4,7 +4,7 @@
 		<section class="modules">
 			<h2 class="main__title <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
 				<?= get_field( 'first_title_part' ); ?>
-				<span class="accent">
+				<span class="accent" style="color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 				<?= get_field( 'second_title_part' ); ?>
 			</span>
 			</h2>

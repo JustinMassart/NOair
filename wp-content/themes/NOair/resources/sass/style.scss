@@ -33,11 +33,11 @@ $btnBottom: 3.125rem;
 $btnTop: 1.875rem;
 $articleTop: 1.875rem;
 $textBottom: 1.25rem;
-$btnPadding: 15px 30px;
-$btnMargin: 30px 0 30px;
+$btnPadding: 0.9375rem 1.875rem;
+$btnMargin: 1.875rem 0 1.875rem;
 
-$btnShadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
-$footerShadow: 0 -5px 10px 0 rgba(0, 0, 0, .1);
+$btnShadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, .1);
+$footerShadow: 0 -0.3125rem 0.625rem 0 rgba(0, 0, 0, .1);
 
 
 // HIDE SVGS
@@ -46,29 +46,19 @@ $footerShadow: 0 -5px 10px 0 rgba(0, 0, 0, .1);
   display: none;
 }
 
-// TODO : alert
-
-.alert {
-  font-size: 20px;
-  font-family: $glacialB;
-  color: red;
-}
-
-// MOBILE 320px
-
 // BODY
 
 .body {
   position: relative;
   background-color: $background;
   font-family: $glacialR;
-  max-width: 1920px;
+  max-width: 120em;
   min-height: 100vh;
   margin: 0 auto;
 
   &__wave {
     position: absolute;
-    top: 200px;
+    top: 12.5em;
     left: 0;
     min-width: 100%;
     min-height: 20%;
@@ -82,7 +72,7 @@ $footerShadow: 0 -5px 10px 0 rgba(0, 0, 0, .1);
 }
 
 .header {
-  margin-top: 1.875rem;
+  margin-top: $articleTop;
   margin-bottom: $headerBottom;
 
   &__wrapper {
@@ -95,8 +85,8 @@ $footerShadow: 0 -5px 10px 0 rgba(0, 0, 0, .1);
   }
 
   &__logo svg {
-    width: 100px;
-    height: 60px;
+    width: 6.25em;
+    height: 3.75em;
   }
 
   &__burger {
@@ -105,7 +95,7 @@ $footerShadow: 0 -5px 10px 0 rgba(0, 0, 0, .1);
 
   & .nav {
     &__cta {
-      margin-left: 20px;
+      margin-left: $textBottom;
     }
   }
 
@@ -115,20 +105,20 @@ $footerShadow: 0 -5px 10px 0 rgba(0, 0, 0, .1);
 // MAIN
 
 section {
-  max-width: 1440px;
+  max-width: 90rem;
   margin: 0 auto;
 }
 
 .main {
 
   &__container {
-    max-width: 850px;
+    max-width: 53.125em;
     margin: 0 auto;
   }
 
   &__title {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 2em; // 32px
+    line-height: 1.25em;
     font-family: $glacialB;
     margin-bottom: $titleBottom;
     display: inline-block;
@@ -145,7 +135,7 @@ strong {
   font-family: $glacialB;
   border-radius: 100px;
   box-shadow: $btnShadow;
-  font-size: 16px;
+  font-size: 1em; // 16px
   text-align: center;
   overflow: hidden;
   transition: .3s;
@@ -167,19 +157,19 @@ strong {
 
   &__desc {
     display: block;
-    max-width: 490px;
+    max-width: 30.625em;
     margin: 0 auto;
   }
 
   &__title {
     font-family: $glacialB;
-    font-size: 32px;
+    font-size: 2em; // 32px
     padding-bottom: $titleBottom;
   }
 
   &__goal {
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 1.375em; // 22px
+    line-height: 1.36363636em;
   }
 
   &__cta {
@@ -199,8 +189,8 @@ strong {
   margin-bottom: $sectionBottom;
 
   &__title {
-    font-size: 32px;
-    line-height: 48px;
+    font-size: 2em; // 32px
+    line-height: 1.5em;
   }
 
   &__grid {
@@ -217,14 +207,14 @@ strong {
 
   &__subTitle {
     display: inline-block;
-    font-size: 42px;
+    font-size: 2.625em; // 42px
     color: $green;
     margin-bottom: $textBottom;
   }
 
   &__desc {
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 1.375em; // 22px
+    line-height: 1.36363636em;
   }
 
 }
@@ -239,7 +229,7 @@ strong {
     box-shadow: $btnShadow;
     border-radius: 10px;
     min-width: calc(100% - 50px);
-    padding: 30px 25px;
+    padding: 1.875em 1.5625em;
     margin: 0 auto;
   }
 
@@ -258,7 +248,7 @@ strong {
 
   &__title {
     text-align: center;
-    font-size: 32px;
+    font-size: 2em; // 32px
   }
 }
 
@@ -269,16 +259,16 @@ strong {
   border-radius: 10px;
 
   &__container {
-    padding: 30px 25px 30px;
+    padding: 1.875em 1.5625em;
   }
 
   &__title {
-    font-size: 20px;
+    font-size: 1.25em; // 20px
     margin-bottom: $textBottom;
   }
 
   &__desc {
-    font-size: 18px;
+    font-size: 1.125em; // 18px
     line-height: 2.1875rem;
     max-width: 100%;
     display: inline-block;
@@ -289,8 +279,8 @@ strong {
   }
 
   &__cta {
-    font-size: 14px;
-    margin: 30px 0 0;
+    font-size: 0.875em; // 14px
+    margin: 2.1428em 0 0;
   }
 
   & a {
@@ -310,34 +300,34 @@ strong {
     box-shadow: $btnShadow;
     overflow: hidden;
     position: relative;
-    max-width: 640px;
+    max-width: 40rem;
     margin: 0 auto $articleTop;
 
     &__container {
       max-width: 100%;
-      padding: 30px 25px 0;
+      padding: 1.875em 1.5625em 0;
     }
 
     &__title {
       font-family: $glacialB;
-      font-size: 32px;
+      font-size: 2em; // 32px
     }
 
     &__who, &__measures span {
       display: inline-block;
       font-family: $glacialB;
-      font-size: 22px;
-      padding-top: 30px;
+      font-size: 1.375em; // 22px
+      padding-top: 1.36363636em;
       padding-bottom: $textBottom;
     }
 
     &__public, &__measures {
-      max-width: 375px;
+      max-width: 23.4375rem;
     }
 
     &__desc, &__item {
-      font-size: 18px;
-      line-height: 24px;
+      font-size: 1.125em; // 18px
+      line-height: 1.333333em;
     }
 
     &__imgContainer {
@@ -346,12 +336,12 @@ strong {
     }
 
     &__imgContainer img {
-      max-width: 200px;
+      max-width: 12.5rem;
       object-fit: contain;
     }
 
     &__list {
-      padding-left: 15px;
+      padding-left: 0.9375em;
     }
 
     &__item {
@@ -364,7 +354,7 @@ strong {
     }
 
     &__cta {
-      font-size: 16px;
+      font-size: 1em; // 16px
       margin: $btnMargin;
       float: right;
     }
@@ -383,18 +373,18 @@ strong {
   margin-bottom: $sectionBottom;
 
   &__title {
-    font-size: 48px;
+    font-size: 3em; // 48px
     font-family: $glacialB;
     margin-bottom: $titleBottom;
   }
 
   &__desc {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 2em; // 32px
+    line-height: 1.25em;
   }
 
   &__desc p {
-    max-width: 500px;
+    max-width: 31.25rem;
   }
 
   &__desc p:first-of-type {
@@ -403,8 +393,8 @@ strong {
 
   &__grid, &__grid2, &__grid3 {
     display: grid;
-    grid-template-rows: 300px;
-    grid-row-gap: 30px;
+    grid-template-rows: 18.75rem;
+    grid-row-gap: 1.875em;
     justify-items: center;
     align-items: center;
     justify-content: center;
@@ -414,7 +404,7 @@ strong {
     display: block;
     margin: 0 auto;
     position: relative;
-    max-width: 275px;
+    max-width: 17.1875rem;
   }
 
   &__svg {
@@ -423,46 +413,46 @@ strong {
   }
 
   &__img {
-    max-height: 430px;
+    max-height: 26.875rem;
   }
 
   &__img img {
     display: block;
     margin: 0 auto;
     max-width: 100%;
-    max-height: 430px;
+    max-height: 26.875rem;
     object-fit: contain;
   }
 }
 
 .specs {
   margin-top: $sectionBottom;
-  max-width: 500px;
+  max-width: 31.25rem;
 
   &__title {
     font-family: $glacialB;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5em; // 24px
+    line-height: 1.3333333em;
     margin-bottom: $textBottom;
   }
 
   &__desc {
-    margin-bottom: 40px;
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 1.25em; // 20xp
+    margin-bottom: 2em;
+    line-height: 1.6em;
   }
 
   & .quadef {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 20px; // 20px
+    line-height: 1.6em;
 
     & .list:first-of-type {
-      margin-bottom: 10px;
+      margin-bottom: 0.625em;
       color: #4F6F37;
     }
 
     & .list:last-of-type {
-      margin-bottom: 40px;
+      margin-bottom: 2.5em;
       color: #9A0F24;
     }
   }
@@ -471,19 +461,19 @@ strong {
     background: white;
     border-radius: 10px;
     box-shadow: $btnShadow;
-    max-width: 400px;
+    max-width: 25rem;
 
     &__container {
-      padding: 30px;
+      padding: 1.875em;
     }
 
     & .specList {
-      font-size: 20px;
-      line-height: 32px;
+      font-size: 1.25em; // 20px
+      line-height: 1.6em;
     }
 
     & ul {
-      margin-left: 20px;
+      margin-left: 1em;
       list-style-type: disc;
     }
   }
@@ -494,14 +484,14 @@ strong {
 
   &__title {
     font-family: $glacialB;
-    font-size: 24px;
+    font-size: 1.5em; // 24px
     margin-bottom: $textBottom;
     display: inline-block;
   }
 
   &__options {
     display: block;
-    margin: 10px 0 0 25px;
+    margin: 0.4166666em 0 0 1.041em;
   }
 
   &__listContainer {
@@ -517,8 +507,8 @@ strong {
     align-items: center;
 
     &__item {
-      font-size: 30px;
-      padding: 30px 0;
+      font-size: 1.875em; // 30px
+      padding: 1em 0;
     }
 
     &__item {
@@ -527,7 +517,7 @@ strong {
   }
 
   &__cta {
-    margin: 30px 25px;
+    margin: 1.875em 1.5625em;
   }
 }
 
@@ -535,8 +525,8 @@ strong {
 .wanted {
 
   &__imgContainer img {
-    width: 175px;
-    height: 175px;
+    width: 10.9375rem;
+    height: 10.9375rem;
     margin: 0 auto;
     display: block;
   }
@@ -549,11 +539,11 @@ strong {
 // MODULES - PUBLICATION
 
 .recent {
-  margin: 2.8125rem auto 0;
+  margin: 2.8125em auto 0;
 
   &__title {
     font-family: $glacialB;
-    font-size: 32px;
+    font-size: 2em; // 32px
     margin-bottom: $titleBottom;
   }
 
@@ -563,16 +553,16 @@ strong {
   background: white;
   border-radius: 10px;
   box-shadow: $btnShadow;
-  max-width: 420px;
+  max-width: 26.25rem;
   margin: 0 auto;
 
   &__container {
-    padding: 30px 25px;
+    padding: 1.875em 1.5625em;
   }
 
   &__title {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5em; // 24px
+    line-height: 2em;
     margin-bottom: $textBottom;
   }
 
@@ -581,14 +571,14 @@ strong {
   }
 
   &__infos {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 375px;
+    font-size: 1.125em; // 18xp
+    line-height: 1.3333333em;
+    max-width: 23.4375rem;
   }
 
   &__cta {
-    margin: 30px 0 0;
-    font-size: 16px;
+    font-size: 1em; // 16px
+    margin: 1.875em 0 0;
   }
 
   & a {
@@ -613,8 +603,8 @@ strong {
   margin-top: $sectionBottom;
 
   &__title {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 2em; // 32px
+    line-height: 1.25em;
     text-align: center;
   }
 
@@ -633,7 +623,7 @@ strong {
 
 .article {
   margin: 0 auto;
-  max-width: 630px;
+  max-width: 39.375rem;
 
   &__desc {
     font-size: 1.5rem;
@@ -641,7 +631,7 @@ strong {
   }
 
   &__desc:last-child {
-    margin-bottom: 50px;
+    margin-bottom: 3.125em;
   }
 }
 
@@ -656,7 +646,7 @@ strong {
   }
 
   & img:not(:last-of-type) {
-    margin-bottom: 30px;
+    margin-bottom: 1.875em;
   }
 }
 
@@ -667,29 +657,29 @@ strong {
   box-shadow: $btnShadow;
   border-radius: 10px;
   margin: 0 auto;
-  max-width: 1060px;
+  max-width: 66.25rem;
 
   &__container {
-    padding: 30px 25px;
+    padding: 1.875em 1.5625em;
   }
 
   &__title {
-    font-size: 32px;
+    font-size: 2em; // 32px
     font-family: $glacialB;
   }
 
   &__fullname {
     display: inline-block;
     font-family: $glacialB;
-    font-size: 20px;
+    font-size: 1.25em; // 20px
     margin-bottom: $textBottom;
   }
 
   &__desc {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 375px;
-    margin-bottom: 30px;
+    font-size: 18px; // 18px
+    line-height: 1.333333em;
+    max-width: 23.4375rem;
+    margin-bottom: 1.666666em;
   }
 
   &__image img {
@@ -699,15 +689,15 @@ strong {
   }
 
   &__cta {
-    font-size: 16px;
-    margin: 30px 0 0;
+    font-size: 1em; // 16px
+    margin: 1.875em 0 0;
     max-width: fit-content;
   }
 
 }
 
 .partner:not(:last-of-type) {
-  margin-bottom: 30px;
+  margin-bottom: 1.875em;
 }
 
 .hepl {
@@ -765,7 +755,7 @@ strong {
 
   &__field {
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
   }
 
   &__label {
@@ -773,14 +763,14 @@ strong {
   }
 
   &__input, &__select {
+    font-size: 1.25em; // 20xp
     background-color: white;
-    min-height: 50px;
+    min-height: 2.5em;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, .1);
     display: block;
     width: 100%;
-    font-size: 20px;
-    padding-left: 10px;
+    padding-left: 0.5em;
     -ms-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -791,13 +781,13 @@ strong {
   &__textarea {
     min-width: 100%;
     max-width: 100%;
-    min-height: 50px;
+    min-height: 3.125em;
     max-height: 1000px;
   }
 
   ::placeholder {
     font-family: $glacialR;
-    font-size: 20px;
+    font-size: 1em; // 20xp
     color: black;
     vertical-align: middle;
   }
@@ -811,14 +801,13 @@ strong {
     border: none;
     background-color: $green;
     padding: $btnPadding;
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 1em; // 16px
     color: white;
   }
 
   &__errors {
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 1.25em; // 20xp
+    line-height: 1.25em;
     font-family: $glacialB;
     color: darkred;
     margin-bottom: $textBottom;
@@ -829,28 +818,28 @@ strong {
     &__error {
       display: inline-block;
       color: darkred;
-      font-size: 16px;
-      line-height: 20px;
-      margin-top: 10px;
+      font-size: 1em; // 16px
+      line-height: 1.25em;
+      margin-top: 0.625em;
     }
   }
 
   &__feedback {
 
     & .cta {
-      margin-bottom: 50px;
+      margin-bottom: 3.125em;
     }
   }
 
   &__feedback span {
-    font-size: 40px;
+    font-size: 2.5em; // 40xp
     font-family: $glacialB;
-    line-height: 50px;
+    line-height: 1.25em;
   }
 
   &__fbAccent {
     display: block;
-    margin-bottom: 50px;
+    margin-bottom: 1.25em;
   }
 
 
@@ -866,18 +855,18 @@ strong {
     background-color: white;
     border-radius: 10px;
     box-shadow: $btnShadow;
-    max-width: 300px;
+    max-width: 18/75rem;
     margin: 0 auto;
   }
 
   &__contact:not(:last-of-type) {
-    margin-bottom: 30px;
+    margin-bottom: 1.875em;
   }
 
   & span:not(:last-of-type) {
+    font-size: 1.125em; /// 18px
     display: block;
-    margin-bottom: 10px;
-    font-size: 18px;
+    margin-bottom: 0.5555555em;
   }
 
   &__title {
@@ -896,35 +885,35 @@ strong {
 
   &__grid {
     display: grid;
-    grid-template-columns: 150px 150px;
+    grid-template-columns: 9.375rem 9.375rem;
     align-items: center;
     justify-content: space-between;
-    padding: 0 25px;
+    padding: 0 1.5625em;
   }
 
   &__logo {
-    max-width: 136px;
-    max-height: 50px;
-    padding: 30px 0 0 25px;
-    margin-bottom: 50px;
+    max-width: 8.5rem;
+    max-height: 3.125em;
+    padding: 1.875em 0 0 1.5625em;
+    margin-bottom: 3.125em;
   }
 
   &__dev {
-    max-width: 125px;
-    padding: 30px 15px;
+    max-width: 7.8125rem;
+    padding: 1.875em 0.9375em;
     margin: 0 auto;
   }
 
 }
 
 .socials {
-  padding-right: 25px;
+  padding-right: 1.5625em;
   display: grid;
   grid-template-columns: 1fr 1fr;
 
   &__insta, &__fb {
-    max-width: 50px;
-    max-height: 50px;
+    max-width: 3.125em;
+    max-height: 3.125em;
   }
 }
 
@@ -934,7 +923,7 @@ strong {
     max-width: max-content;
     display: flex;
     flex-direction: column;
-    padding-left: 25px;
+    padding-left: 1.5625em;
   }
 
   &__container a {
@@ -943,11 +932,11 @@ strong {
   }
 
   &__iteme {
-    padding: 5px;
+    padding: 0.3125em;
   }
 
   &__item:not(:first-of-type) {
-    margin-top: 10px;
+    margin-top: 0.3125em;
   }
 
   & .copyright {
@@ -958,7 +947,7 @@ strong {
 
 .redBorder {
   border: 2px solid darkred;
-  border-radius: 10px;
+  border-radius: 0.3125em;
 }
 
 @media screen and (min-width: 0px) {
@@ -1505,7 +1494,7 @@ strong {
   }
 }
 
-.antilope {
+/*.antilope {
 
   &__cta {
     background-color: $orange;
@@ -1617,7 +1606,7 @@ strong {
   .form__button {
     background-color: $blue;
   }
-}
+}*/
 
 .back {
   margin-bottom: 20px;

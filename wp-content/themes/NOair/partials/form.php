@@ -93,10 +93,10 @@
 				</span>
 			<?php endif; ?>
 		</div>
-		<div class="form__actions <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
+		<div class="form__actions">
 			<input type="hidden" name="action" value="submit_contact_form"/>
 			<?php wp_nonce_field( 'nonce_check_contact_form' ); ?>
-			<button type="submit" class="form__button cta"><?= __( 'Envoyer', 'NOair' ); ?></button>
+			<button type="submit" class="form__button cta" style="background-color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>"><?= __( 'Envoyer', 'NOair' ); ?></button>
 		</div>
 	</div>
 </form>

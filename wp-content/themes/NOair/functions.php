@@ -550,9 +550,10 @@ HTML;
 			while ( $modules -> have_posts() ) {
 				$modules -> the_post();
 				$accents[] = [
-					'name'  => strtolower( get_field( 'module_name' ) ),
-					'color' => strtolower( get_field( 'accent_color' ) ),
-					'logo'  => NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' ),
+					'name'     => strtolower( get_field( 'module_name' ) ),
+					'color'    => get_field( 'accent_color' ),
+					'color-op' => str_replace( ')', ',.07)', get_field( 'accent_color' ) ),
+					'logo'     => NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' ),
 				];
 			}
 		}
@@ -578,7 +579,8 @@ HTML;
 	}
 
 	function NOair_get_new_accent(): void {
-		$_SESSION[ 'accents' ][ 'name' ]         = strtolower( get_field( 'module_name' ) );
-		$_SESSION[ 'accents' ][ 'accent_color' ] = strtolower( get_field( 'module_name' ) );
-		$_SESSION[ 'accents' ][ 'logo' ]         = NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' );
+		$_SESSION[ 'accents' ][ 'name' ]     = strtolower( get_field( 'module_name' ) );
+		$_SESSION[ 'accents' ][ 'color' ]    = strtolower( get_field( 'accent_color' ) );
+		$_SESSION[ 'accents' ][ 'color-op' ] = str_replace( ')', ',.07)', get_field( 'accent_color' ) );
+		$_SESSION[ 'accents' ][ 'logo' ]     = NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' );
 	}

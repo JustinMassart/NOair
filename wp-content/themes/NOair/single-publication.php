@@ -14,7 +14,7 @@
 		<div class="article__text">
 			<h2 class="main__title <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
 				<?= strtoupper( get_field( 'publication_author' ) ) . ' - ' ?>
-				<span class="accent pbaccent">
+				<span class="accent pbaccent" style="color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 			<?= get_field( 'publication_date' ) ?>
 		</span>
 			</h2>
@@ -55,7 +55,7 @@
 					<p class="dis_card__desc">
 						<?= __( 'Tous les modules dont les articles ci-dessus parlent ce trouvent ici !', 'NOair' ) ?>
 					</p>
-					<div class="dis_card__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
+					<div class="dis_card__cta cta" style="background-color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 						<a href="<?= get_permalink( NOair_get_template_page( ( 'template-modules' ) ) ) ?>"
 						   title="<?= __( 'Aller sur la page des modules', 'NOair' ) ?>"
 						   class="nav__contact"><?= strtoupper( __( 'voir nos modules', 'NOair' ) ) ?></a>

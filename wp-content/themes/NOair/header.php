@@ -11,9 +11,8 @@
 		<?php wp_head(); ?>
 	</head>
 	<body class="body" itemscope itemtype="https://schema.org/Organization">
-		<span class="alert"><?= __( 'Ce site est toujours en cours de développement', 'NOair' ) ?></span>
 		<div class="body__container">
-			<div class="body__wave <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
+			<div class="body__wave <?= $_SESSION[ 'accents' ][ 'name' ] ?>" style="fill: <?= $_SESSION[ 'accents' ][ 'color-op' ] ?>">
 				<?= NOair_get_svg( 'wave' ) ?>
 			</div>
 			<header class="header">
@@ -53,7 +52,7 @@
 									</li>
 								<?php endforeach; ?>
 							</ul>
-							<div class="nav__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
+							<div class="nav__cta cta" style="background-color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 								<a href="<?= get_permalink( NOair_get_template_page( ( 'template-contact' ) ) ) ?>"
 								   title="<?= __( 'Aller sur la page de contact', 'NOair' ) ?>"
 								   class="nav__contact"><?= __( 'contactez nous', 'NOair' ); ?></a>

@@ -4,15 +4,15 @@
 	<main class="main">
 		<section class="contactWrapper">
 			<?php if ( get_locale() === 'fr_BE' ): ?>
-				<h2 class="main__title <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
+				<h2 class="main__title">
 					<?= __( 'Formulaire de ', 'NOair' ) ?>
-					<span class="accent">
+					<span class="accent" style="color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 					<?= get_the_title() ?>
 				</span>
 				</h2>
 			<?php else: ?>
 				<h2 class="main__title">
-				<span class="accent">
+				<span class="accent" style="color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 					<?= get_the_title() ?>
 				</span>
 					<?= __( ' form', 'NOair' ) ?>
@@ -33,7 +33,7 @@
 						</span>
 						<div class="form__feedbackCta cta <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
 							<a href="/" class="nav__contact"
-							   title="<?= __('Aller sur la page d’accueil', 'NOair') ?>">
+							   title="<?= __( 'Aller sur la page d’accueil', 'NOair' ) ?>">
 								<?= __( 'Revenir à la page d’accueil', 'NOair' ) ?>
 							</a>
 						</div>

@@ -4,7 +4,7 @@
 		<section class="main__hepling hepling">
 			<h2 class="main__title <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
 				<?= get_field( 'first_title_part' ); ?>
-				<span class="accent">
+				<span class="accent" style="color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 			<?= get_field( 'second_title_part' ); ?>
 		</span>
 			</h2>
@@ -27,9 +27,9 @@
 						<p class="dis_card__desc">
 							<?= __( 'Tous les modules dont les articles ci-dessus parlent ce trouvent ici !', 'NOair' ) ?>
 						</p>
-						<div class="dis_card__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
+						<div class="dis_card__cta cta" style="background-color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 							<a href="<?= get_permalink( NOair_get_template_page( ( 'template-modules' ) ) ) ?>"
-							   title="<?= __('Aller sur la page de contact', 'NOair') ?>"
+							   title="<?= __( 'Aller sur la page de contact', 'NOair' ) ?>"
 							   class="nav__contact"><?= strtoupper( __( 'voir nos modules', 'NOair' ) ) ?></a>
 						</div>
 					</div>

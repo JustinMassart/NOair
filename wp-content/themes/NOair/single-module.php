@@ -17,7 +17,7 @@
 			</h2>
 			<section class="main__intro intro <?= strtolower( get_field( 'module_name' ) ) ?>">
 				<div class="intro__hero">
-					<h3 class="intro__title accent">
+					<h3 class="intro__title accent" style="color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 						<?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( ':name', 'NOair' ) ) ?>
 					</h3>
 					<div class="intro__desc">
@@ -116,7 +116,7 @@
 					<span class="measures__options">
 						<?= __( '* Sous options.', 'NOair' ) ?>
 					</span>
-					<div class="measures__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] ?>__cta">
+					<div class="measures__cta cta" style="background-color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 						<a href="<?= __( 'https://www.wallonair.be/fr/', 'NOair' ) ?>"
 						   title="<?= __( 'Aller sur le site de Wallonair', 'NOair' ) ?>"
 						   class="measures__wallonair">
@@ -135,7 +135,7 @@
 							<p class="wanted__desc dis_card__desc">
 								<?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( 'Posez nous vos question et demandes au sujet du module :name' ) ) ?>
 							</p>
-							<div class="wanted__cta cta dis_card__cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] ?>__cta">
+							<div class="wanted__cta cta dis_card__cta" style="background-color: <?= $_SESSION[ 'accents' ][ 'color' ] ?>">
 								<a href="<?= get_permalink( NOair_get_template_page( ( 'template-contact' ) ) ) ?>"
 								   title="<?= __( 'Aller sur la page de contact', 'NOair' ) ?>"
 								   class="nav__contact">
