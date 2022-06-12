@@ -29,6 +29,7 @@
 				<?php endwhile; endif; ?>
 				<div class="description__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
 					<a href="<?= get_permalink( NOair_get_template_page( ( 'template-modules' ) ) ) ?>"
+					   title="<?= __( 'Aller sur la page des modules', 'NOair' ) ?>"
 					   class="description__modules"><?= __( 'voir nos modules', 'NOair' ); ?></a>
 				</div>
 			</div>
@@ -56,7 +57,7 @@
 				<?= __( 'Vidéo de présentation de NOair - Antilope', 'NOair' ) ?>
 			</h3>
 			<div class="presentation__video">
-				<?= get_field( 'presentation_video' ) ?>
+				<?= get_field('presentation_video') ?>
 			</div>
 		</section>
 		<section class="discover">
@@ -74,6 +75,7 @@
 						</p>
 						<div class="dis_card__cta cta">
 							<a class="dis_card__link" href="<?= get_permalink( NOair_get_template_page( ( 'template-publications' ) ) ) ?>"
+							   title="<?= __( 'Aller sur la page des publications', 'NOair' ) ?>"
 							   class="nav__contact"><?= strtoupper( __( 'voir les publications', 'NOair' ) ) ?></a>
 						</div>
 					</div>
@@ -93,6 +95,7 @@
 						</p>
 						<div class="dis_card__cta cta">
 							<a class="dis_card__link" href="<?= get_permalink( NOair_get_template_page( ( 'template-partners' ) ) ) ?>"
+							   title="<?= __( 'Aller sur la page des partenaires', 'NOair' ) ?>"
 							   class="nav__contact">
 								<?= strtoupper( __( 'voir les partenaires', 'NOair' ) ) ?>
 							</a>

@@ -24,15 +24,16 @@
 						<?php include( __DIR__ . '/partials/form.php' ) ?>
 					</section>
 				<?php else : ?>
-					<div class="form__feedback">
+					<div class="form__feedback <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
 						<span>
 							<?= __( 'Merci de nous avoir contacté.', 'NOair' ) ?>
 						</span>
-						<span class="form__fbAccent">
+						<span class="form__fbAccent accent">
 							<?= __( 'À bientôt !', 'NOair' ) ?>
 						</span>
 						<div class="form__feedbackCta cta <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
-							<a href="/" class="nav__contact">
+							<a href="/" class="nav__contact"
+							   title="<?= __('Aller sur la page d’accueil', 'NOair') ?>">
 								<?= __( 'Revenir à la page d’accueil', 'NOair' ) ?>
 							</a>
 						</div>

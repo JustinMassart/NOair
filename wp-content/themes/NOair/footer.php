@@ -3,18 +3,22 @@
 	<h2 class="sro"><?= __( 'Pied de page', 'NOair' ) ?></h2>
 	<div class="footer__grid">
 		<div class="footer__logo">
-			<a href="/">
+			<a href="/" title="<?= __( 'Aller sur la page d’accueil', 'NOair' ) ?>">
 				<?= NOair_get_svg( 'NOair' ) ?>
 			</a>
 		</div>
 		<div class="footer__socials socials">
 			<div class="socials__insta">
-				<a href="https://instagram.com/ingenieur.hepl?igshid=YmMyMTA2M2Y=" itemprop="sameAs">
+				<a href="https://instagram.com/ingenieur.hepl?igshid=YmMyMTA2M2Y=" itemprop="sameAs"
+				   title="<?= __( 'Aller sur le compte Instagram de NOair', 'NOair' ) ?>">
 					<?= NOair_get_svg( 'instagram' ) ?>
 				</a>
 			</div>
 			<div class="socials__fb" itemprop="sameAs">
-				<?= NOair_get_svg( 'facebook' ) ?>
+				<a href="https://fr-fr.facebook.com/ISILELECTRO/" itemprop="sameAs"
+				   title="<?= __( 'Aller sur la page Facebook de NOair', 'NOair' ) ?>">
+					<?= NOair_get_svg( 'facebook' ) ?>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -23,7 +27,9 @@
 		<ul class="fnav__container">
 			<?php foreach ( NOair_get_menu_items( 'footer' ) as $link ): ?>
 				<li class="<?= $link -> getBemClasses( 'fnav__item' ); ?>">
-					<a href="<?= $link -> url; ?>" class="fnav__link"><?= $link -> label ?></a>
+					<a href="<?= $link -> url; ?>"
+					   title="<?= __( 'Aller sur la page ', 'NOair' ) . $link -> label ?>"
+					   class="fnav__link"><?= $link -> label ?></a>
 					<span class="footer__ball"> • </span>
 				</li>
 			<?php endforeach; ?>

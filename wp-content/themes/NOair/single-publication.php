@@ -1,5 +1,15 @@
 <?php get_header() ?>
-<main class="main">
+<main class="main main__pb">
+	<div class="back">
+		<a title="<?= __( 'Retourner sur la page des publications', 'NOair' ) ?>" href="<?= get_permalink( NOair_get_template_page( ( 'template-publications' ) ) ) ?>">
+			<div class="back__svg">
+				<?= NOair_get_svg( 'arrow' ) ?>
+			</div>
+			<span>
+				<?= __( 'Retourner sur la page des publications', 'NOair' ) ?>
+			</span>
+		</a>
+	</div>
 	<section class="main__article article">
 		<div class="article__text">
 			<h2 class="main__title <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
@@ -47,6 +57,7 @@
 					</p>
 					<div class="dis_card__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
 						<a href="<?= get_permalink( NOair_get_template_page( ( 'template-modules' ) ) ) ?>"
+						   title="<?= __( 'Aller sur la page des modules', 'NOair' ) ?>"
 						   class="nav__contact"><?= strtoupper( __( 'voir nos modules', 'NOair' ) ) ?></a>
 					</div>
 				</div>

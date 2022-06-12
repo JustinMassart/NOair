@@ -77,7 +77,7 @@
 		'public'        => true,
 		'menu_position' => 20,
 		'menu_icon'     => 'dashicons-welcome-add-page',
-		'supports'      => [ 'title', 'editor' ],
+		'supports'      => [ 'title' ],
 		'rewrite'       => [ 'slug' => 'modules' ],
 	] );
 
@@ -277,7 +277,6 @@
 		$content .= 'à propos de ' . $subject . '<br />';
 		$content .= 'email : ' . $sender . '<br />';
 		$content .= 'Pour le visualiser : ' . get_edit_post_link( $id );
-
 
 		wp_mail( $email, 'Nouveau message' . $subject, $content );
 
@@ -536,7 +535,7 @@ HTML;
 	}
 
 	function NOair_verify_url( $link ): string {
-		return 'http://' . $_SERVER[ 'HTTP_HOST' ] . $_SERVER[ 'REQUEST_URI' ] === $link ? ' underline' : '';
+		return 'https://' . $_SERVER[ 'HTTP_HOST' ] . $_SERVER[ 'REQUEST_URI' ] === $link ? ' underline' : '';
 	}
 
 	function NOair_verify_lang( $locale ): string {
@@ -551,8 +550,9 @@ HTML;
 			while ( $modules -> have_posts() ) {
 				$modules -> the_post();
 				$accents[] = [
-					'name' => strtolower( get_field( 'module_name' ) ),
-					'logo' => NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' ),
+					'name'  => strtolower( get_field( 'module_name' ) ),
+					'color' => strtolower( get_field( 'accent_color' ) ),
+					'logo'  => NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' ),
 				];
 			}
 		}
@@ -578,6 +578,7 @@ HTML;
 	}
 
 	function NOair_get_new_accent(): void {
-		$_SESSION[ 'accents' ][ 'name' ] = strtolower( get_field( 'module_name' ) );
-		$_SESSION[ 'accents' ][ 'logo' ] = NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' );
+		$_SESSION[ 'accents' ][ 'name' ]         = strtolower( get_field( 'module_name' ) );
+		$_SESSION[ 'accents' ][ 'accent_color' ] = strtolower( get_field( 'module_name' ) );
+		$_SESSION[ 'accents' ][ 'logo' ]         = NOair_get_template_by_extension( get_field( 'logo' ), 'thumbnail' );
 	}

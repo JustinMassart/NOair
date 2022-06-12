@@ -1,7 +1,6 @@
 // @IMPORT
 
 @import url('./reset.scss');
-@import url('./functions.scss');
 @import url('./fonts.scss');
 
 // VARIABLES
@@ -246,7 +245,7 @@ strong {
 
   iframe {
     border-radius: 10px;
-    width: 100%;
+    min-width: 100%;
     min-height: 100%;
     display: block;
     margin: 0 auto;
@@ -501,14 +500,17 @@ strong {
   }
 
   &__options {
-    display: inline-block;
-    margin-top: 10px;
+    display: block;
+    margin: 10px 0 0 25px;
   }
 
-  & .list {
+  &__listContainer {
     background-color: white;
     border-radius: 10px;
     box-shadow: $btnShadow;
+  }
+
+  & .list {
     text-align: center;
     display: grid;
     grid-template-rows: 1fr;
@@ -519,9 +521,13 @@ strong {
       padding: 30px 0;
     }
 
-    &__item:nth-last-child(n+2) {
+    &__item {
       border-bottom: 1px solid rgba(0, 0, 0, .1);
     }
+  }
+
+  &__cta {
+    margin: 30px 25px;
   }
 }
 
@@ -843,7 +849,6 @@ strong {
   }
 
   &__fbAccent {
-    color: $green;
     display: block;
     margin-bottom: 50px;
   }
@@ -1258,18 +1263,6 @@ strong {
       max-height: 400px;
     }
   }
-
-  .presentation {
-
-    &__video {
-      min-height: 600px;
-    }
-
-    & iframe {
-      min-height: 600px;
-    }
-  }
-
 }
 
 
@@ -1525,6 +1518,10 @@ strong {
   & svg {
     fill: $opOrange;
   }
+
+  .form__button {
+    background-color: $orange;
+  }
 }
 
 .madoqua {
@@ -1539,6 +1536,10 @@ strong {
 
   & svg {
     fill: $opOrange;
+  }
+
+  .form__button {
+    background-color: $orange;
   }
 }
 
@@ -1555,6 +1556,10 @@ strong {
   & svg {
     fill: $opGreen;
   }
+
+  .form__button {
+    background-color: $green;
+  }
 }
 
 .nyala {
@@ -1570,6 +1575,10 @@ strong {
   & svg {
     fill: $opDarkGreen;
   }
+
+  .form__button {
+    background-color: $darkGreen;
+  }
 }
 
 .impala {
@@ -1580,6 +1589,10 @@ strong {
 
   & .accent {
     color: $purple;
+  }
+
+  .form__button {
+    background-color: $purple;
   }
 
   & svg {
@@ -1600,4 +1613,36 @@ strong {
   & svg {
     fill: $opBlue;
   }
+
+  .form__button {
+    background-color: $blue;
+  }
+}
+
+.back {
+  margin-bottom: 20px;
+  display: inline-block;
+
+  a {
+    text-decoration: none;
+    color: grey;
+    display: flex;
+    align-items: center;
+
+    .back__svg {
+      display: inline-block;
+    }
+
+    .back__svg svg {
+      min-width: 20px;
+      transform: rotate(180deg);
+      margin-right: 20px;
+    }
+  }
+}
+
+.main__pb {
+  display: grid;
+  max-width: 990px;
+  margin: 0 auto;
 }

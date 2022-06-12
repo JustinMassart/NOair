@@ -1,7 +1,7 @@
 <h3 class="sro">
 	<?= __( 'Formulaire pour contacter Noair • Antilope', 'NOair' ) ?>
 </h3>
-<form action="<?= 'http://noair.test' ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
+<form action="<?= 'https://noair.justinmassart.be' ?>/wp-admin/admin-post.php" method="POST" class="contact__form form">
 	<?php if ( isset( $_SESSION[ 'feedback_contact_form' ] ) && ! $_SESSION[ 'feedback_contact_form' ][ 'success' ] ) : ?>
 		<p class="form__errors"><?= __( 'Oups ! Ce formulaire contient des erreurs, merci de les corriger.', 'NOair' ); ?></p>
 	<?php endif; ?>
@@ -93,7 +93,7 @@
 				</span>
 			<?php endif; ?>
 		</div>
-		<div class="form__actions">
+		<div class="form__actions <?= $_SESSION[ 'accents' ][ 'name' ] ?>">
 			<input type="hidden" name="action" value="submit_contact_form"/>
 			<?php wp_nonce_field( 'nonce_check_contact_form' ); ?>
 			<button type="submit" class="form__button cta"><?= __( 'Envoyer', 'NOair' ); ?></button>

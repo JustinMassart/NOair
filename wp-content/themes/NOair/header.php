@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?= get_locale() ?>">
+<html lang="<?= explode( '_', get_locale() )[ 0 ] ?>">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
 			  content="<?= __( 'Rejoignez la sensibilisation contre la pollution grâce aux modules de NOair permettant de mesurer la qualité de l’air.', 'NOair' ); ?>">
 		<title><?= get_bloginfo( 'name' ); ?><?= wp_title( '•' ); ?></title>
 		<link rel="stylesheet" type="text/css" href="<?= NOair_mix( '/css/style.css' ); ?>"/>
-		<script type="text/javascript" src="<?= NOair_mix( 'js/script.js' ); ?>"></script>
+		<script type="text/javascript" src="<?= NOair_mix( '/js/script.js' ); ?>"></script>
 		<?php wp_head(); ?>
 	</head>
 	<body class="body" itemscope itemtype="https://schema.org/Organization">
@@ -27,7 +27,7 @@
 						</span>
 					</h1>
 					<div class="header__logo">
-						<a href="/" itemprop="logo">
+						<a href="/" itemprop="logo" title="<?= __( 'Aller sur la page d’accueil', 'NOair' ) ?>">
 							<?= NOair_get_svg( 'NOair' ) ?>
 						</a>
 					</div>
@@ -36,6 +36,7 @@
 							<?php foreach ( pll_the_languages( [ 'raw' => true ] ) as $code => $locale ) : ?>
 								<div class="header__langs <?= NOair_verify_lang( $locale ) ?>">
 									<a href="<?= $locale[ 'url' ]; ?>" itemprop="knowsLanguage"
+									   title="<?= __( 'Changer la langue en ', 'NOair' ) . strtoupper( $code ) ?>"
 									   class="header__locale"
 									   title="<?= $locale[ 'name' ]; ?>"
 									   lang="<?= $locale[ 'locale' ]; ?>" hreflang="<?= $locale[ 'locale' ]; ?>"><?= $code; ?></a>
@@ -47,12 +48,14 @@
 							<ul class="nav__container">
 								<?php foreach ( NOair_get_menu_items( 'primary' ) as $link ): ?>
 									<li class="<?= $link -> getBemClasses( 'nav__item' ); ?><?= NOair_verify_url( $link -> url ) ?>">
-										<a href="<?= $link -> url ?>" class="nav__link"><?= $link -> label; ?></a>
+										<a href="<?= $link -> url ?>" title="<?= __( 'Aller sur la page ', 'NOair' ) . $link -> label ?>"
+										   class="nav__link"><?= $link -> label; ?></a>
 									</li>
 								<?php endforeach; ?>
 							</ul>
 							<div class="nav__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
 								<a href="<?= get_permalink( NOair_get_template_page( ( 'template-contact' ) ) ) ?>"
+								   title="<?= __( 'Aller sur la page de contact', 'NOair' ) ?>"
 								   class="nav__contact"><?= __( 'contactez nous', 'NOair' ); ?></a>
 							</div>
 						</nav>

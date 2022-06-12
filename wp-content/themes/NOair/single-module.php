@@ -2,6 +2,16 @@
 <?php get_header() ?>
 	<main class="main">
 		<div class="main__container">
+			<div class="back">
+				<a title="<?= __( 'Retourner sur la page des modules', 'NOair' ) ?>" href="<?= get_permalink( NOair_get_template_page( ( 'template-modules' ) ) ) ?>">
+					<div class="back__svg">
+						<?= NOair_get_svg( 'arrow' ) ?>
+					</div>
+					<span>
+						<?= __( 'Retourner sur la page des modules', 'NOair' ) ?>
+					</span>
+				</a>
+			</div>
 			<h2 class="main__title sro">
 				<?= __( 'Le module ' ) . get_field( 'module_name' ) ?>
 			</h2>
@@ -10,12 +20,8 @@
 					<h3 class="intro__title accent">
 						<?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( ':name', 'NOair' ) ) ?>
 					</h3>
-					<?php if ( have_posts() ): while ( have_posts() ):
-						the_post(); ?>
 					<div class="intro__desc">
-						<?= the_content() ?>
-						<?php endwhile;
-							endif; ?>
+						<?= get_field( 'module_slogan' ) ?>
 					</div>
 				</div>
 				<div class="intro__svg">
@@ -107,10 +113,17 @@
 							</li>
 						<?php endforeach; ?>
 					</ul>
+					<span class="measures__options">
+						<?= __( '* Sous options.', 'NOair' ) ?>
+					</span>
+					<div class="measures__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] ?>__cta">
+						<a href="<?= __( 'https://www.wallonair.be/fr/', 'NOair' ) ?>"
+						   title="<?= __( 'Aller sur le site de Wallonair', 'NOair' ) ?>"
+						   class="measures__wallonair">
+							<?= __( 'voir les mesures en direct', 'NOair' ) ?>
+						</a>
+					</div>
 				</div>
-				<span class="measures__options">
-				<?= __( '* Sous options.', 'NOair' ) ?>
-			</span>
 			</section>
 			<section class="wanted">
 				<article class="wanted__card <?= strtolower( get_field( 'module_name' ) ) ?> dis_card">
@@ -123,7 +136,9 @@
 								<?= str_replace( ':name', ucfirst( strtolower( get_field( 'module_name' ) ) ), __( 'Posez nous vos question et demandes au sujet du module :name' ) ) ?>
 							</p>
 							<div class="wanted__cta cta dis_card__cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] ?>__cta">
-								<a href="<?= get_permalink( NOair_get_template_page( ( 'template-contact' ) ) ) ?>" class="nav__contact">
+								<a href="<?= get_permalink( NOair_get_template_page( ( 'template-contact' ) ) ) ?>"
+								   title="<?= __( 'Aller sur la page de contact', 'NOair' ) ?>"
+								   class="nav__contact">
 									<?= __( 'contactez nous', 'NOair' ) ?>
 								</a>
 							</div>

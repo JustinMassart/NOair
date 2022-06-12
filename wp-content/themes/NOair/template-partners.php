@@ -29,6 +29,7 @@
 						</p>
 						<div class="dis_card__cta cta <?= $_SESSION[ 'accents' ][ 'name' ] ?> <?= $_SESSION[ 'accents' ][ 'name' ] . '__cta' ?>">
 							<a href="<?= get_permalink( NOair_get_template_page( ( 'template-modules' ) ) ) ?>"
+							   title="<?= __('Aller sur la page de contact', 'NOair') ?>"
 							   class="nav__contact"><?= strtoupper( __( 'voir nos modules', 'NOair' ) ) ?></a>
 						</div>
 					</div>

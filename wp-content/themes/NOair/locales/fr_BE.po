@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-31 14:42+0200\n"
-"PO-Revision-Date: 2022-05-31 14:44+0200\n"
+"POT-Creation-Date: 2022-06-12 12:58+0200\n"
+"PO-Revision-Date: 2022-06-12 12:58+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_BE\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -19,9 +19,25 @@ msgstr ""
 msgid "Pied de page"
 msgstr "Pied de page"
 
-#: footer.php:22
+#: footer.php:6 header.php:30 template-contact.php:36
+msgid "Aller sur la page d’accueil"
+msgstr "Aller sur la page d’accueil"
+
+#: footer.php:13
+msgid "Aller sur le compte Instagram de NOair"
+msgstr "Aller sur le compte Instagram de NOair"
+
+#: footer.php:19
+msgid "Aller sur la page Facebook de NOair"
+msgstr "Aller sur la page Facebook de NOair"
+
+#: footer.php:26
 msgid "Navigation de pied de page"
 msgstr "Navigation de pied de page"
+
+#: footer.php:31 header.php:51
+msgid "Aller sur la page "
+msgstr "Aller sur la page "
 
 #: header.php:7
 msgid ""
@@ -35,11 +51,19 @@ msgstr ""
 msgid "Ce site est toujours en cours de développement"
 msgstr "Ce site est toujours en cours de développement"
 
-#: header.php:42
+#: header.php:39
+msgid "Changer la langue en "
+msgstr "Changer la langue en "
+
+#: header.php:47
 msgid "Navigation principale"
 msgstr "Navigation principale"
 
-#: header.php:52 single-module.php:127
+#: header.php:58 single-module.php:140 template-partners.php:32
+msgid "Aller sur la page de contact"
+msgstr "Aller sur la page de contact"
+
+#: header.php:59 single-module.php:142
 msgid "contactez nous"
 msgstr "contactez nous"
 
@@ -47,28 +71,32 @@ msgstr "contactez nous"
 msgid "NOair •"
 msgstr "NOair •"
 
-#: index.php:32 single-publication.php:50 template-partners.php:32
-#: template-publications.php:30
+#: index.php:32 single-publication.php:60 template-publications.php:30
+msgid "Aller sur la page des modules"
+msgstr "Aller sur la page des modules"
+
+#: index.php:33 single-publication.php:61 template-partners.php:33
+#: template-publications.php:31
 msgid "voir nos modules"
 msgstr "voir nos modules"
 
-#: index.php:40
+#: index.php:41
 msgid "NOair c’est :"
 msgstr "NOair c’est :"
 
-#: index.php:56
+#: index.php:57
 msgid "Vidéo de présentation de NOair - Antilope"
 msgstr "Vidéo de présentation de NOair - Antilope"
 
-#: index.php:64
+#: index.php:65
 msgid "Découvrez aussi"
 msgstr "Découvrez aussi"
 
-#: index.php:70
+#: index.php:71
 msgid "Les publications"
 msgstr "Les publications"
 
-#: index.php:73
+#: index.php:74
 msgid ""
 "Toutes les publications qui nous font références autant dans des journaux et "
 "jusqu’à la télévision"
@@ -76,21 +104,29 @@ msgstr ""
 "Toutes les publications qui nous font références autant dans des journaux et "
 "jusqu’à la télévision"
 
-#: index.php:77
+#: index.php:78
+msgid "Aller sur la page des publications"
+msgstr "Aller sur la page des publications"
+
+#: index.php:79
 msgid "voir les publications"
 msgstr "voir les publications"
 
-#: index.php:89
+#: index.php:91
 msgid "Nos partenaires"
 msgstr "Nos partenaires"
 
-#: index.php:92
+#: index.php:94
 msgid ""
 "Nous ne travaillons pas seul, nous sommes plusieurs à réaliser cette démarche"
 msgstr ""
 "Nous ne travaillons pas seul, nous sommes plusieurs à réaliser cette démarche"
 
-#: index.php:97
+#: index.php:98
+msgid "Aller sur la page des partenaires"
+msgstr "Aller sur la page des partenaires"
+
+#: index.php:100
 msgid "voir les partenaires"
 msgstr "voir les partenaires"
 
@@ -155,20 +191,20 @@ msgid "Sélectionner un sujet ici"
 msgstr "Sélectionner un sujet ici"
 
 #: partials/form.php:51
-msgid "les modules"
-msgstr "les modules"
+msgid "Achat/Installation d’un module"
+msgstr "Achat/Installation d’un module"
 
 #: partials/form.php:54
-msgid "la section ingénieur de la HEPL"
-msgstr "la section ingénieur de la HEPL"
+msgid "Informations sur les modules"
+msgstr "Informations sur les modules"
 
 #: partials/form.php:57
-msgid "la HEPL"
-msgstr "la HEPL"
+msgid "Informations sur la section ingénieur de la HEPL"
+msgstr "Informations sur la section ingénieur de la HEPL"
 
 #: partials/form.php:60
-msgid "l’ISSeP"
-msgstr "l’ISSeP"
+msgid "Informations sur l’ISSeP"
+msgstr "Informations sur l’ISSeP"
 
 #: partials/form.php:65 partials/form.php:76
 msgid "Un sujet est requis pour envoyer le formulaire. Merci d’en choisir un."
@@ -210,7 +246,7 @@ msgstr "Mesures effectuées"
 msgid "Voir le module "
 msgstr "Voir le module "
 
-#: partials/module.php:38 single-module.php:11
+#: partials/module.php:38 single-module.php:21
 msgid ":name"
 msgstr ":name"
 
@@ -234,60 +270,82 @@ msgstr "Voir la publication"
 msgid " de :author"
 msgstr " de :author"
 
-#: single-module.php:6
+#: single-module.php:6 single-module.php:11
+#| msgid "Aller sur la page des modules"
+msgid "Retourner sur la page des modules"
+msgstr "Retourner sur la page des modules"
+
+#: single-module.php:16
 msgid "Le module "
 msgstr "Le module "
 
-#: single-module.php:27
+#: single-module.php:33
 msgid "Les photos du module :name"
 msgstr "Les photos du module :name"
 
-#: single-module.php:53
+#: single-module.php:59
 msgid "Information du module :name"
 msgstr "Information du module :name"
 
-#: single-module.php:56
+#: single-module.php:62
 msgid "Comment s’utilise-t-il ?"
 msgstr "Comment s’utilise-t-il ?"
 
-#: single-module.php:64
+#: single-module.php:70
 msgid "Ces qualités et défauts"
 msgstr "Ces qualités et défauts"
 
-#: single-module.php:84
+#: single-module.php:90
 msgid "Caractéristiques"
 msgstr "Caractéristiques"
 
-#: single-module.php:100
+#: single-module.php:106
 msgid "Ce que :name mesure"
 msgstr "Ce que :name mesure"
 
-#: single-module.php:112
+#: single-module.php:117
 msgid "* Sous options."
 msgstr "* Sous options."
 
 #: single-module.php:120
+msgid "https://www.wallonair.be/fr/"
+msgstr "https://www.wallonair.be/fr/"
+
+#: single-module.php:121
+msgid "Aller sur le site de Wallonair"
+msgstr "Aller sur le site de Wallonair"
+
+#: single-module.php:123
+msgid "voir les mesures en direct"
+msgstr "voir les mesures en direct"
+
+#: single-module.php:133
 msgid "Des questions sur ce module ?"
 msgstr "Des questions sur ce module ?"
 
-#: single-module.php:123
+#: single-module.php:136
 msgid "Posez nous vos question et demandes au sujet du module :name"
 msgstr "Posez nous vos question et demandes au sujet du module :name"
 
-#: single-publication.php:13
+#: single-publication.php:4 single-publication.php:9
+#| msgid "Aller sur la page des publications"
+msgid "Retourner sur la page des publications"
+msgstr "Retourner sur la page des publications"
+
+#: single-publication.php:23
 msgid "L’article de "
 msgstr "L’article de "
 
-#: single-publication.php:37 template-publications.php:17
+#: single-publication.php:47 template-publications.php:17
 msgid "Découvrez de quels modules ils parlent"
 msgstr "Découvrez de quels modules ils parlent"
 
-#: single-publication.php:43 template-partners.php:25
+#: single-publication.php:53 template-partners.php:25
 #: template-publications.php:23
 msgid "Les modules"
 msgstr "Les modules"
 
-#: single-publication.php:46 template-partners.php:28
+#: single-publication.php:56 template-partners.php:28
 #: template-publications.php:26
 msgid "Tous les modules dont les articles ci-dessus parlent ce trouvent ici !"
 msgstr "Tous les modules dont les articles ci-dessus parlent ce trouvent ici !"
@@ -301,7 +359,6 @@ msgid " form"
 msgstr " form"
 
 #: template-contact.php:29
-#| msgid "Merci de nous avoir contacté, à bientôt !"
 msgid "Merci de nous avoir contacté."
 msgstr "Merci de nous avoir contacté."
 
@@ -309,11 +366,11 @@ msgstr "Merci de nous avoir contacté."
 msgid "À bientôt !"
 msgstr "À bientôt !"
 
-#: template-contact.php:36
+#: template-contact.php:37
 msgid "Revenir à la page d’accueil"
 msgstr "Revenir à la page d’accueil"
 
-#: template-contact.php:42
+#: template-contact.php:43
 msgid "Les différents contacts"
 msgstr "Les différents contacts"
 
@@ -330,6 +387,156 @@ msgstr "Les publications récentes"
 #: template-partners.php:19
 msgid "Découvrez nos modules"
 msgstr "Découvrez nos modules"
+
+#~ msgid ""
+#~ "<strong>Error</strong>: Invalid username, email address or incorrect "
+#~ "password."
+#~ msgstr ""
+#~ "<strong>Error</strong>: Invalid username, email address or incorrect "
+#~ "password."
+
+#~ msgid ""
+#~ "You should specify an action to be verified by using the first parameter."
+#~ msgstr ""
+#~ "You should specify an action to be verified by using the first parameter."
+
+#~ msgid "HTTP redirect status code must be a redirection code, 3xx."
+#~ msgstr "HTTP redirect status code must be a redirection code, 3xx."
+
+#, php-format
+#~ msgid "New trackback on your post \"%s\""
+#~ msgstr "New trackback on your post \"%s\""
+
+#, php-format
+#~ msgid "Website: %1$s (IP address: %2$s, %3$s)"
+#~ msgstr "Website: %1$s (IP address: %2$s, %3$s)"
+
+#, php-format
+#~ msgid "URL: %s"
+#~ msgstr "URL: %s"
+
+#, php-format
+#~ msgid "Comment: %s"
+#~ msgstr "Comment: %s"
+
+#~ msgid "You can see all trackbacks on this post here:"
+#~ msgstr "You can see all trackbacks on this post here:"
+
+#, php-format
+#~ msgid "[%1$s] Trackback: \"%2$s\""
+#~ msgstr "[%1$s] Trackback: \"%2$s\""
+
+#, php-format
+#~ msgid "New pingback on your post \"%s\""
+#~ msgstr "New pingback on your post \"%s\""
+
+#~ msgid "You can see all pingbacks on this post here:"
+#~ msgstr "You can see all pingbacks on this post here:"
+
+#, php-format
+#~ msgid "[%1$s] Pingback: \"%2$s\""
+#~ msgstr "[%1$s] Pingback: \"%2$s\""
+
+#, php-format
+#~ msgid "New comment on your post \"%s\""
+#~ msgstr "New comment on your post \"%s\""
+
+#, php-format
+#~ msgid "Author: %1$s (IP address: %2$s, %3$s)"
+#~ msgstr "Author: %1$s (IP address: %2$s, %3$s)"
+
+#, php-format
+#~ msgid "Email: %s"
+#~ msgstr "Email: %s"
+
+#, php-format
+#~ msgid "In reply to: %s"
+#~ msgstr "In reply to: %s"
+
+#~ msgid "You can see all comments on this post here:"
+#~ msgstr "You can see all comments on this post here:"
+
+#, php-format
+#~ msgid "[%1$s] Comment: \"%2$s\""
+#~ msgstr "[%1$s] Comment: \"%2$s\""
+
+#, php-format
+#~ msgid "Permalink: %s"
+#~ msgstr "Permalink: %s"
+
+#, php-format
+#~ msgid "Trash it: %s"
+#~ msgstr "Trash it: %s"
+
+#, php-format
+#~ msgid "Delete it: %s"
+#~ msgstr "Delete it: %s"
+
+#, php-format
+#~ msgid "Spam it: %s"
+#~ msgstr "Spam it: %s"
+
+#, php-format
+#~ msgid "A new trackback on the post \"%s\" is waiting for your approval"
+#~ msgstr "A new trackback on the post \"%s\" is waiting for your approval"
+
+#~ msgid "Trackback excerpt: "
+#~ msgstr "Trackback excerpt: "
+
+#, php-format
+#~ msgid "A new pingback on the post \"%s\" is waiting for your approval"
+#~ msgstr "A new pingback on the post \"%s\" is waiting for your approval"
+
+#~ msgid "Pingback excerpt: "
+#~ msgstr "Pingback excerpt: "
+
+#, php-format
+#~ msgid "A new comment on the post \"%s\" is waiting for your approval"
+#~ msgstr "A new comment on the post \"%s\" is waiting for your approval"
+
+#, php-format
+#~ msgid "Approve it: %s"
+#~ msgstr "Approve it: %s"
+
+#, php-format
+#~ msgid "[%1$s] Please moderate: \"%2$s\""
+#~ msgstr "[%1$s] Please moderate: \"%2$s\""
+
+#, php-format
+#~ msgid "Password changed for user: %s"
+#~ msgstr "Password changed for user: %s"
+
+#, php-format
+#~ msgid "[%s] Password Changed"
+#~ msgstr "[%s] Password Changed"
+
+#, php-format
+#~ msgid "New user registration on your site %s:"
+#~ msgstr "New user registration on your site %s:"
+
+#, php-format
+#~ msgid "Username: %s"
+#~ msgstr "Username: %s"
+
+#, php-format
+#~ msgid "[%s] New User Registration"
+#~ msgstr "[%s] New User Registration"
+
+#~ msgid "To set your password, visit the following address:"
+#~ msgstr "To set your password, visit the following address:"
+
+#, php-format
+#~ msgid "[%s] Login Details"
+#~ msgstr "[%s] Login Details"
+
+#~ msgid "les modules"
+#~ msgstr "les modules"
+
+#~ msgid "la HEPL"
+#~ msgstr "la HEPL"
+
+#~ msgid "l’ISSeP"
+#~ msgstr "l’ISSeP"
 
 #~ msgid "Que faites vous dans la vie ?"
 #~ msgstr "Que faites vous dans la vie ?"
